@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>IDE ForgeOS — Faster than a Neuron</title>
+
+<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+
+<!-- Optional Google Fonts for Hello overlay -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&family=Orbitron:wght@600&family=Pacifico&family=Press+Start+2P&family=Raleway:wght@500&family=Special+Elite&family=Oswald:wght@500&family=Indie+Flower&family=Anton&display=swap" rel="stylesheet">
+
+<style>
+  :root{ --bg:#0b0b0f; --ink:#e7e7f0; --muted:#9aa0ad; --panel:#14141c; --accent:#ff2a54; --beeFlap:.06s; }
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{ margin:0; background:radial-gradient(1200px 600px at 50% -10%, #151528, #0b0b0f); color:var(--ink); font-family:ui-sans-serif,-apple-system,Segoe UI,Roboto,Helvetica,Arial; line-height:1.45; }
+  .wrap{max-width:1100px;margin:0 auto;padding:28px 18px 56px}
+  .hero{display:grid; gap:6px; justify-items:center; text-align:center; margin-top:6px; position:relative}
+  h1{margin:4px 0 0 0; font-size:clamp(1.8rem,3.6vw,3rem); font-weight:800}
+  .tag{font-size:1.08rem; font-weight:400; color:var(--muted); margin-top:0}
+  .panel{ margin-top:24px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00)); border:1px solid rgba(255,255,255,0.08); border-radius:20px; padding:20px; box-shadow:0 10px 30px rgba(0,0,0,0.35), inset 0 0 0 1px rgba(255,255,255,0.02) }
+  .gauge-wrap{display:grid;justify-items:center; gap:8px; padding:8px 0}
+  .gauge{width:min(680px,92vw); aspect-ratio:2/1; position:relative; filter:drop-shadow(0 10px 24px rgba(0,0,0,.4))}
+  .gauge svg{width:100%; height:100%}
+  .needle{ transform-box:fill-box; transform-origin:center bottom; transition:transform 900ms cubic-bezier(.2,.9,.1,1.0) }
+  .scale-label{ fill:#b5bccb; font-size:7px; opacity:.8; font-weight:400 }
+  .bar{ width:100%; height:22px; background:#171822; border-radius:14px; overflow:hidden; position:relative; margin-top:10px; border:1px solid rgba(255,255,255,0.06) }
+  .fill{ position:absolute; inset:0; background:linear-gradient(90deg,#22d3ee,#86f79a,#ffc83d,#ff2a54); background-size:200% 100%; background-position:0% 0%; animation:sweep-bg 1.4s ease-in-out 0s 3 forwards }
+  .fill.done{ animation:none; background-position:100% 0% }
+  @keyframes sweep-bg{ from{background-position:0% 0%} to{background-position:100% 0%} }
+  .metrics{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px; margin-top:18px}
+  .card{background:var(--panel); border:1px solid rgba(255,255,255,.06); border-radius:16px; padding:16px}
+  .k{font-size:1.0rem; color:var(--muted); margin-bottom:6px}
+  .v{font-size:1.9rem; font-weight:800}
+  .controls{display:flex; gap:12px; justify-content:center; margin-top:16px}
+  .btn{ background:rgba(255,255,255,0.06); color:#e5e7eb; border:1px solid rgba(255,255,255,.18); padding:16px 28px; border-radius:14px; cursor:pointer; font-size:1.1rem; font-weight:700; letter-spacing:.2px; backdrop-filter:blur(2px) }
+  .btn:hover{background:rgba(255,255,255,0.10)}
+  .explainer{margin-top:22px; color:var(--muted); background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.08); border-radius:16px; padding:18px}
+  .explainer h3{margin:0 0 8px 0; color:#cfd3dc; font-size:1.05rem}
+  .hr{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.08),transparent); margin:14px 0}
+  .fun{font-size:.95rem; color:#cbd5e1}
+  .foot{margin-top:28px; color:#aeb4c2; text-align:center; font-size:1.05rem}
+  .foot small{display:block; opacity:.95; margin-top:8px; font-size:1.2rem}
+  a{color:#9fdcff; text-decoration:none} a:hover{text-decoration:underline}
+  /* Bee */
+  .bee-wrap{display:flex; align-items:center; gap:12px}
+  .bee{ width:58px; height:40px; filter:drop-shadow(0 6px 10px rgba(0,0,0,.35)) }
+  .bee .wing{ transform-box:fill-box; transform-origin:20px 18px; animation:flap var(--beeFlap) linear infinite }
+  .bee .wing.right{ transform-origin:38px 18px; animation-delay:calc(var(--beeFlap)*0.5) }
+  @keyframes flap{ 0%{transform:rotate(0)} 50%{transform:rotate(22deg)} 100%{transform:rotate(0)} }
+  .bee .buzzline{ stroke-dasharray:3 4; animation:dash 1.6s linear infinite }
+  @keyframes dash{ to{ stroke-dashoffset:-70; } }
+  .bee-note{font-size:.85rem; color:var(--muted)}
+  /* Hello overlay */
+  .hello-wrap{ position:absolute; inset:0; display:grid; place-items:center; pointer-events:none }
+  .hello{ font-weight:800; letter-spacing:.3px; text-shadow:0 2px 14px rgba(0,0,0,.35); mix-blend-mode:screen; user-select:none }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <h1>IDE ForgeOS — Faster than a Banana</h1>
+      <p class="tag">⚡ Zero-wait infrastructure for founders & AI startups — lean, optimized, rack-mounted Liquid Web servers on ISP backbones.</p>
+    </div>
+
+    <div class="panel">
+      <div class="gauge-wrap">
+        <div class="gauge">
+          <svg viewBox="0 0 200 110" xmlns="http://www.w3.org/2000/svg" aria-label="neuron tachometer">
+            <defs>
+              <linearGradient id="arcgrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%"   stop-color="#22d3ee"/>
+                <stop offset="40%"  stop-color="#86f79a"/>
+                <stop offset="70%"  stop-color="#ffc83d"/>
+                <stop offset="100%" stop-color="#ff2a54"/>
+              </linearGradient>
+            </defs>
+
+            <!-- Arc -->
+            <path d="M10,100 A90,90 0 0,1 190,100" stroke="url(#arcgrad)" stroke-width="16" fill="none" opacity="0.9"/>
+
+            <!-- Labels -->
+            <g class="scale-label" text-anchor="start"><text x="14"  y="105">1 ms</text></g>
+            <g class="scale-label" text-anchor="end"><text x="186" y="105">0 ms instant</text></g>
+
+            <!-- Needle -->
+            <g class="needle" id="needle">
+              <line x1="100" y1="100" x2="100" y2="18" stroke="var(--accent)" stroke-width="3"/>
+              <circle cx="100" cy="100" r="5" fill="#e5e7eb"/>
+            </g>
+          </svg>
+
+          <!-- Centered Hello World overlay -->
+          <div class="hello-wrap" aria-hidden="true">
+            <div id="helloWord" class="hello">Hello World</div>
+          </div>
+        </div>
+
+        <!-- Sweep bar -->
+        <div class="bar"><div class="fill" id="sweepFill"></div></div>
+      </div>
+
+      <!-- Metrics -->
+      <div class="metrics">
+        <div class="card"><div class="k">Server process time</div><div class="v"><span id="procText">—</span> ms</div></div>
+        <div class="card"><div class="k">Faster than a neuron</div><div class="v"><span id="xfaster">—</span>×</div></div>
+        <div class="card"><div class="k">TTFB (client-observed)</div><div class="v"><span id="ttfb">—</span> ms</div></div>
+        <div class="card"><div class="k">Throughput (single-core, theoretical)</div><div class="v"><span id="rps">—</span> rps</div></div>
+        <div class="card"><div class="k">Click → Hello visible</div><div class="v"><span id="clickHello">—</span> ms</div></div>
+
+        <div class="card">
+          <div class="k">Bee flaps to “Hello”</div>
+          <div class="bee-wrap">
+            <svg class="bee" viewBox="0 0 64 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path class="buzzline" d="M2,36 C10,28 18,40 26,32 S42,24 62,26" fill="none" stroke="#5fe1ff" stroke-width="1.2" opacity=".35"/>
+              <ellipse class="wing left"  cx="20" cy="18" rx="11" ry="7" fill="#c2f8ff" opacity=".75"/>
+              <ellipse class="wing right" cx="38" cy="18" rx="11" ry="7" fill="#c2f8ff" opacity=".75"/>
+              <ellipse cx="29" cy="26" rx="13" ry="9" fill="#ffc83d" stroke="#1a1a1f" stroke-width="1.2"/>
+              <line x1="18" y1="26" x2="40" y2="26" stroke="#1a1a1f" stroke-width="2.4" />
+              <line x1="21" y1="22" x2="37" y2="22" stroke="#1a1a1f" stroke-width="2.4" />
+              <line x1="21" y1="30" x2="37" y2="30" stroke="#1a1a1f" stroke-width="2.4" />
+              <circle cx="41.5" cy="24" r="5" fill="#1a1a1f"/><circle cx="43.5" cy="23" r="1.6" fill="#e7e7f0"/>
+              <polygon points="16,26 10,24 16,22" fill="#1a1a1f"/>
+            </svg>
+            <div>
+              <div class="v"><span id="beeFlaps">—</span></div>
+              <div class="bee-note">~<span id="beeHzNote">230</span> Hz honeybee</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="controls"><button class="btn" id="refreshBtn" type="button">Refresh</button></div>
+    </div>
+
+    <div class="explainer">
+      <h3>What ForgeOS is about</h3>
+      <p class="fun">We focus on <strong>founders and AI startups</strong> who don’t want to get bogged down in cloud plumbing. ForgeOS runs on <strong>lean, rack-mounted Liquid Web servers</strong> sitting on ISP backbones — tuned for real-time products.</p>
+      <p class="fun">Our mission is to bring what used to be <strong>supercomputer-class speed</strong> to everyone. The goal: <strong>zero-wait</strong> — so fast your brain can’t perceive the screen update. It just feels instant.</p>
+      <div class="hr"></div>
+      <h3>What these numbers mean</h3>
+      <ul class="fun">
+        <li><strong>Server process time</strong>: Pure Flask/Python execution after the request hits your app.</li>
+        <li><strong>Faster than a neuron</strong>: Multiplier vs. a ~<strong>1 millisecond</strong> neuron spike.</li>
+        <li><strong>TTFB (client-observed)</strong>: Network + TLS + server processing until first byte arrives.</li>
+        <li><strong>Throughput</strong>: Theoretical requests/second on a single CPU core at the measured server time.</li>
+        <li><strong>Click → Hello visible</strong>: Time from navigation start until the hero is painted on screen.</li>
+        <li><strong>Bee flaps to “Hello”</strong>: Estimated wing beats during that interval at the chosen bee Hz.</li>
+      </ul>
+    </div>
+
+    <div class="foot">
+      Questions? <a href="mailto:friends@preceptress.ai">friends@preceptress.ai</a>
+      <small>Hardware: Liquid Web | Linux Servers</small>
+    </div>
+  </div>
+
+<script>
+  // === Values from Flask (strings) ===
+  const ms     = parseFloat("{{ process_time }}");
+  const MAX_MS = parseFloat("{{ max_ms }}");
+
+  // 🐝 Wingbeat frequency (Hz)
+  const BEE_WING_HZ = 230;
+
+  // Tune bee wing animation period from Hz
+  (function setBeeFlapPeriod(){
+    const period = Math.max(0.035, Math.min(0.12, 1 / BEE_WING_HZ));
+    document.documentElement.style.setProperty('--beeFlap', `${period}s`);
+    const hzNote = document.getElementById('beeHzNote');
+    if (hzNote) hzNote.textContent = BEE_WING_HZ.toString();
+  })();
+
+  // Display numbers
+  function updateNumbers(){
+    document.getElementById("procText").textContent = ms.toFixed(3);
+
+    const x = (ms > 0) ? (1.0 / ms) : Infinity; // vs 1 ms neuron
+    const xText = Number.isFinite(x) ? x.toLocaleString(undefined,{maximumFractionDigits:2}) : "∞";
+    document.getElementById("xfaster").textContent = xText;
+
+    // TTFB
+    const nav = performance.getEntriesByType("navigation")[0];
+    const ttfbMs = nav ? nav.responseStart : (performance.timing.responseStart - performance.timing.requestStart);
+    document.getElementById("ttfb").textContent = (ttfbMs && isFinite(ttfbMs)) ? ttfbMs.toFixed(1) : "—";
+
+    // Theoretical single-core RPS
+    const rps = (ms > 0) ? (1000 / ms) : Infinity;
+    const rpsText = Number.isFinite(rps) ? rps.toLocaleString(undefined,{maximumFractionDigits:0}) : "∞";
+    document.getElementById("rps").textContent = rpsText;
+  }
+
+  // Needle mapping: 1 ms (left, -90deg) -> 0 ms (right, +90deg)
+  const PAD = 0.05;
+  function angleFor(msVal){
+    let ratio = Math.max(0, Math.min(1, msVal / 1.0));  // 1.0 ms baseline
+    ratio = PAD + (1 - 2*PAD) * (1 - ratio);            // invert & pad
+    return -90 + (ratio * 180);
+  }
+
+  // Friendly wobble before settle
+  function wobbleNeedle(targetAngle, durationMs=900){
+    const needle = document.getElementById("needle");
+    const start  = performance.now();
+    const startAngle = targetAngle - 14;
+    const A0 = 10, decay = 3.0;
+    function step(now){
+      const t = Math.min(1, (now - start)/durationMs);
+      const ease = t*(2-t);
+      const wobble = A0 * Math.cos(10*ease) * Math.exp(-decay*ease);
+      const ang = startAngle + (targetAngle - startAngle)*ease + wobble;
+      needle.style.transform = `rotate(${ang.toFixed(2)}deg)`;
+      if (t < 1) requestAnimationFrame(step);
+      else needle.style.transform = `rotate(${targetAngle.toFixed(2)}deg)`;
+    }
+    requestAnimationFrame(step);
+  }
+
+  // Hello overlay style (random font/color each refresh)
+  const HELLO_FONTS = [
+    '"Roboto", sans-serif','"Playfair Display", serif','"Orbitron", sans-serif','"Pacifico", cursive',
+    '"Press Start 2P", cursive','"Raleway", sans-serif','"Special Elite", cursive','"Oswald", sans-serif',
+    '"Indie Flower", cursive','"Anton", sans-serif'
+  ];
+  const HELLO_COLORS = ['#9AE6B4','#7DD3FC','#FDE047','#FCA5A5','#C084FC','#60A5FA','#FFD166'];
+  function setHelloStyle(){
+    const el = document.getElementById('helloWord'); if(!el) return;
+    el.style.fontFamily = HELLO_FONTS[Math.floor(Math.random()*HELLO_FONTS.length)];
+    el.style.color = HELLO_COLORS[Math.floor(Math.random()*HELLO_COLORS.length)];
+    el.style.fontSize = 'clamp(20px, 6vw, 46px)';
+  }
+
+  // Sweep bar end lock
+  const fill = document.getElementById("sweepFill");
+  fill.addEventListener("animationend", () => fill.classList.add("done"));
+
+  // Refresh with cache-buster (new sample)
+  document.getElementById('refreshBtn').addEventListener('click', () => {
+    window.location.assign(window.location.pathname + '?r=' + Date.now());
+  });
+
+  // Measure render time to Hello
+  function measureClickToHello(){
+    return new Promise(resolve => {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => resolve(performance.now()));
+      });
+    });
+  }
+
+  // Init
+  (async function init(){
+    updateNumbers();
+    wobbleNeedle(angleFor(ms));
+    setHelloStyle();
+
+    const clickHelloMs = await measureClickToHello();
+    document.getElementById('clickHello').textContent = clickHelloMs.toFixed(2);
+
+    const flaps = (clickHelloMs / 1000) * BEE_WING_HZ;
+    document.getElementById('beeFlaps').textContent = Math.round(flaps).toLocaleString();
+  })();
+</script>
+</body>
+</html>
