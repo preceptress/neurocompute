@@ -1,0 +1,701 @@
+/* ----------------------------------------
+   Core Theme
+   ---------------------------------------- */
+:root {
+    --bg: #0b0b0f;
+    /* Deep cosmic black-blue */
+    --panel: #14141c;
+    /* Panel background */
+    --ink: #e7e7f0;
+    /* Primary text */
+    --muted: #9aa0ad;
+    /* Secondary text */
+    --accent: #66ffcc;
+    /* Theme accent (cyan-teal) */
+    --lime: #b4ff5c;
+    /* Lime highlight for emphasis */
+    --green: #6effa3;
+    /* Consistent green for metrics */
+    --redis-red: #d82c20;
+    /* Redis brand red */
+    --live-dot: #00ff88;
+    /* Live indicator green */
+}
+
+/* ----------------------------------------
+   Global Reset
+   ---------------------------------------- */
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', ui-sans-serif, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+}
+
+h1,
+h2,
+p {
+    margin: 0;
+}
+
+/* ----------------------------------------
+   Layout Containers
+   ---------------------------------------- */
+.wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 28px 18px 56px;
+}
+
+.hero {
+    display: grid;
+    gap: 6px;
+    justify-items: center;
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+
+}
+
+h1 {
+    font-size: clamp(1.8rem, 3.6vw, 3rem);
+    font-weight: 800;
+}
+
+.tag {
+    font-size: 1.08rem;
+    color: var(--muted);
+}
+
+/* ----------------------------------------
+   Panels & Cards
+   ---------------------------------------- */
+.panel {
+    margin-top: 24px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
+.card,
+.redis-card,
+.metric-card,
+.techstack-block {
+    background: var(--panel);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 18px 28px;
+    margin-bottom: 26px;
+}
+
+.techstack-block {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    padding: 2rem 2.5rem;
+    transition: background 0.3s ease;
+}
+
+.techstack-block:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* ----------------------------------------
+   Gauge & Progress
+   ---------------------------------------- */
+.gauge-wrap {
+    display: grid;
+    justify-items: center;
+    gap: 8px;
+    padding: 8px 0;
+}
+
+.gauge {
+    width: min(680px, 92vw);
+    aspect-ratio: 2 / 1;
+    position: relative;
+    filter: drop-shadow(0 10px 24px rgba(0, 0, 0, .4));
+}
+
+.gauge svg {
+    width: 100%;
+    height: 100%;
+}
+
+.needle {
+    transform-box: fill-box;
+    transform-origin: center bottom;
+    transition: transform 900ms cubic-bezier(.2, .9, .1, 1);
+}
+
+.scale-label {
+    fill: #b5bccb;
+    font-size: 7px;
+    opacity: .8;
+}
+
+.bar {
+    height: 22px;
+    background: #171822;
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+    margin-top: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.fill {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, #22d3ee, #86f79a, #ffc83d, #ff2a54);
+    background-size: 200% 100%;
+    animation: sweep-bg 1.4s ease-in-out 0s 3 forwards;
+}
+
+.fill.done {
+    animation: none;
+    background-position: 100% 0;
+}
+
+@keyframes sweep-bg {
+    from {
+        background-position: 0 0;
+    }
+
+    to {
+        background-position: 100% 0;
+    }
+}
+
+/* ----------------------------------------
+   Typography & Metrics
+   ---------------------------------------- */
+.hello-text {
+    font-weight: 800;
+    font-size: clamp(22px, 3vw, 40px);
+    text-shadow: 0 2px 14px rgba(0, 0, 0, .35);
+    margin-top: 20px;
+    color: #9ae6b4;
+    text-align: center;
+}
+
+.metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.k {
+    font-size: 1rem;
+    color: var(--muted);
+}
+
+.v {
+    font-size: 1.9rem;
+    font-weight: 800;
+}
+
+.metric-number {
+    font-size: clamp(70px, 14vw, 200px);
+    font-weight: 800;
+    color: var(--green);
+    text-shadow: 0 0 20px rgba(110, 255, 163, .4);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.metric-number.fast {
+    color: var(--lime);
+    text-shadow: 0 0 15px rgba(180, 255, 92, .4);
+}
+
+.metric-label {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.metric-desc {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #bbb;
+    max-width: 800px;
+}
+
+/* ----------------------------------------
+   Buttons & Controls
+   ---------------------------------------- */
+.controls {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.btn {
+    background: rgba(255, 255, 255, 0.06);
+    color: #e5e7eb;
+    border: 1px solid rgba(255, 255, 255, .18);
+    padding: 16px 28px;
+    border-radius: 14px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: .2px;
+    transition: background 0.2s ease;
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.10);
+}
+
+/* ----------------------------------------
+   Animations & Effects
+   ---------------------------------------- */
+.pulse-green {
+    color: #86efac;
+    animation: pulse 1.6s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .5;
+    }
+}
+
+.status-dot {
+    display: inline-block;
+    width: 0.9rem;
+    height: 0.9rem;
+    border-radius: 50%;
+    background: var(--live-dot);
+    box-shadow: 0 0 25px var(--live-dot);
+    margin-right: 0.4rem;
+    animation: pulse-dot 1.6s infinite ease-in-out;
+}
+
+@keyframes pulse-dot {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(0.8);
+        opacity: 0.5;
+    }
+}
+
+.rings {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 30px auto;
+}
+
+.ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    animation: ripple 2s infinite ease-out;
+}
+
+.ring:nth-child(2) {
+    animation-delay: 0.6s;
+}
+
+.ring:nth-child(3) {
+    animation-delay: 1.2s;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0.2);
+        opacity: 0.8;
+        border-color: #22d3ee;
+    }
+
+    100% {
+        transform: scale(1.2);
+        opacity: 0;
+        border-color: #ff2a54;
+    }
+}
+
+.orb {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    margin: 30px auto;
+    background: radial-gradient(circle at 30% 30%, #86f79a, #151528);
+    box-shadow: 0 0 40px #86f79a;
+    transition: all 0.8s ease;
+}
+
+/* ----------------------------------------
+   System Status (Full-Screen)
+   ---------------------------------------- */
+.system-status {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 100vh;
+    text-align: center;
+    padding: 2rem;
+}
+
+.status-block {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.status-icon {
+    font-size: 8rem;
+    line-height: 1;
+}
+
+/* ----------------------------------------
+   Redis Section
+   ---------------------------------------- */
+.redis-icon {
+    font-size: 8rem;
+    color: var(--redis-red);
+    text-shadow: 0 0 40px rgba(216, 44, 32, 0.6);
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.redis-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.redis-state,
+#redisStatus {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #bfbfbf;
+}
+
+.redis-ok {
+    color: var(--accent);
+}
+
+.redis-fail {
+    color: #ff5577;
+}
+
+/* ----------------------------------------
+   Tech Stack & Metrics Sections
+   ---------------------------------------- */
+.stack-section,
+.techstack-section,
+.latency-section {
+    padding: 6rem 3rem;
+    max-width: 1000px;
+    margin: auto;
+    text-align: center;
+}
+
+.stack-title,
+.techstack-title,
+.opensource-title {
+    font-size: 2.8rem;
+    color: #fff;
+    margin-bottom: 4rem;
+    letter-spacing: -0.5px;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.metric,
+.techstack-block,
+.opensource-block {
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.metric {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    justify-content: center;
+}
+
+.metric-icon {
+    font-size: 6rem;
+    opacity: 0.8;
+    color: #fff;
+}
+
+.techstack-block h2,
+.opensource-block h2 {
+    font-size: 1.6rem;
+    color: #fff;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.techstack-block p,
+.opensource-block p,
+.metric-desc {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #c2c2c2;
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+/* ----------------------------------------
+   Marketing & Footer
+   ---------------------------------------- */
+.marketing {
+    max-width: 820px;
+    margin: 80px auto 40px;
+    text-align: center;
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #bfc4ce;
+    letter-spacing: 0.3px;
+}
+
+.marketing p {
+    margin-bottom: 24px;
+}
+
+.marketing strong,
+.lime {
+    color: var(--lime);
+    font-weight: 700;
+}
+
+.foot {
+    margin-top: 60px;
+    text-align: center;
+    color: #aeb4c2;
+    font-size: 1.05rem;
+}
+
+.foot a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0 10px;
+}
+
+.foot a:hover {
+    text-decoration: underline;
+}
+
+.foot small {
+    display: block;
+    opacity: .95;
+    margin-top: 8px;
+    font-size: 1.2rem;
+}
+
+/* ----------------------------------------
+   Code Highlights
+   ---------------------------------------- */
+code {
+    background: rgba(102, 255, 204, 0.1);
+    color: var(--accent);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-family: 'SFMono-Regular', Consolas, monospace;
+}
+
+.hero code {
+    background: rgba(110, 255, 163, 0.08);
+    color: var(--green);
+}
+
+.hero-title {
+    font-size: 62px;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+.latency-section {
+    background: #000;
+    color: #e0e0e0;
+    text-align: center;
+    padding: 4rem 2rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.metric-number.fast {
+    font-size: clamp(70px, 14vw, 200px);
+    font-weight: 800;
+    color: #6effa3;
+    text-shadow: 0 0 20px rgba(110, 255, 163, 0.4);
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.metric-label {
+    font-size: 1.6rem;
+    margin-top: 1rem;
+    color: #ccc;
+    font-weight: 600;
+}
+
+.metric-desc {
+    font-size: 1.1rem;
+    color: #9aa0ad;
+    margin-top: 0.8rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #0b0b0d;
+    color: #fff;
+    font-family: "Inter", "Helvetica Neue", sans-serif;
+    text-align: center;
+}
+
+main {
+    margin-top: 60px;
+}
+
+.brand {
+    font-size: 3.5em;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-size: 1.8em;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.intro {
+    max-width: 750px;
+    margin: 0 auto 40px;
+    color: #bbb;
+    line-height: 1.5;
+}
+
+.latency-section {
+    background-color: #000;
+    padding: 60px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    margin-top: 40px;
+}
+
+.metric-number {
+    font-size: 9em;
+    font-weight: 700;
+    color: #9effa4;
+    text-shadow: 0 0 30px #6fff8e;
+    transition: all 0.3s ease-in-out;
+}
+
+.metric-label {
+    font-size: 1.3em;
+    color: #eee;
+    margin-top: 15px;
+}
+
+.metric-desc {
+    color: #aaa;
+    font-size: 0.95em;
+    line-height: 1.5;
+    max-width: 600px;
+    margin: 25px auto 0;
+}
+
+ul {
+    list-style-type: none;
+    /* removes the bullets */
+    padding-left: 0;
+    /* removes indentation */
+    margin: 0;
+    /* keeps alignment clean */
+}
+
+.plan-card {
+    text-align: left;
+    /* align everything to the left */
+    max-width: 700px;
+    /* keeps it readable */
+    margin: 0 auto;
+    /* centers the card container itself */
+    padding-left: 2rem;
+    /* adds a little breathing room */
+}
+
+.plan-card ul {
+    list-style-type: none;
+    /* remove the bullets */
+    padding-left: 0;
+    margin: 0;
+}
+
+.plan-card li {
+    margin-bottom: 0.5rem;
+    /* space between items */
+    color: #ccc;
+    /* optional: match your ForgeOS gray */
+    font-size: 1rem;
+}
+
+.plan-card {
+    text-align: left;
+    /* align everything to the left */
+    max-width: 700px;
+    /* keeps it readable */
+    margin: 0 auto;
+    /* centers the card container itself */
+    padding-left: 2rem;
+    /* adds a little breathing room */
+}
+
+.plan-card ul {
+    list-style-type: none;
+    /* remove the bullets */
+    padding-left: 0;
+    margin: 0;
+}
+
+.plan-card li {
+    margin-bottom: 0.5rem;
+    /* space between items */
+    color: #ccc;
+    /* optional: match your ForgeOS gray */
+    font-size: 1rem;
+}
