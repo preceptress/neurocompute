@@ -1,0 +1,212 @@
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 223, in run
+    handler()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 256, in handle_term
+    raise StopIteration
+StopIteration
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/logging/__init__.py", line 1084, in flush
+    self.stream.flush()
+RuntimeError: reentrant call inside <_io.BufferedWriter name='/home/chief/neurocompute/gunicorn-error.log'>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/logging/__init__.py", line 1104, in emit
+    self.flush()
+  File "/usr/lib/python3.10/logging/__init__.py", line 1084, in flush
+    self.stream.flush()
+RuntimeError: reentrant call inside <_io.BufferedWriter name='/home/chief/neurocompute/gunicorn-error.log'>
+Call stack:
+  File "/home/chief/neurocompute/venv/bin/gunicorn", line 7, in <module>
+    sys.exit(run())
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 66, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]", prog=prog).run()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/app/base.py", line 235, in run
+    super().run()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/app/base.py", line 71, in run
+    Arbiter(self).run()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 226, in run
+    self.halt()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 341, in halt
+    self.stop()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 395, in stop
+    time.sleep(0.1)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 241, in handle_chld
+    self.reap_workers()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 553, in reap_workers
+    self.log.error(msg)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/glogging.py", line 271, in error
+    self.error_log.error(msg, *args, **kwargs)
+  File "/usr/lib/python3.10/logging/__init__.py", line 1506, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/usr/lib/python3.10/logging/__init__.py", line 1624, in _log
+    self.handle(record)
+  File "/usr/lib/python3.10/logging/__init__.py", line 1634, in handle
+    self.callHandlers(record)
+  File "/usr/lib/python3.10/logging/__init__.py", line 1696, in callHandlers
+    hdlr.handle(record)
+  File "/usr/lib/python3.10/logging/__init__.py", line 968, in handle
+    self.emit(record)
+  File "/usr/lib/python3.10/logging/__init__.py", line 1218, in emit
+    StreamHandler.emit(self, record)
+  File "/usr/lib/python3.10/logging/__init__.py", line 1104, in emit
+    self.flush()
+  File "/usr/lib/python3.10/logging/__init__.py", line 1084, in flush
+    self.stream.flush()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 241, in handle_chld
+    self.reap_workers()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 553, in reap_workers
+    self.log.error(msg)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/glogging.py", line 271, in error
+    self.error_log.error(msg, *args, **kwargs)
+  File "/usr/lib/python3.10/logging/__init__.py", line 1506, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/usr/lib/python3.10/logging/__init__.py", line 1624, in _log
+    self.handle(record)
+  File "/usr/lib/python3.10/logging/__init__.py", line 1634, in handle
+    self.callHandlers(record)
+  File "/usr/lib/python3.10/logging/__init__.py", line 1696, in callHandlers
+    hdlr.handle(record)
+  File "/usr/lib/python3.10/logging/__init__.py", line 968, in handle
+    self.emit(record)
+  File "/usr/lib/python3.10/logging/__init__.py", line 1218, in emit
+    StreamHandler.emit(self, record)
+  File "/usr/lib/python3.10/logging/__init__.py", line 1104, in emit
+    self.flush()
+  File "/usr/lib/python3.10/logging/__init__.py", line 1084, in flush
+    self.stream.flush()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 241, in handle_chld
+    self.reap_workers()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 553, in reap_workers
+    self.log.error(msg)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/glogging.py", line 271, in error
+    self.error_log.error(msg, *args, **kwargs)
+Message: 'Worker (pid:34603) was sent SIGTERM!'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 223, in run
+    handler()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 256, in handle_term
+    raise StopIteration
+StopIteration
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/logging/__init__.py", line 1104, in emit
+    self.flush()
+  File "/usr/lib/python3.10/logging/__init__.py", line 1084, in flush
+    self.stream.flush()
+RuntimeError: reentrant call inside <_io.BufferedWriter name='/home/chief/neurocompute/gunicorn-error.log'>
+Call stack:
+  File "/home/chief/neurocompute/venv/bin/gunicorn", line 7, in <module>
+    sys.exit(run())
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 66, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]", prog=prog).run()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/app/base.py", line 235, in run
+    super().run()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/app/base.py", line 71, in run
+    Arbiter(self).run()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 226, in run
+    self.halt()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 341, in halt
+    self.stop()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 395, in stop
+    time.sleep(0.1)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 241, in handle_chld
+    self.reap_workers()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 553, in reap_workers
+    self.log.error(msg)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/glogging.py", line 271, in error
+    self.error_log.error(msg, *args, **kwargs)
+  File "/usr/lib/python3.10/logging/__init__.py", line 1506, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/usr/lib/python3.10/logging/__init__.py", line 1624, in _log
+    self.handle(record)
+  File "/usr/lib/python3.10/logging/__init__.py", line 1634, in handle
+    self.callHandlers(record)
+  File "/usr/lib/python3.10/logging/__init__.py", line 1696, in callHandlers
+    hdlr.handle(record)
+  File "/usr/lib/python3.10/logging/__init__.py", line 968, in handle
+    self.emit(record)
+  File "/usr/lib/python3.10/logging/__init__.py", line 1218, in emit
+    StreamHandler.emit(self, record)
+  File "/usr/lib/python3.10/logging/__init__.py", line 1104, in emit
+    self.flush()
+  File "/usr/lib/python3.10/logging/__init__.py", line 1084, in flush
+    self.stream.flush()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 241, in handle_chld
+    self.reap_workers()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 553, in reap_workers
+    self.log.error(msg)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/glogging.py", line 271, in error
+    self.error_log.error(msg, *args, **kwargs)
+Message: 'Worker (pid:34605) was sent SIGTERM!'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 223, in run
+    handler()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 256, in handle_term
+    raise StopIteration
+StopIteration
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/logging/__init__.py", line 1104, in emit
+    self.flush()
+  File "/usr/lib/python3.10/logging/__init__.py", line 1084, in flush
+    self.stream.flush()
+RuntimeError: reentrant call inside <_io.BufferedWriter name='/home/chief/neurocompute/gunicorn-error.log'>
+Call stack:
+  File "/home/chief/neurocompute/venv/bin/gunicorn", line 7, in <module>
+    sys.exit(run())
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/app/wsgiapp.py", line 66, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]", prog=prog).run()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/app/base.py", line 235, in run
+    super().run()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/app/base.py", line 71, in run
+    Arbiter(self).run()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 226, in run
+    self.halt()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 341, in halt
+    self.stop()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 395, in stop
+    time.sleep(0.1)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 241, in handle_chld
+    self.reap_workers()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 553, in reap_workers
+    self.log.error(msg)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/glogging.py", line 271, in error
+    self.error_log.error(msg, *args, **kwargs)
+  File "/usr/lib/python3.10/logging/__init__.py", line 1506, in error
+    self._log(ERROR, msg, args, **kwargs)
+  File "/usr/lib/python3.10/logging/__init__.py", line 1624, in _log
+    self.handle(record)
+  File "/usr/lib/python3.10/logging/__init__.py", line 1634, in handle
+    self.callHandlers(record)
+  File "/usr/lib/python3.10/logging/__init__.py", line 1696, in callHandlers
+    hdlr.handle(record)
+  File "/usr/lib/python3.10/logging/__init__.py", line 968, in handle
+    self.emit(record)
+  File "/usr/lib/python3.10/logging/__init__.py", line 1218, in emit
+    StreamHandler.emit(self, record)
+  File "/usr/lib/python3.10/logging/__init__.py", line 1104, in emit
+    self.flush()
+  File "/usr/lib/python3.10/logging/__init__.py", line 1084, in flush
+    self.stream.flush()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 241, in handle_chld
+    self.reap_workers()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/arbiter.py", line 553, in reap_workers
+    self.log.error(msg)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/glogging.py", line 271, in error
+    self.error_log.error(msg, *args, **kwargs)
+Message: 'Worker (pid:1096819) was sent SIGTERM!'
+Arguments: ()

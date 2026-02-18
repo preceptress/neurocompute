@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Abandoned Trials | Clawbot Neurocompute</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+  <div class="topbar">
+    <div class="brand">
+      <a href="/" class="brandlink">Clawbot <span>Neurocompute</span></a>
+    </div>
+
+    <form class="search" method="GET">
+      <input name="q" placeholder="Search abandoned trials..." value="{{ q }}" />
+      <button type="submit">Search</button>
+    </form>
+  </div>
+
+  <div class="container">
+
+    <div class="heading">
+      <h2>Abandoned / Terminated Neuro Trials</h2>
+
+      <div class="navstrip">
+        <a class="pillbtn" href="/">Research</a>
+        <a class="pillbtn active" href="/abandoned">Abandoned Trials</a>
+        <a class="pillbtn" href="/drugs">Drug Radar</a>
+        <a class="pillbtn" href="/sponsors">Sponsors</a>
+      </div>
+
+      <div class="muted">
+        Sorted by repurpose score (years since end + evidence + sponsor weight).
+      </div>
+    </div>
+
+    <div class="table">
+      <div class="row header" style="grid-template-columns: 1.2fr .3fr .25fr .25fr .2fr;">
+        <div>Trial</div>
+        <div>Status</div>
+        <div>Phase</div>
+        <div>Evidence</div>
+        <div>Score</div>
+      </div>
+
+      {% if trials and trials|length > 0 %}
+      {% for t in trials %}
+      <a class="row" href="{{ t.url }}" target="_blank" style="grid-template-columns: 1.2fr .3fr .25fr .25fr .2fr;">
+        <div class="title">
+          {{ t.title }}
+          <div class="snippet">{{ t.nct_id }} · {{ t.sponsor or "—" }}</div>
+        </div>
+
+        <div class="status">
+          {% if t.status == "TERMINATED" %}
+          <span class="status terminated">{{ t.status }}</span>
+          {% elif t.status == "WITHDRAWN" %}
+          <span class="status withdrawn">{{ t.status }}</span>
+          {% elif t.status == "SUSPENDED" %}
+          <span class="status suspended">{{ t.status }}</span>
+          {% else %}
+          <span class="status">{{ t.status }}</span>
+          {% endif %}
+        </div>
+
+        <div class="muted">{{ t.phase or "—" }}</div>
+        <div class="muted">{{ t.evidence_papers or 0 }} papers</div>
+
+        <div class="score">
+          {{ "%.2f"|format(t.repurpose_score or 0) }}
+          <span class="chev">›</span>
+        </div>
+      </a>
+      {% endfor %}
+      {% else %}
+      <div class="empty">
+        No abandoned trials found{% if q %} for "<b>{{ q }}</b>"{% endif %}.
+      </div>
+      {% endif %}
+    </div>
+
+  </div>
+
+</body>
+
+</html>

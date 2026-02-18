@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>{{ paper.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="brand">
+      <a href="/" class="brandlink">Clawbot <span>Neurocompute</span></a>
+    </div>
+    <div class="navstrip">
+      <a class="pillbtn" href="/">Research</a>
+      <a class="pillbtn" href="/abandoned">Abandoned Trials</a>
+      <a class="pillbtn" href="/drugs">Drug Radar</a>
+      <a class="pillbtn" href="/sponsors">Sponsors</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <h1 class="detailtitle">{{ paper.title }}</h1>
+
+    <div class="meta card">
+      <div><b>Journal:</b> {{ paper.journal }}</div>
+      <div><b>Date:</b> {{ paper.publication_date or "" }}</div>
+      <div><b>Score:</b> {{ "%.2f"|format(paper.score or 0) }}</div>
+      <div><b>Link:</b> <a href="{{ paper.url }}" target="_blank">Open original</a></div>
+    </div>
+
+    <h3>Abstract</h3>
+    <div class="card">
+      {{ paper.abstract or "No abstract available." }}
+    </div>
+
+    <h3>Authors</h3>
+    <div class="card">
+      {% if authors %}
+      {% for a in authors %}
+      <span class="pill">{{ a.name }}</span>
+      {% endfor %}
+      {% else %}
+      <span class="muted">No authors stored for this paper.</span>
+      {% endif %}
+    </div>
+
+    <h3>Tags</h3>
+    <div class="card">
+      {% if tags %}
+      {% for t in tags %}
+      <span class="pill">{{ t.name }}</span>
+      {% endfor %}
+      {% else %}
+      <span class="muted">No tags yet. Run the tagger.</span>
+      {% endif %}
+    </div>
+
+    <h3>Drug Mentions</h3>
+    <div class="card">
+      {% if drugs %}
+      {% for d in drugs %}
+      <span class="pill">{{ d.name }} ({{ d.mention_source }})</span>
+      {% endfor %}
+      {% else %}
+      <span class="muted">No drug mentions detected yet. Run paper_drug_linker.py</span>
+      {% endif %}
+    </div>
+  </div>
+</body>
+
+</html>

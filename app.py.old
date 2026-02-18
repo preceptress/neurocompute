@@ -1,0 +1,213 @@
+#!/usr/bin/env python3
+# -----------------------------------------------------------------------------
+# ForgeOS / NeuroCompute Performance Monitor
+# -----------------------------------------------------------------------------
+
+import os
+import time
+import subprocess
+import re
+import redis
+import psutil
+from collections import deque
+from flask import Flask, render_template, jsonify
+
+# -----------------------------------------------------------------------------
+# Flask setup
+# -----------------------------------------------------------------------------
+app = Flask(__name__, template_folder="templates", static_folder="static")
+app.config["TEMPLATES_AUTO_RELOAD"] = True
+app.jinja_env.cache = {}
+
+# -----------------------------------------------------------------------------
+# Redis connection
+# -----------------------------------------------------------------------------
+REDIS_HOST = os.getenv("REDIS_HOST", "localhost")
+REDIS_PORT = int(os.getenv("REDIS_PORT", 6379))
+REDIS_DB = int(os.getenv("REDIS_DB", 0))
+
+try:
+    r = redis.Redis(host=REDIS_HOST, port=REDIS_PORT, db=REDIS_DB)
+    r.ping()
+    print(f"✅ Redis connected at {REDIS_HOST}:{REDIS_PORT}")
+except Exception as e:
+    print(f"❌ Redis connection failed: {e}")
+    r = None
+
+import statistics
+from time import perf_counter_ns
+
+# -----------------------------------------------------------------------------
+# Rolling telemetry buffers
+# -----------------------------------------------------------------------------
+latency_window = deque(maxlen=500)   # ms
+request_count  = deque(maxlen=60)    # timestamps
+
+# -----------------------------------------------------------------------------
+# Routes
+# -----------------------------------------------------------------------------
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+# -----------------------------------------------------------------------------
+# Redis latency API
+# -----------------------------------------------------------------------------
+_last_latency = {"value": 0.0, "timestamp": 0.0}
+
+@app.route("/api/redis-latency")
+def redis_latency():
+    """
+    Measures Redis round-trip latency using repeated PINGs.
+    Returns median latency in ms (plus p95/p99).
+    """
+    if not r:
+        return jsonify({
+            "latency_ms": 0.0,
+            "p95_ms": 0.0,
+            "p99_ms": 0.0,
+            "samples": 0,
+            "method": "redis-ping",
+            "error": "redis not connected"
+        }), 503
+
+    samples = []
+    n = 200  # small but stable
+
+    try:
+        # warmup
+        for _ in range(10):
+            r.ping()
+
+        for _ in range(n):
+            t0 = perf_counter_ns()
+            r.ping()
+            t1 = perf_counter_ns()
+            samples.append((t1 - t0) / 1_000_000.0)  # ns -> ms
+
+        samples.sort()
+        median = statistics.median(samples)
+
+        p95 = samples[int(0.95 * (len(samples) - 1))]
+        p99 = samples[int(0.99 * (len(samples) - 1))]
+
+        return jsonify({
+            "latency_ms": float(median),
+            "p95_ms": float(p95),
+            "p99_ms": float(p99),
+            "samples": len(samples),
+            "method": "redis-ping"
+        })
+
+    except Exception as e:
+        return jsonify({
+            "latency_ms": 0.0,
+            "p95_ms": 0.0,
+            "p99_ms": 0.0,
+            "samples": 0,
+            "method": "redis-ping",
+            "error": str(e)
+        }), 500
+
+# -----------------------------------------------------------------------------
+# Full stack latency API
+# -----------------------------------------------------------------------------
+@app.route("/api/stack-speed")
+def stack_speed():
+    """
+    Measures framework overhead: Flask routing + Python + JSON serialization.
+    (Deliberately does NOT touch Redis.)
+    """
+    t0 = perf_counter_ns()
+
+    # do minimal work, then jsonify (serialization cost is part of "framework overhead")
+    payload = {"ok": True}
+
+    t1 = perf_counter_ns()
+    duration_ms = (t1 - t0) / 1_000_000.0
+
+    return jsonify({
+        "stack_ms": float(duration_ms),
+        "timestamp": time.time()
+    })
+
+# -----------------------------------------------------------------------------
+# System telemetry API
+# -----------------------------------------------------------------------------
+@app.route("/api/system-metrics")
+def system_metrics():
+    cpu = psutil.cpu_percent(interval=None)
+    load1, load5, load15 = os.getloadavg()
+    mem = psutil.virtual_memory()
+    net = psutil.net_io_counters()
+    ctx = psutil.cpu_stats()
+
+    now = time.time()
+    rps = len([t for t in request_count if now - t < 1])
+
+    latencies = sorted(latency_window)
+    p95 = latencies[int(len(latencies) * 0.95)] if latencies else 0.0
+    p99 = latencies[int(len(latencies) * 0.99)] if latencies else 0.0
+
+    return jsonify({
+        "cpu_percent": cpu,
+        "load": [load1, load5, load15],
+        "memory": {
+            "used_mb": round(mem.used / 1024 / 1024, 1),
+            "percent": mem.percent
+        },
+        "network": {
+            "rx_mb": round(net.bytes_recv / 1024 / 1024, 2),
+            "tx_mb": round(net.bytes_sent / 1024 / 1024, 2)
+        },
+        "kernel": {
+            "ctx_switches": ctx.ctx_switches,
+            "interrupts": ctx.interrupts
+        },
+        "traffic": {
+            "rps": rps,
+            "p95_ms": round(p95, 3),
+            "p99_ms": round(p99, 3)
+        },
+        "timestamp": now
+    })
+
+# -----------------------------------------------------------------------------
+# Health endpoint
+# -----------------------------------------------------------------------------
+@app.route("/api/health")
+def health():
+    status = "ok"
+    try:
+        if r:
+            r.ping()
+    except Exception:
+        status = "degraded"
+
+    return jsonify({
+        "service": "ForgeOS",
+        "status": status,
+        "time": time.strftime("%Y-%m-%d %H:%M:%S")
+    })
+
+
+@app.route("/api/end-to-end")
+def end_to_end():
+    start = time.perf_counter()
+    r.ping()
+    duration = (time.perf_counter() - start) * 1000
+
+    return jsonify({
+        "e2e_ms": round(duration, 4)
+    })
+
+@app.route("/api/ping")
+def ping():
+    return "ok"
+
+# -----------------------------------------------------------------------------
+# Main entry
+# -----------------------------------------------------------------------------
+if __name__ == "__main__":
+    print("🚀 ForgeOS running on port 9054")
+    app.run(host="0.0.0.0", port=9054, debug=True)

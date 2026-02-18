@@ -2,224 +2,193 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>IDE ForgeOS</title>
+  <meta charset="UTF-8">
+  <title>ForgeOS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0">
-  <meta http-equiv="Pragma" content="no-cache">
-  <meta http-equiv="Expires" content="0">
-
+  <!-- Styles -->
   <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&family=Orbitron:wght@600&family=Pacifico&family=Press+Start+2P&family=Raleway:wght@500&family=Special+Elite&family=Oswald:wght@500&family=Indie+Flower&family=Anton&display=swap"
-    rel="stylesheet">
-
 </head>
 
 <body>
+
   <div class="wrap">
 
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
     <section class="hero">
-      <div class="hero-content">
-        <h1 class="hero-title">ForgeOS</h1>
-        <h1>We Build Servers That Think</h1>
-        <p class="hero-subtitle">
-          Our business is performance engineering — crafting bare-metal systems optimized for real-time AI and data
-          pipelines.
-          Every server is tuned at the kernel level for raw speed, precision, and reliability.
-        </p>
-      </div>
+      <h1 class="hero-title">ForgeOS</h1>
+      <h2>
+        Are you an AI startup? <br>
+        Our quest is to build the world’s fastest web servers.
+      </h2>
     </section>
 
-    <div class="opensource-block">
-      <div class="metric-number fast" id="stackLatency">0.000 ms</div>
-      <div class="metric-label">Full-Stack Response (Flask → Redis → Render)</div>
-      <div class="metric-light" id="stackLightDistance">💡 Light travels 0.0 m in this time</div>
-      <div class="metric-number fast" id="redisLatency">0.000 ms</div>
+    <!-- =====================================================
+         PRIMARY HUMAN METRIC
+    ====================================================== -->
+    <section class="metric-group">
 
-      <div class="metric-label">Redis Latency (Bare Metal)</div>
-      <div class="metric-light" id="lightDistance">Light travels 0.0 m in this time</div>
-
-    </div>
-
-    <div class="opensource-block">
-      <h1>Backend Framework</h1>
-      <p>
-        The core logic runs on <strong>Flask</strong> with <strong>Gunicorn</strong> and <strong>Nginx</strong>,
-        communicating over optimized TCP ports for high
-        concurrency and transparent scalability.
-        This trio forms a battle-tested open-source web stack, widely used across scientific computing, AI data
-        pipelines, and production-grade APIs, delivering near-bare-metal efficiency.
-      </p>
-    </div>
-
-    <div class="opensource-block">
-      <h1>Data & Storage</h1>
-      <p>
-        Data persistence is handled by <strong>PostgreSQL</strong>, our open-source relational backbone.
-        In-memory caching and real-time data streams are powered by <strong>Redis</strong>, running bare-metal.
-        Together they deliver sub-millisecond lookups across hundreds of millions of records.
-      </p>
-    </div>
-
-    <div class="opensource-block">
-      <h1>Frontend Interface</h1>
-      <p>
-        The user experience is built with <strong>Bootstrap 5</strong> and vanilla <strong>JavaScript</strong>,
-        rendered through <strong>Jinja2</strong> templates.
-        Every component is open, inspectable, and customizable — from CSS gradients to live metric feeds.
-      </p>
-    </div>
-
-    <div class="opensource-block">
-      <h1>Observability & Deployment</h1>
-      <p>
-        System metrics flow through <strong>Prometheus</strong>-style exporters and
-        <strong>Grafana</strong> visual dashboards.
-        The entire network runs behind <strong>Nginx</strong> reverse proxies with free and open
-        <strong>Let’s Encrypt</strong> SSL certificates — no commercial gateways, no black-box monitoring.
-      </p>
-    </div>
-
-    <div class="opensource-block">
-      <h1>Ethos</h1>
-      <p>
-        Every layer — from kernel to UI — is powered by open source.
-        We contribute back patches, benchmarks, and tuning profiles.
-        Transparency, reproducibility, and community collaboration are part of the architecture itself.
-      </p>
-    </div>
-
-    <div class="opensource-block">
-      <h1>System Integrity</h1>
-      <p>
-        Every server in our stack is built from verified open-source components and compiled on-site.
-        We run a <strong>zero-trust internal network</strong> with strict key-based access control — no shared
-        passwords,
-        no unsecured ports. Root access is protected by hardware tokens, and every service runs under a
-        <strong>least-privilege model</strong>.
-      </p>
-    </div>
-
-    <div class="opensource-block">
-      <h1>Data Protection</h1>
-      <p>
-        At-rest encryption is handled through <strong>LUKS</strong> with kernel-level AES acceleration.
-        In-transit data uses <strong>TLS 1.3</strong> with perfect forward secrecy and pinned certificates.
-        Redis and PostgreSQL connections are isolated through local sockets to prevent lateral traffic exposure.
-      </p>
-    </div>
-
-    <div class="opensource-block">
-      <h1>Monitoring & Response</h1>
-      <p>
-        Real-time intrusion detection runs on <strong>OSSEC</strong> and <strong>Auditd</strong>,
-        logging kernel events, failed auth attempts, and process anomalies.
-        System telemetry is piped into our internal dashboard for
-        <strong>live threat correlation</strong> and automated response —
-        if something moves that shouldn’t, it gets quarantined.
-      </p>
-    </div>
-
-    <div class="opensource-block">
-      <h1>Firmware & Kernel Security</h1>
-      <p>
-        Kernel builds are signed and verified before deployment.
-        BIOS and firmware integrity are checked against cryptographic baselines at boot.
-        We deploy <strong>AppArmor</strong> and <strong>SELinux policies</strong> tuned to our workloads,
-        isolating services at the syscall level.
-      </p>
-    </div>
-
-    <div class="opensource-block">
-      <h1 class="pricing-title">ForgeOS Bare-Metal Plans</h1>
-      <p class="pricing-subtitle">
-        Every ForgeOS system includes our full open-source stack — real-time monitoring, daily encrypted backups,
-        zero-trust access, compliance logging, and 24/7 ForgeOS SysAdmin support.
-        The only difference is compute power.
-      </p>
-    </div>
-
-    <div class="pricing-table">
-      <!-- Lite -->
-      <div class="plan-card">
-        <h2>ForgeOS Lite</h2>
-        <p class="price">$850<span>/mo</span></p>
-        <ul>
-          <li>8 CPU Cores</li>
-          <li>32 GB DDR4 ECC RAM</li>
-          <li>1 TB NVMe SSD</li>
-          <li>1 Gbps Network Uplink</li>
-          <li>Ubuntu LTS Hardened Kernel</li>
-          <li>ForgeOS Security Suite (OSSEC + AppArmor + Auditd)</li>
-          <li>Prometheus & Grafana Telemetry Stack</li>
-          <li>Automated Patch Management & CVE Mitigation</li>
-          <li>Zero-Trust SSH Access Only</li>
-          <li>Daily Encrypted Backups</li>
-          <li>Full Compliance Audit Logging</li>
-          <li>24/7 ForgeOS SysAdmin Monitoring</li>
-        </ul>
-        <button>Launch Lite Node</button>
+      <div class="metric-number fast" id="humanLatency">
+        <span class="value">0</span>
+        <span class="unit">ms</span>
       </div>
 
-      <!-- Pro -->
-      <div class="plan-card featured">
-        <h2>ForgeOS Pro</h2>
-        <p class="price">$1,450<span>/mo</span></p>
-        <ul>
-          <li>24 CPU Cores</li>
-          <li>128 GB DDR4 ECC RAM</li>
-          <li>2 × 2 TB NVMe ( RAID-1 )</li>
-          <li>1 Gbps Dedicated Uplink</li>
-          <li>Ubuntu LTS Hardened Kernel</li>
-          <li>ForgeOS Security Suite (OSSEC + AppArmor + Auditd)</li>
-          <li>Prometheus & Grafana Telemetry Stack</li>
-          <li>Automated Patch Management & CVE Mitigation</li>
-          <li>Zero-Trust SSH Access Only</li>
-          <li>Daily Encrypted Backups</li>
-          <li>Full Compliance Audit Logging</li>
-          <li>24/7 ForgeOS SysAdmin Monitoring</li>
-        </ul>
-        <button>Choose Pro Node</button>
-      </div>
+      <p>
+        <button id="measureBtn" class="btn">
+          Measure Human Latency
+        </button>
+      </p>
 
-      <!-- Enterprise -->
-      <div class="plan-card">
-        <h2>ForgeOS Enterprise</h2>
-        <p class="price">$2,900<span>/mo</span></p>
-        <ul>
-          <li>48 + CPU Cores / Dual EPYC</li>
-          <li>256 GB + ECC RAM</li>
-          <li>4 × NVMe RAID-10</li>
-          <li>10 Gbps Uplink / GPU Ready</li>
-          <li>Ubuntu LTS Hardened Kernel</li>
-          <li>ForgeOS Security Suite (OSSEC + AppArmor + Auditd)</li>
-          <li>Prometheus & Grafana Telemetry Stack</li>
-          <li>Automated Patch Management & CVE Mitigation</li>
-          <li>Zero-Trust SSH Access Only</li>
-          <li>Daily Encrypted Backups</li>
-          <li>Full Compliance Audit Logging</li>
-          <li>24/7 ForgeOS SysAdmin Monitoring</li>
-        </ul>
-        <button>Contact Sales</button>
-      </div>
-    </div>
-
-    <p class="pricing-footer">
-      <strong>No setup fees.</strong> All tiers include ForgeOS Hardening, Monitoring, and Support — identical across
-      every plan.
-    </p>
     </section>
 
-    <div class="foot">
-      Questions? <a href="mailto:friends@preceptress.ai">friends@preceptress.ai</a><br>
-      Liquid Web | Linux Servers</small>
-    </div>
+
+    <h3>Human latency is how fast a system responds to a real user — from click to visible change. <br> Your finger
+      hasn’t
+      finished telling your brain yet.</h3>
+
+    </section>
+
+    <div class="forge-rule" aria-hidden="true"></div>
+
+    <!-- =====================================================
+         FORGE TWEAKS
+    ====================================================== -->
+    <section class="forge-tweaks">
+
+      <h2 class="forge-tweaks-title">
+        12 Hardcore Server Optimizations We Actually Use
+      </h2>
+
+      <p class="forge-tweaks-subtitle">
+        Flask · Python · JavaScript · Nginx · Gunicorn · PostgreSQL
+      </p>
+
+      <div class="forge-tweaks-grid">
+
+        <div class="forge-tweak">
+          <span class="forge-num">01</span>
+          <h3>TCP Fast Open</h3>
+          <p>Allows data in the SYN handshake, reducing round-trip latency on repeat connections.</p>
+        </div>
+
+        <div class="forge-tweak">
+          <span class="forge-num">02</span>
+          <h3>BBR Congestion Control</h3>
+          <p>Modern congestion control tuned for throughput and latency under real network conditions.</p>
+        </div>
+
+        <div class="forge-tweak">
+          <span class="forge-num">03</span>
+          <h3>Raised File Descriptor Limits</h3>
+          <p>Kernel, user, and Nginx limits tuned to eliminate hidden concurrency ceilings.</p>
+        </div>
+
+        <div class="forge-tweak">
+          <span class="forge-num">04</span>
+          <h3>Nginx Worker Affinity</h3>
+          <p>Workers pinned to CPU cores to reduce cache thrashing and context switching.</p>
+        </div>
+
+        <div class="forge-tweak">
+          <span class="forge-num">05</span>
+          <h3>Sendfile + TCP_NOPUSH</h3>
+          <p>Optimized packet batching for fast, efficient payload delivery.</p>
+        </div>
+
+        <div class="forge-tweak">
+          <span class="forge-num">06</span>
+          <h3>Gunicorn Preload + COW</h3>
+          <p>Application preloading for memory sharing and faster worker spawn.</p>
+        </div>
+
+        <div class="forge-tweak">
+          <span class="forge-num">07</span>
+          <h3>Worker Class by Workload</h3>
+          <p>Sync, threaded, or async — selected based on real I/O behavior.</p>
+        </div>
+
+        <div class="forge-tweak">
+          <span class="forge-num">08</span>
+          <h3>Socket Keepalive Tuning</h3>
+          <p>Prevents zombie connections without disrupting legitimate clients.</p>
+        </div>
+
+        <div class="forge-tweak">
+          <span class="forge-num">09</span>
+          <h3>Selective Nagle Disable</h3>
+          <p>Latency-critical endpoints bypass buffering delays.</p>
+        </div>
+
+        <div class="forge-tweak">
+          <span class="forge-num">10</span>
+          <h3>Zero-Copy Static Delivery</h3>
+          <p>Nginx serves static assets directly from kernel space.</p>
+        </div>
+
+        <div class="forge-tweak">
+          <span class="forge-num">11</span>
+          <h3>Systemd + Gunicorn Hardening</h3>
+          <p>Socket activation, restart policy, and CPU accounting.</p>
+        </div>
+
+        <div class="forge-tweak">
+          <span class="forge-num">12</span>
+          <h3>Human-Perceived Latency Metrics</h3>
+          <p>We measure click → screen update, not just charts.</p>
+        </div>
+
+      </div>
+
+      <div class="forge-rule" aria-hidden="true"></div>
+
+    </section>
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+    <footer class="foot">
+      ForgeOS isn’t just a framework. · It’s hard-won latency discipline <br>
+      We build customized Liquid Web Ubuntu Severs • <a href="mailto:info@preceptress.ai">Lets
+        connect</a>
+    </footer>
+
+  </div>
+
+  <!-- =====================================================
+       MINIMAL JS
+  ====================================================== -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const output = document.getElementById("humanLatency");
+      const button = document.getElementById("measureBtn");
+
+      async function measureClickToResponse() {
+        const start = performance.now();
+
+        button.disabled = true;
 
 
-    <script src="{{ url_for('static', filename='neuro.js') }}"></script>
+        try {
+          await fetch("/api/ping", { cache: "no-store" });
+        } catch (err) {
+          console.warn("Ping failed", err);
+        }
+
+        const elapsed = performance.now() - start;
+
+        output.querySelector(".value").textContent = elapsed.toFixed(1);
+
+        button.textContent = "Measure Human Latency";
+        button.disabled = false;
+
+      }
+
+      button.addEventListener("click", measureClickToResponse);
+    });
+  </script>
 
 </body>
 

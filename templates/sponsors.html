@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Sponsors | Clawbot Neurocompute</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand">
+      <a href="/" class="brandlink">Clawbot <span>Neurocompute</span></a>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="heading">
+      <h2>Sponsor Patterns (Abandoned Trials)</h2>
+
+      <div class="navstrip">
+        <a class="pillbtn" href="/">Research</a>
+        <a class="pillbtn" href="/abandoned">Abandoned Trials</a>
+        <a class="pillbtn" href="/drugs">Drug Radar</a>
+        <a class="pillbtn active" href="/sponsors">Sponsors</a>
+      </div>
+    </div>
+
+    <div class="table">
+      <div class="row header" style="grid-template-columns: 1.2fr .3fr .3fr .3fr .3fr;">
+        <div>Sponsor</div>
+        <div>Total</div>
+        <div>Terminated</div>
+        <div>Withdrawn</div>
+        <div>Suspended</div>
+      </div>
+
+      {% for s in sponsors %}
+      <div class="row" style="grid-template-columns: 1.2fr .3fr .3fr .3fr .3fr;">
+        <div class="title">{{ s.sponsor or "—" }}</div>
+        <div class="muted">{{ s.abandoned_trials }}</div>
+        <div class="muted">{{ s.terminated }}</div>
+        <div class="muted">{{ s.withdrawn }}</div>
+        <div class="muted">{{ s.suspended }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</body>
+</html>
+

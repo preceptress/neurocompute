@@ -1,0 +1,732 @@
+[2025-11-04 18:48:45 -0500] [30738] [INFO] Starting gunicorn 23.0.0
+[2025-11-04 18:48:45 -0500] [30738] [INFO] Listening at: http://127.0.0.1:9054 (30738)
+[2025-11-04 18:48:45 -0500] [30738] [INFO] Using worker: sync
+[2025-11-04 18:48:45 -0500] [30743] [INFO] Booting worker with pid: 30743
+[2025-11-04 18:48:45 -0500] [30744] [INFO] Booting worker with pid: 30744
+[2025-11-04 18:48:45 -0500] [30745] [INFO] Booting worker with pid: 30745
+[2025-11-04 18:52:13 -0500] [30743] [INFO] Worker exiting (pid: 30743)
+[2025-11-04 18:52:13 -0500] [30744] [INFO] Worker exiting (pid: 30744)
+[2025-11-04 18:52:13 -0500] [30745] [INFO] Worker exiting (pid: 30745)
+[2025-11-04 18:52:13 -0500] [30738] [INFO] Handling signal: term
+[2025-11-04 18:52:13 -0500] [30738] [ERROR] Worker (pid:30743) was sent SIGTERM!
+[2025-11-04 18:52:13 -0500] [30738] [ERROR] Worker (pid:30744) was sent SIGTERM!
+[2025-11-04 18:52:13 -0500] [30738] [ERROR] Worker (pid:30745) was sent SIGTERM!
+[2025-11-04 18:52:13 -0500] [30738] [INFO] Shutting down: Master
+[2025-11-04 18:52:13 -0500] [31274] [INFO] Starting gunicorn 23.0.0
+[2025-11-04 18:52:13 -0500] [31274] [INFO] Listening at: http://127.0.0.1:9054 (31274)
+[2025-11-04 18:52:13 -0500] [31274] [INFO] Using worker: sync
+[2025-11-04 18:52:13 -0500] [31276] [INFO] Booting worker with pid: 31276
+[2025-11-04 18:52:13 -0500] [31277] [INFO] Booting worker with pid: 31277
+[2025-11-04 18:52:13 -0500] [31278] [INFO] Booting worker with pid: 31278
+[2025-11-04 18:58:21 -0500] [31278] [INFO] Worker exiting (pid: 31278)
+[2025-11-04 18:58:21 -0500] [31277] [INFO] Worker exiting (pid: 31277)
+[2025-11-04 18:58:21 -0500] [31276] [INFO] Worker exiting (pid: 31276)
+[2025-11-04 18:58:21 -0500] [31274] [INFO] Handling signal: term
+[2025-11-04 18:58:21 -0500] [31274] [ERROR] Worker (pid:31277) was sent SIGTERM!
+[2025-11-04 18:58:21 -0500] [31274] [ERROR] Worker (pid:31278) was sent SIGTERM!
+[2025-11-04 18:58:21 -0500] [31274] [ERROR] Worker (pid:31276) was sent SIGTERM!
+[2025-11-04 18:58:21 -0500] [31274] [INFO] Shutting down: Master
+[2025-11-04 18:58:21 -0500] [32027] [INFO] Starting gunicorn 23.0.0
+[2025-11-04 18:58:21 -0500] [32027] [INFO] Listening at: http://127.0.0.1:9054 (32027)
+[2025-11-04 18:58:21 -0500] [32027] [INFO] Using worker: sync
+[2025-11-04 18:58:21 -0500] [32030] [INFO] Booting worker with pid: 32030
+[2025-11-04 18:58:22 -0500] [32031] [INFO] Booting worker with pid: 32031
+[2025-11-04 18:58:22 -0500] [32032] [INFO] Booting worker with pid: 32032
+[2025-11-04 19:37:26 -0500] [32032] [INFO] Worker exiting (pid: 32032)
+[2025-11-04 19:37:26 -0500] [32030] [INFO] Worker exiting (pid: 32030)
+[2025-11-04 19:37:26 -0500] [32031] [INFO] Worker exiting (pid: 32031)
+[2025-11-04 19:37:26 -0500] [32027] [INFO] Handling signal: term
+[2025-11-04 19:37:26 -0500] [32027] [ERROR] Worker (pid:32030) was sent SIGTERM!
+[2025-11-04 19:37:26 -0500] [32027] [ERROR] Worker (pid:32032) was sent SIGTERM!
+[2025-11-04 19:37:26 -0500] [32027] [ERROR] Worker (pid:32031) was sent SIGTERM!
+[2025-11-04 19:37:26 -0500] [32027] [INFO] Shutting down: Master
+[2025-11-04 19:37:26 -0500] [34259] [INFO] Starting gunicorn 23.0.0
+[2025-11-04 19:37:26 -0500] [34259] [INFO] Listening at: http://127.0.0.1:9054 (34259)
+[2025-11-04 19:37:26 -0500] [34259] [INFO] Using worker: sync
+[2025-11-04 19:37:26 -0500] [34261] [INFO] Booting worker with pid: 34261
+[2025-11-04 19:37:26 -0500] [34262] [INFO] Booting worker with pid: 34262
+[2025-11-04 19:37:26 -0500] [34263] [INFO] Booting worker with pid: 34263
+[2025-11-04 19:41:11 -0500] [34261] [INFO] Worker exiting (pid: 34261)
+[2025-11-04 19:41:11 -0500] [34263] [INFO] Worker exiting (pid: 34263)
+[2025-11-04 19:41:11 -0500] [34262] [INFO] Worker exiting (pid: 34262)
+[2025-11-04 19:41:11 -0500] [34259] [INFO] Handling signal: term
+[2025-11-04 19:41:11 -0500] [34259] [ERROR] Worker (pid:34262) was sent SIGTERM!
+[2025-11-04 19:41:11 -0500] [34259] [ERROR] Worker (pid:34263) was sent SIGTERM!
+[2025-11-04 19:41:11 -0500] [34259] [ERROR] Worker (pid:34261) was sent SIGTERM!
+[2025-11-04 19:41:11 -0500] [34259] [INFO] Shutting down: Master
+[2025-11-04 19:41:11 -0500] [34601] [INFO] Starting gunicorn 23.0.0
+[2025-11-04 19:41:11 -0500] [34601] [INFO] Listening at: http://127.0.0.1:9054 (34601)
+[2025-11-04 19:41:11 -0500] [34601] [INFO] Using worker: sync
+[2025-11-04 19:41:11 -0500] [34603] [INFO] Booting worker with pid: 34603
+[2025-11-04 19:41:11 -0500] [34604] [INFO] Booting worker with pid: 34604
+[2025-11-04 19:41:11 -0500] [34605] [INFO] Booting worker with pid: 34605
+[2025-11-05 20:45:21 -0500] [34605] [INFO] Worker exiting (pid: 34605)
+[2025-11-05 20:45:21 -0500] [34604] [INFO] Worker exiting (pid: 34604)
+[2025-11-05 20:45:21 -0500] [34603] [INFO] Worker exiting (pid: 34603)
+[2025-11-05 20:45:21 -0500] [34601] [INFO] Handling signal: term
+[2025-11-05 20:45:21 -0500] [34601] [ERROR] Worker (pid:34604) was sent SIGTERM!
+[2025-11-05 20:45:21 -0500] [34601] [INFO] Shutting down: Master
+[2025-11-05 20:45:21 -0500] [115614] [INFO] Starting gunicorn 23.0.0
+[2025-11-05 20:45:21 -0500] [115614] [INFO] Listening at: http://127.0.0.1:9054 (115614)
+[2025-11-05 20:45:21 -0500] [115614] [INFO] Using worker: sync
+[2025-11-05 20:45:21 -0500] [115616] [INFO] Booting worker with pid: 115616
+[2025-11-05 20:45:21 -0500] [115617] [INFO] Booting worker with pid: 115617
+[2025-11-05 20:45:21 -0500] [115618] [INFO] Booting worker with pid: 115618
+[2025-11-05 20:49:39 -0500] [115617] [INFO] Worker exiting (pid: 115617)
+[2025-11-05 20:49:39 -0500] [115616] [INFO] Worker exiting (pid: 115616)
+[2025-11-05 20:49:39 -0500] [115618] [INFO] Worker exiting (pid: 115618)
+[2025-11-05 20:49:39 -0500] [115614] [INFO] Handling signal: term
+[2025-11-05 20:49:39 -0500] [115614] [ERROR] Worker (pid:115617) was sent SIGTERM!
+[2025-11-05 20:49:39 -0500] [115614] [ERROR] Worker (pid:115618) was sent SIGTERM!
+[2025-11-05 20:49:39 -0500] [115614] [ERROR] Worker (pid:115616) was sent SIGTERM!
+[2025-11-05 20:49:39 -0500] [115614] [INFO] Shutting down: Master
+[2025-11-05 20:49:40 -0500] [115797] [INFO] Starting gunicorn 23.0.0
+[2025-11-05 20:49:40 -0500] [115797] [INFO] Listening at: http://127.0.0.1:9054 (115797)
+[2025-11-05 20:49:40 -0500] [115797] [INFO] Using worker: sync
+[2025-11-05 20:49:40 -0500] [115799] [INFO] Booting worker with pid: 115799
+[2025-11-05 20:49:40 -0500] [115800] [INFO] Booting worker with pid: 115800
+[2025-11-05 20:49:40 -0500] [115801] [INFO] Booting worker with pid: 115801
+[2025-11-05 20:50:39 -0500] [115801] [INFO] Worker exiting (pid: 115801)
+[2025-11-05 20:50:39 -0500] [115799] [INFO] Worker exiting (pid: 115799)
+[2025-11-05 20:50:39 -0500] [115800] [INFO] Worker exiting (pid: 115800)
+[2025-11-05 20:50:39 -0500] [115797] [INFO] Handling signal: term
+[2025-11-05 20:50:39 -0500] [115797] [ERROR] Worker (pid:115800) was sent SIGTERM!
+[2025-11-05 20:50:39 -0500] [115797] [ERROR] Worker (pid:115801) was sent SIGTERM!
+[2025-11-05 20:50:39 -0500] [115797] [ERROR] Worker (pid:115799) was sent SIGTERM!
+[2025-11-05 20:50:39 -0500] [115797] [INFO] Shutting down: Master
+[2025-11-05 20:50:39 -0500] [115883] [INFO] Starting gunicorn 23.0.0
+[2025-11-05 20:50:39 -0500] [115883] [INFO] Listening at: http://127.0.0.1:9054 (115883)
+[2025-11-05 20:50:39 -0500] [115883] [INFO] Using worker: sync
+[2025-11-05 20:50:39 -0500] [115885] [INFO] Booting worker with pid: 115885
+[2025-11-05 20:50:39 -0500] [115887] [INFO] Booting worker with pid: 115887
+[2025-11-05 20:50:39 -0500] [115888] [INFO] Booting worker with pid: 115888
+[2025-11-05 20:52:52 -0500] [115888] [INFO] Worker exiting (pid: 115888)
+[2025-11-05 20:52:52 -0500] [115887] [INFO] Worker exiting (pid: 115887)
+[2025-11-05 20:52:52 -0500] [115885] [INFO] Worker exiting (pid: 115885)
+[2025-11-05 20:52:52 -0500] [115883] [INFO] Handling signal: term
+[2025-11-05 20:52:52 -0500] [115883] [ERROR] Worker (pid:115887) was sent SIGTERM!
+[2025-11-05 20:52:52 -0500] [115883] [ERROR] Worker (pid:115888) was sent SIGTERM!
+[2025-11-05 20:52:52 -0500] [115883] [ERROR] Worker (pid:115885) was sent SIGTERM!
+[2025-11-05 20:52:52 -0500] [115883] [INFO] Shutting down: Master
+[2025-11-05 20:52:52 -0500] [115987] [INFO] Starting gunicorn 23.0.0
+[2025-11-05 20:52:52 -0500] [115987] [INFO] Listening at: http://127.0.0.1:9054 (115987)
+[2025-11-05 20:52:52 -0500] [115987] [INFO] Using worker: sync
+[2025-11-05 20:52:52 -0500] [115989] [INFO] Booting worker with pid: 115989
+[2025-11-05 20:52:52 -0500] [115990] [INFO] Booting worker with pid: 115990
+[2025-11-05 20:52:52 -0500] [115991] [INFO] Booting worker with pid: 115991
+[2025-11-06 20:41:26 -0500] [115989] [INFO] Worker exiting (pid: 115989)
+[2025-11-06 20:41:26 -0500] [115990] [INFO] Worker exiting (pid: 115990)
+[2025-11-06 20:41:26 -0500] [115991] [INFO] Worker exiting (pid: 115991)
+[2025-11-06 20:41:26 -0500] [115987] [INFO] Handling signal: term
+[2025-11-06 20:41:26 -0500] [115987] [ERROR] Worker (pid:115991) was sent SIGTERM!
+[2025-11-06 20:41:26 -0500] [115987] [ERROR] Worker (pid:115990) was sent SIGTERM!
+[2025-11-06 20:41:26 -0500] [115987] [ERROR] Worker (pid:115989) was sent SIGTERM!
+[2025-11-06 20:41:26 -0500] [115987] [INFO] Shutting down: Master
+[2025-11-06 20:41:26 -0500] [135054] [INFO] Starting gunicorn 23.0.0
+[2025-11-06 20:41:26 -0500] [135054] [INFO] Listening at: http://127.0.0.1:9054 (135054)
+[2025-11-06 20:41:26 -0500] [135054] [INFO] Using worker: sync
+[2025-11-06 20:41:26 -0500] [135057] [INFO] Booting worker with pid: 135057
+[2025-11-06 20:41:26 -0500] [135059] [INFO] Booting worker with pid: 135059
+[2025-11-06 20:41:26 -0500] [135060] [INFO] Booting worker with pid: 135060
+[2025-12-03 17:28:55 -0500] [135057] [INFO] Worker exiting (pid: 135057)
+[2025-12-03 17:28:55 -0500] [135059] [INFO] Worker exiting (pid: 135059)
+[2025-12-03 17:28:55 -0500] [135060] [INFO] Worker exiting (pid: 135060)
+[2025-12-03 17:28:55 -0500] [135054] [INFO] Handling signal: term
+[2025-12-03 17:28:55 -0500] [135054] [ERROR] Worker (pid:135060) was sent SIGTERM!
+[2025-12-03 17:28:55 -0500] [135054] [ERROR] Worker (pid:135057) was sent SIGTERM!
+[2025-12-03 17:28:55 -0500] [135054] [INFO] Shutting down: Master
+[2025-12-03 17:28:56 -0500] [733213] [INFO] Starting gunicorn 23.0.0
+[2025-12-03 17:28:56 -0500] [733213] [INFO] Listening at: http://127.0.0.1:9054 (733213)
+[2025-12-03 17:28:56 -0500] [733213] [INFO] Using worker: sync
+[2025-12-03 17:28:56 -0500] [733226] [INFO] Booting worker with pid: 733226
+[2025-12-03 17:28:56 -0500] [733227] [INFO] Booting worker with pid: 733227
+[2025-12-03 17:28:56 -0500] [733230] [INFO] Booting worker with pid: 733230
+[2025-12-20 00:45:57 -0500] [733226] [INFO] Worker exiting (pid: 733226)
+[2025-12-20 00:45:57 -0500] [733230] [INFO] Worker exiting (pid: 733230)
+[2025-12-20 00:45:57 -0500] [733227] [INFO] Worker exiting (pid: 733227)
+[2025-12-20 00:45:57 -0500] [733213] [INFO] Handling signal: term
+[2025-12-20 00:45:57 -0500] [733213] [ERROR] Worker (pid:733227) was sent SIGTERM!
+[2025-12-20 00:45:57 -0500] [733213] [ERROR] Worker (pid:733226) was sent SIGTERM!
+[2025-12-20 00:45:57 -0500] [733213] [ERROR] Worker (pid:733230) was sent SIGTERM!
+[2025-12-20 00:45:57 -0500] [733213] [INFO] Shutting down: Master
+[2025-12-20 00:45:57 -0500] [1096806] [INFO] Starting gunicorn 23.0.0
+[2025-12-20 00:45:57 -0500] [1096806] [INFO] Listening at: http://127.0.0.1:9054 (1096806)
+[2025-12-20 00:45:57 -0500] [1096806] [INFO] Using worker: sync
+[2025-12-20 00:45:57 -0500] [1096808] [INFO] Booting worker with pid: 1096808
+[2025-12-20 00:45:57 -0500] [1096810] [INFO] Booting worker with pid: 1096810
+[2025-12-20 00:45:57 -0500] [1096811] [INFO] Booting worker with pid: 1096811
+[2025-12-20 00:46:02 -0500] [1096808] [INFO] Worker exiting (pid: 1096808)
+[2025-12-20 00:46:02 -0500] [1096811] [INFO] Worker exiting (pid: 1096811)
+[2025-12-20 00:46:02 -0500] [1096810] [INFO] Worker exiting (pid: 1096810)
+[2025-12-20 00:46:02 -0500] [1096806] [INFO] Handling signal: term
+[2025-12-20 00:46:02 -0500] [1096806] [ERROR] Worker (pid:1096808) was sent SIGTERM!
+[2025-12-20 00:46:02 -0500] [1096806] [ERROR] Worker (pid:1096810) was sent SIGTERM!
+[2025-12-20 00:46:02 -0500] [1096806] [ERROR] Worker (pid:1096811) was sent SIGTERM!
+[2025-12-20 00:46:02 -0500] [1096806] [INFO] Shutting down: Master
+[2025-12-20 00:46:02 -0500] [1096817] [INFO] Starting gunicorn 23.0.0
+[2025-12-20 00:46:02 -0500] [1096817] [INFO] Listening at: http://127.0.0.1:9054 (1096817)
+[2025-12-20 00:46:02 -0500] [1096817] [INFO] Using worker: sync
+[2025-12-20 00:46:02 -0500] [1096818] [INFO] Booting worker with pid: 1096818
+[2025-12-20 00:46:02 -0500] [1096819] [INFO] Booting worker with pid: 1096819
+[2025-12-20 00:46:02 -0500] [1096820] [INFO] Booting worker with pid: 1096820
+[2025-12-20 00:48:44 -0500] [1096818] [INFO] Worker exiting (pid: 1096818)
+[2025-12-20 00:48:44 -0500] [1096819] [INFO] Worker exiting (pid: 1096819)
+[2025-12-20 00:48:44 -0500] [1096820] [INFO] Worker exiting (pid: 1096820)
+[2025-12-20 00:48:44 -0500] [1096817] [INFO] Handling signal: term
+[2025-12-20 00:48:44 -0500] [1096817] [ERROR] Worker (pid:1096820) was sent SIGTERM!
+[2025-12-20 00:48:44 -0500] [1096817] [ERROR] Worker (pid:1096818) was sent SIGTERM!
+[2025-12-20 00:48:44 -0500] [1096817] [INFO] Shutting down: Master
+[2025-12-20 00:48:45 -0500] [1097100] [INFO] Starting gunicorn 23.0.0
+[2025-12-20 00:48:45 -0500] [1097100] [INFO] Listening at: http://127.0.0.1:9054 (1097100)
+[2025-12-20 00:48:45 -0500] [1097100] [INFO] Using worker: sync
+[2025-12-20 00:48:45 -0500] [1097101] [INFO] Booting worker with pid: 1097101
+[2025-12-20 00:48:45 -0500] [1097104] [INFO] Booting worker with pid: 1097104
+[2025-12-20 00:48:45 -0500] [1097105] [INFO] Booting worker with pid: 1097105
+[2025-12-20 00:51:34 -0500] [1097105] [INFO] Worker exiting (pid: 1097105)
+[2025-12-20 00:51:34 -0500] [1097101] [INFO] Worker exiting (pid: 1097101)
+[2025-12-20 00:51:34 -0500] [1097104] [INFO] Worker exiting (pid: 1097104)
+[2025-12-20 00:51:34 -0500] [1097100] [INFO] Handling signal: term
+[2025-12-20 00:51:34 -0500] [1097100] [ERROR] Worker (pid:1097101) was sent SIGTERM!
+[2025-12-20 00:51:34 -0500] [1097100] [ERROR] Worker (pid:1097105) was sent SIGTERM!
+[2025-12-20 00:51:34 -0500] [1097100] [INFO] Shutting down: Master
+[2025-12-20 00:51:34 -0500] [1097377] [INFO] Starting gunicorn 23.0.0
+[2025-12-20 00:51:34 -0500] [1097377] [INFO] Listening at: http://127.0.0.1:9054 (1097377)
+[2025-12-20 00:51:34 -0500] [1097377] [INFO] Using worker: sync
+[2025-12-20 00:51:34 -0500] [1097378] [INFO] Booting worker with pid: 1097378
+[2025-12-20 00:51:34 -0500] [1097379] [INFO] Booting worker with pid: 1097379
+[2025-12-20 00:51:34 -0500] [1097380] [INFO] Booting worker with pid: 1097380
+[2025-12-20 01:19:26 -0500] [1097378] [INFO] Worker exiting (pid: 1097378)
+[2025-12-20 01:19:26 -0500] [1097380] [INFO] Worker exiting (pid: 1097380)
+[2025-12-20 01:19:26 -0500] [1097379] [INFO] Worker exiting (pid: 1097379)
+[2025-12-20 01:19:26 -0500] [1097377] [INFO] Handling signal: term
+[2025-12-20 01:19:26 -0500] [1097377] [ERROR] Worker (pid:1097378) was sent SIGTERM!
+[2025-12-20 01:19:26 -0500] [1097377] [ERROR] Worker (pid:1097380) was sent SIGTERM!
+[2025-12-20 01:19:26 -0500] [1097377] [INFO] Shutting down: Master
+[2025-12-20 01:19:26 -0500] [1100922] [INFO] Starting gunicorn 23.0.0
+[2025-12-20 01:19:26 -0500] [1100922] [INFO] Listening at: http://127.0.0.1:9054 (1100922)
+[2025-12-20 01:19:26 -0500] [1100922] [INFO] Using worker: sync
+[2025-12-20 01:19:26 -0500] [1100924] [INFO] Booting worker with pid: 1100924
+[2025-12-20 01:19:26 -0500] [1100925] [INFO] Booting worker with pid: 1100925
+[2025-12-20 01:19:26 -0500] [1100926] [INFO] Booting worker with pid: 1100926
+[2025-12-20 01:19:29 -0500] [1100925] [INFO] Worker exiting (pid: 1100925)
+[2025-12-20 01:19:29 -0500] [1100924] [INFO] Worker exiting (pid: 1100924)
+[2025-12-20 01:19:29 -0500] [1100926] [INFO] Worker exiting (pid: 1100926)
+[2025-12-20 01:19:29 -0500] [1100922] [INFO] Handling signal: term
+[2025-12-20 01:19:29 -0500] [1100922] [ERROR] Worker (pid:1100926) was sent SIGTERM!
+[2025-12-20 01:19:29 -0500] [1100922] [ERROR] Worker (pid:1100925) was sent SIGTERM!
+[2025-12-20 01:19:29 -0500] [1100922] [ERROR] Worker (pid:1100924) was sent SIGTERM!
+[2025-12-20 01:19:29 -0500] [1100922] [INFO] Shutting down: Master
+[2025-12-20 01:19:30 -0500] [1100931] [INFO] Starting gunicorn 23.0.0
+[2025-12-20 01:19:30 -0500] [1100931] [INFO] Listening at: http://127.0.0.1:9054 (1100931)
+[2025-12-20 01:19:30 -0500] [1100931] [INFO] Using worker: sync
+[2025-12-20 01:19:30 -0500] [1100932] [INFO] Booting worker with pid: 1100932
+[2025-12-20 01:19:30 -0500] [1100933] [INFO] Booting worker with pid: 1100933
+[2025-12-20 01:19:30 -0500] [1100934] [INFO] Booting worker with pid: 1100934
+[2025-12-20 02:17:56 -0500] [1100933] [INFO] Worker exiting (pid: 1100933)
+[2025-12-20 02:17:56 -0500] [1100934] [INFO] Worker exiting (pid: 1100934)
+[2025-12-20 02:17:56 -0500] [1100932] [INFO] Worker exiting (pid: 1100932)
+[2025-12-20 02:17:56 -0500] [1100931] [INFO] Handling signal: term
+[2025-12-20 02:17:56 -0500] [1100931] [ERROR] Worker (pid:1100932) was sent SIGTERM!
+[2025-12-20 02:17:56 -0500] [1100931] [ERROR] Worker (pid:1100934) was sent SIGTERM!
+[2025-12-20 02:17:56 -0500] [1100931] [ERROR] Worker (pid:1100933) was sent SIGTERM!
+[2025-12-20 02:17:56 -0500] [1100931] [INFO] Shutting down: Master
+[2025-12-20 02:17:56 -0500] [1107612] [INFO] Starting gunicorn 23.0.0
+[2025-12-20 02:17:56 -0500] [1107612] [INFO] Listening at: http://127.0.0.1:9054 (1107612)
+[2025-12-20 02:17:56 -0500] [1107612] [INFO] Using worker: sync
+[2025-12-20 02:17:56 -0500] [1107613] [INFO] Booting worker with pid: 1107613
+[2025-12-20 02:17:56 -0500] [1107617] [INFO] Booting worker with pid: 1107617
+[2025-12-20 02:17:56 -0500] [1107618] [INFO] Booting worker with pid: 1107618
+[2025-12-20 02:17:58 -0500] [1107613] [INFO] Worker exiting (pid: 1107613)
+[2025-12-20 02:17:58 -0500] [1107617] [INFO] Worker exiting (pid: 1107617)
+[2025-12-20 02:17:58 -0500] [1107618] [INFO] Worker exiting (pid: 1107618)
+[2025-12-20 02:17:58 -0500] [1107612] [INFO] Handling signal: term
+[2025-12-20 02:17:58 -0500] [1107612] [ERROR] Worker (pid:1107613) was sent SIGTERM!
+[2025-12-20 02:17:58 -0500] [1107612] [ERROR] Worker (pid:1107617) was sent SIGTERM!
+[2025-12-20 02:17:58 -0500] [1107612] [ERROR] Worker (pid:1107618) was sent SIGTERM!
+[2025-12-20 02:17:58 -0500] [1107612] [INFO] Shutting down: Master
+[2025-12-20 02:17:58 -0500] [1107626] [INFO] Starting gunicorn 23.0.0
+[2025-12-20 02:17:58 -0500] [1107626] [INFO] Listening at: http://127.0.0.1:9054 (1107626)
+[2025-12-20 02:17:58 -0500] [1107626] [INFO] Using worker: sync
+[2025-12-20 02:17:58 -0500] [1107627] [INFO] Booting worker with pid: 1107627
+[2025-12-20 02:17:58 -0500] [1107628] [INFO] Booting worker with pid: 1107628
+[2025-12-20 02:17:58 -0500] [1107629] [INFO] Booting worker with pid: 1107629
+[2025-12-20 02:35:20 -0500] [1107628] [INFO] Worker exiting (pid: 1107628)
+[2025-12-20 02:35:20 -0500] [1107627] [INFO] Worker exiting (pid: 1107627)
+[2025-12-20 02:35:20 -0500] [1107629] [INFO] Worker exiting (pid: 1107629)
+[2025-12-20 02:35:20 -0500] [1107626] [INFO] Handling signal: term
+[2025-12-20 02:35:20 -0500] [1107626] [ERROR] Worker (pid:1107629) was sent SIGTERM!
+[2025-12-20 02:35:20 -0500] [1107626] [ERROR] Worker (pid:1107628) was sent SIGTERM!
+[2025-12-20 02:35:20 -0500] [1107626] [ERROR] Worker (pid:1107627) was sent SIGTERM!
+[2025-12-20 02:35:20 -0500] [1107626] [INFO] Shutting down: Master
+[2025-12-20 02:35:21 -0500] [1109525] [INFO] Starting gunicorn 23.0.0
+[2025-12-20 02:35:21 -0500] [1109525] [INFO] Listening at: http://127.0.0.1:9054 (1109525)
+[2025-12-20 02:35:21 -0500] [1109525] [INFO] Using worker: sync
+[2025-12-20 02:35:21 -0500] [1109528] [INFO] Booting worker with pid: 1109528
+[2025-12-20 02:35:21 -0500] [1109529] [INFO] Booting worker with pid: 1109529
+[2025-12-20 02:35:21 -0500] [1109530] [INFO] Booting worker with pid: 1109530
+[2025-12-20 02:35:23 -0500] [1109529] [INFO] Worker exiting (pid: 1109529)
+[2025-12-20 02:35:23 -0500] [1109530] [INFO] Worker exiting (pid: 1109530)
+[2025-12-20 02:35:23 -0500] [1109528] [INFO] Worker exiting (pid: 1109528)
+[2025-12-20 02:35:23 -0500] [1109525] [INFO] Handling signal: term
+[2025-12-20 02:35:23 -0500] [1109525] [INFO] Shutting down: Master
+[2025-12-20 02:35:23 -0500] [1109543] [INFO] Starting gunicorn 23.0.0
+[2025-12-20 02:35:23 -0500] [1109543] [INFO] Listening at: http://127.0.0.1:9054 (1109543)
+[2025-12-20 02:35:23 -0500] [1109543] [INFO] Using worker: sync
+[2025-12-20 02:35:23 -0500] [1109545] [INFO] Booting worker with pid: 1109545
+[2025-12-20 02:35:23 -0500] [1109546] [INFO] Booting worker with pid: 1109546
+[2025-12-20 02:35:23 -0500] [1109547] [INFO] Booting worker with pid: 1109547
+[2026-01-11 09:21:18 -0500] [1109546] [INFO] Worker exiting (pid: 1109546)
+[2026-01-11 09:21:18 -0500] [1109545] [INFO] Worker exiting (pid: 1109545)
+[2026-01-11 09:21:18 -0500] [1109547] [INFO] Worker exiting (pid: 1109547)
+[2026-01-11 09:21:18 -0500] [1109543] [INFO] Handling signal: term
+[2026-01-11 09:21:18 -0500] [1109543] [ERROR] Worker (pid:1109547) was sent SIGTERM!
+[2026-01-11 09:21:18 -0500] [1109543] [ERROR] Worker (pid:1109545) was sent SIGTERM!
+[2026-01-11 09:21:18 -0500] [1109543] [ERROR] Worker (pid:1109546) was sent SIGTERM!
+[2026-01-11 09:21:18 -0500] [1109543] [INFO] Shutting down: Master
+[2026-01-11 09:21:24 -0500] [4067789] [INFO] Starting gunicorn 23.0.0
+[2026-01-11 09:21:24 -0500] [4067789] [INFO] Listening at: http://127.0.0.1:9054 (4067789)
+[2026-01-11 09:21:24 -0500] [4067789] [INFO] Using worker: sync
+[2026-01-11 09:21:24 -0500] [4067796] [INFO] Booting worker with pid: 4067796
+[2026-01-11 09:21:24 -0500] [4067800] [INFO] Booting worker with pid: 4067800
+[2026-01-11 09:21:24 -0500] [4067802] [INFO] Booting worker with pid: 4067802
+[2026-01-31 19:38:23 -0500] [4067800] [INFO] Worker exiting (pid: 4067800)
+[2026-01-31 19:38:23 -0500] [4067796] [INFO] Worker exiting (pid: 4067796)
+[2026-01-31 19:38:23 -0500] [4067789] [INFO] Handling signal: term
+[2026-01-31 19:38:23 -0500] [4067802] [INFO] Worker exiting (pid: 4067802)
+[2026-01-31 19:38:23 -0500] [4067789] [INFO] Shutting down: Master
+[2026-01-31 19:38:25 -0500] [1734828] [INFO] Starting gunicorn 23.0.0
+[2026-01-31 19:38:25 -0500] [1734828] [INFO] Listening at: http://127.0.0.1:9054 (1734828)
+[2026-01-31 19:38:25 -0500] [1734828] [INFO] Using worker: sync
+[2026-01-31 19:38:25 -0500] [1734831] [INFO] Booting worker with pid: 1734831
+[2026-01-31 19:38:25 -0500] [1734835] [INFO] Booting worker with pid: 1734835
+[2026-01-31 19:38:25 -0500] [1734837] [INFO] Booting worker with pid: 1734837
+[2026-01-31 19:40:02 -0500] [1734837] [INFO] Worker exiting (pid: 1734837)
+[2026-01-31 19:40:02 -0500] [1734835] [INFO] Worker exiting (pid: 1734835)
+[2026-01-31 19:40:02 -0500] [1734831] [INFO] Worker exiting (pid: 1734831)
+[2026-01-31 19:40:02 -0500] [1734828] [INFO] Handling signal: term
+[2026-01-31 19:40:02 -0500] [1734828] [ERROR] Worker (pid:1734831) was sent SIGTERM!
+[2026-01-31 19:40:02 -0500] [1734828] [ERROR] Worker (pid:1734835) was sent SIGTERM!
+[2026-01-31 19:40:02 -0500] [1734828] [ERROR] Worker (pid:1734837) was sent SIGTERM!
+[2026-01-31 19:40:02 -0500] [1734828] [INFO] Shutting down: Master
+[2026-01-31 19:42:48 -0500] [1242] [INFO] Starting gunicorn 23.0.0
+[2026-01-31 19:42:48 -0500] [1242] [INFO] Listening at: http://127.0.0.1:9054 (1242)
+[2026-01-31 19:42:48 -0500] [1242] [INFO] Using worker: sync
+[2026-01-31 19:42:48 -0500] [1244] [INFO] Booting worker with pid: 1244
+[2026-01-31 19:42:48 -0500] [1246] [INFO] Booting worker with pid: 1246
+[2026-01-31 19:42:48 -0500] [1251] [INFO] Booting worker with pid: 1251
+[2026-02-03 06:41:13 -0500] [1246] [INFO] Worker exiting (pid: 1246)
+[2026-02-03 06:41:13 -0500] [1251] [INFO] Worker exiting (pid: 1251)
+[2026-02-03 06:41:13 -0500] [1242] [INFO] Handling signal: term
+[2026-02-03 06:41:13 -0500] [1244] [INFO] Worker exiting (pid: 1244)
+[2026-02-03 06:41:13 -0500] [1242] [ERROR] Worker (pid:1246) was sent SIGTERM!
+[2026-02-03 06:41:13 -0500] [1242] [INFO] Shutting down: Master
+[2026-02-03 06:41:18 -0500] [710703] [INFO] Starting gunicorn 23.0.0
+[2026-02-03 06:41:18 -0500] [710703] [INFO] Listening at: http://127.0.0.1:9054 (710703)
+[2026-02-03 06:41:18 -0500] [710703] [INFO] Using worker: sync
+[2026-02-03 06:41:18 -0500] [710705] [INFO] Booting worker with pid: 710705
+[2026-02-03 06:41:18 -0500] [710708] [INFO] Booting worker with pid: 710708
+[2026-02-03 06:41:18 -0500] [710712] [INFO] Booting worker with pid: 710712
+[2026-02-17 19:58:35 -0500] [710712] [INFO] Worker exiting (pid: 710712)
+[2026-02-17 19:58:35 -0500] [710705] [INFO] Worker exiting (pid: 710705)
+[2026-02-17 19:58:35 -0500] [710708] [INFO] Worker exiting (pid: 710708)
+[2026-02-17 19:58:35 -0500] [710703] [INFO] Handling signal: term
+[2026-02-17 19:58:35 -0500] [710703] [ERROR] Worker (pid:710708) was sent SIGTERM!
+[2026-02-17 19:58:35 -0500] [710703] [ERROR] Worker (pid:710705) was sent SIGTERM!
+[2026-02-17 19:58:35 -0500] [710703] [ERROR] Worker (pid:710712) was sent SIGTERM!
+[2026-02-17 19:58:35 -0500] [710703] [INFO] Shutting down: Master
+[2026-02-17 19:58:35 -0500] [1197234] [INFO] Starting gunicorn 23.0.0
+[2026-02-17 19:58:35 -0500] [1197234] [INFO] Listening at: http://127.0.0.1:9054 (1197234)
+[2026-02-17 19:58:35 -0500] [1197234] [INFO] Using worker: sync
+[2026-02-17 19:58:35 -0500] [1197236] [INFO] Booting worker with pid: 1197236
+[2026-02-17 19:58:35 -0500] [1197237] [INFO] Booting worker with pid: 1197237
+[2026-02-17 19:58:35 -0500] [1197238] [INFO] Booting worker with pid: 1197238
+[2026-02-17 19:58:38 -0500] [1197238] [INFO] Worker exiting (pid: 1197238)
+[2026-02-17 19:58:38 -0500] [1197237] [INFO] Worker exiting (pid: 1197237)
+[2026-02-17 19:58:38 -0500] [1197236] [INFO] Worker exiting (pid: 1197236)
+[2026-02-17 19:58:38 -0500] [1197234] [INFO] Handling signal: term
+[2026-02-17 19:58:38 -0500] [1197234] [ERROR] Worker (pid:1197236) was sent SIGTERM!
+[2026-02-17 19:58:38 -0500] [1197234] [ERROR] Worker (pid:1197238) was sent SIGTERM!
+[2026-02-17 19:58:38 -0500] [1197234] [ERROR] Worker (pid:1197237) was sent SIGTERM!
+[2026-02-17 19:58:38 -0500] [1197234] [INFO] Shutting down: Master
+[2026-02-17 19:58:38 -0500] [1197251] [INFO] Starting gunicorn 23.0.0
+[2026-02-17 19:58:38 -0500] [1197251] [INFO] Listening at: http://127.0.0.1:9054 (1197251)
+[2026-02-17 19:58:38 -0500] [1197251] [INFO] Using worker: sync
+[2026-02-17 19:58:38 -0500] [1197253] [INFO] Booting worker with pid: 1197253
+[2026-02-17 19:58:38 -0500] [1197254] [INFO] Booting worker with pid: 1197254
+[2026-02-17 19:58:38 -0500] [1197255] [INFO] Booting worker with pid: 1197255
+[2026-02-17 19:59:32 -0500] [1197253] [INFO] Worker exiting (pid: 1197253)
+[2026-02-17 19:59:32 -0500] [1197254] [INFO] Worker exiting (pid: 1197254)
+[2026-02-17 19:59:32 -0500] [1197255] [INFO] Worker exiting (pid: 1197255)
+[2026-02-17 19:59:32 -0500] [1197251] [INFO] Handling signal: term
+[2026-02-17 19:59:32 -0500] [1197251] [INFO] Shutting down: Master
+[2026-02-17 19:59:32 -0500] [1197451] [INFO] Starting gunicorn 23.0.0
+[2026-02-17 19:59:32 -0500] [1197451] [INFO] Listening at: http://127.0.0.1:9054 (1197451)
+[2026-02-17 19:59:32 -0500] [1197451] [INFO] Using worker: sync
+[2026-02-17 19:59:32 -0500] [1197453] [INFO] Booting worker with pid: 1197453
+[2026-02-17 19:59:32 -0500] [1197454] [INFO] Booting worker with pid: 1197454
+[2026-02-17 19:59:32 -0500] [1197455] [INFO] Booting worker with pid: 1197455
+[2026-02-17 22:32:44 -0500] [1197454] [INFO] Worker exiting (pid: 1197454)
+[2026-02-17 22:32:44 -0500] [1197453] [INFO] Worker exiting (pid: 1197453)
+[2026-02-17 22:32:44 -0500] [1197455] [INFO] Worker exiting (pid: 1197455)
+[2026-02-17 22:32:44 -0500] [1197451] [INFO] Handling signal: term
+[2026-02-17 22:32:44 -0500] [1197451] [ERROR] Worker (pid:1197455) was sent SIGTERM!
+[2026-02-17 22:32:44 -0500] [1197451] [ERROR] Worker (pid:1197454) was sent SIGTERM!
+[2026-02-17 22:32:44 -0500] [1197451] [ERROR] Worker (pid:1197453) was sent SIGTERM!
+[2026-02-17 22:32:44 -0500] [1197451] [INFO] Shutting down: Master
+[2026-02-17 22:32:44 -0500] [1231467] [INFO] Starting gunicorn 23.0.0
+[2026-02-17 22:32:44 -0500] [1231467] [INFO] Listening at: http://127.0.0.1:9054 (1231467)
+[2026-02-17 22:32:44 -0500] [1231467] [INFO] Using worker: sync
+[2026-02-17 22:32:44 -0500] [1231468] [INFO] Booting worker with pid: 1231468
+[2026-02-17 22:32:44 -0500] [1231471] [INFO] Booting worker with pid: 1231471
+[2026-02-17 22:32:44 -0500] [1231476] [INFO] Booting worker with pid: 1231476
+[2026-02-17 22:33:05 -0500] [1231468] [INFO] Worker exiting (pid: 1231468)
+[2026-02-17 22:33:05 -0500] [1231476] [INFO] Worker exiting (pid: 1231476)
+[2026-02-17 22:33:05 -0500] [1231471] [INFO] Worker exiting (pid: 1231471)
+[2026-02-17 22:33:05 -0500] [1231467] [INFO] Handling signal: term
+[2026-02-17 22:33:05 -0500] [1231467] [ERROR] Worker (pid:1231471) was sent SIGTERM!
+[2026-02-17 22:33:05 -0500] [1231467] [ERROR] Worker (pid:1231468) was sent SIGTERM!
+[2026-02-17 22:33:05 -0500] [1231467] [ERROR] Worker (pid:1231476) was sent SIGTERM!
+[2026-02-17 22:33:06 -0500] [1231467] [INFO] Shutting down: Master
+[2026-02-17 22:33:06 -0500] [1231548] [INFO] Starting gunicorn 23.0.0
+[2026-02-17 22:33:06 -0500] [1231548] [INFO] Listening at: http://127.0.0.1:9054 (1231548)
+[2026-02-17 22:33:06 -0500] [1231548] [INFO] Using worker: sync
+[2026-02-17 22:33:06 -0500] [1231549] [INFO] Booting worker with pid: 1231549
+[2026-02-17 22:33:06 -0500] [1231554] [INFO] Booting worker with pid: 1231554
+[2026-02-17 22:33:06 -0500] [1231555] [INFO] Booting worker with pid: 1231555
+[2026-02-17 22:33:13 -0500] [1231548] [INFO] Handling signal: term
+[2026-02-17 22:33:13 -0500] [1231549] [INFO] Worker exiting (pid: 1231549)
+[2026-02-17 22:33:13 -0500] [1231554] [INFO] Worker exiting (pid: 1231554)
+[2026-02-17 22:33:13 -0500] [1231555] [INFO] Worker exiting (pid: 1231555)
+[2026-02-17 22:33:13 -0500] [1231548] [INFO] Shutting down: Master
+[2026-02-17 22:33:13 -0500] [1231580] [INFO] Starting gunicorn 23.0.0
+[2026-02-17 22:33:13 -0500] [1231580] [INFO] Listening at: http://127.0.0.1:9054 (1231580)
+[2026-02-17 22:33:13 -0500] [1231580] [INFO] Using worker: sync
+[2026-02-17 22:33:13 -0500] [1231583] [INFO] Booting worker with pid: 1231583
+[2026-02-17 22:33:13 -0500] [1231584] [INFO] Booting worker with pid: 1231584
+[2026-02-17 22:33:13 -0500] [1231585] [INFO] Booting worker with pid: 1231585
+[2026-02-17 22:36:30 -0500] [1231584] [INFO] Worker exiting (pid: 1231584)
+[2026-02-17 22:36:30 -0500] [1231583] [INFO] Worker exiting (pid: 1231583)
+[2026-02-17 22:36:30 -0500] [1231585] [INFO] Worker exiting (pid: 1231585)
+[2026-02-17 22:36:30 -0500] [1231580] [INFO] Handling signal: term
+[2026-02-17 22:36:30 -0500] [1231580] [ERROR] Worker (pid:1231585) was sent SIGTERM!
+[2026-02-17 22:36:30 -0500] [1231580] [ERROR] Worker (pid:1231584) was sent SIGTERM!
+[2026-02-17 22:36:30 -0500] [1231580] [ERROR] Worker (pid:1231583) was sent SIGTERM!
+[2026-02-17 22:36:31 -0500] [1231580] [INFO] Shutting down: Master
+[2026-02-17 22:36:31 -0500] [1232280] [INFO] Starting gunicorn 23.0.0
+[2026-02-17 22:36:31 -0500] [1232280] [INFO] Listening at: http://127.0.0.1:9054 (1232280)
+[2026-02-17 22:36:31 -0500] [1232280] [INFO] Using worker: sync
+[2026-02-17 22:36:31 -0500] [1232282] [INFO] Booting worker with pid: 1232282
+[2026-02-17 22:36:31 -0500] [1232283] [INFO] Booting worker with pid: 1232283
+[2026-02-17 22:36:31 -0500] [1232284] [INFO] Booting worker with pid: 1232284
+[2026-02-17 22:50:55 -0500] [1232282] [INFO] Worker exiting (pid: 1232282)
+[2026-02-17 22:50:55 -0500] [1232284] [INFO] Worker exiting (pid: 1232284)
+[2026-02-17 22:50:55 -0500] [1232283] [INFO] Worker exiting (pid: 1232283)
+[2026-02-17 22:50:55 -0500] [1232280] [INFO] Handling signal: term
+[2026-02-17 22:50:55 -0500] [1232280] [ERROR] Worker (pid:1232282) was sent SIGTERM!
+[2026-02-17 22:50:55 -0500] [1232280] [INFO] Shutting down: Master
+[2026-02-17 22:50:56 -0500] [1235834] [INFO] Starting gunicorn 23.0.0
+[2026-02-17 22:50:56 -0500] [1235834] [INFO] Listening at: http://127.0.0.1:9054 (1235834)
+[2026-02-17 22:50:56 -0500] [1235834] [INFO] Using worker: sync
+[2026-02-17 22:50:56 -0500] [1235837] [INFO] Booting worker with pid: 1235837
+[2026-02-17 22:50:56 -0500] [1235838] [INFO] Booting worker with pid: 1235838
+[2026-02-17 22:50:56 -0500] [1235843] [INFO] Booting worker with pid: 1235843
+[2026-02-17 22:57:23 -0500] [1235843] [INFO] Worker exiting (pid: 1235843)
+[2026-02-17 22:57:23 -0500] [1235838] [INFO] Worker exiting (pid: 1235838)
+[2026-02-17 22:57:23 -0500] [1235837] [INFO] Worker exiting (pid: 1235837)
+[2026-02-17 22:57:23 -0500] [1235834] [INFO] Handling signal: term
+[2026-02-17 22:57:23 -0500] [1235834] [ERROR] Worker (pid:1235837) was sent SIGTERM!
+[2026-02-17 22:57:23 -0500] [1235834] [ERROR] Worker (pid:1235843) was sent SIGTERM!
+[2026-02-17 22:57:23 -0500] [1235834] [ERROR] Worker (pid:1235838) was sent SIGTERM!
+[2026-02-17 22:57:23 -0500] [1235834] [INFO] Shutting down: Master
+[2026-02-17 22:57:23 -0500] [1239616] [INFO] Starting gunicorn 23.0.0
+[2026-02-17 22:57:23 -0500] [1239616] [INFO] Listening at: http://127.0.0.1:9054 (1239616)
+[2026-02-17 22:57:23 -0500] [1239616] [INFO] Using worker: sync
+[2026-02-17 22:57:23 -0500] [1239618] [INFO] Booting worker with pid: 1239618
+[2026-02-17 22:57:23 -0500] [1239619] [INFO] Booting worker with pid: 1239619
+[2026-02-17 22:57:23 -0500] [1239620] [INFO] Booting worker with pid: 1239620
+[2026-02-17 23:21:16 -0500] [1239620] [INFO] Worker exiting (pid: 1239620)
+[2026-02-17 23:21:16 -0500] [1239618] [INFO] Worker exiting (pid: 1239618)
+[2026-02-17 23:21:16 -0500] [1239619] [INFO] Worker exiting (pid: 1239619)
+[2026-02-17 23:21:16 -0500] [1239616] [INFO] Handling signal: term
+[2026-02-17 23:21:16 -0500] [1239616] [ERROR] Worker (pid:1239619) was sent SIGTERM!
+[2026-02-17 23:21:16 -0500] [1239616] [ERROR] Worker (pid:1239618) was sent SIGTERM!
+[2026-02-17 23:21:16 -0500] [1239616] [ERROR] Worker (pid:1239620) was sent SIGTERM!
+[2026-02-17 23:21:16 -0500] [1239616] [INFO] Shutting down: Master
+[2026-02-17 23:21:16 -0500] [1245921] [INFO] Starting gunicorn 23.0.0
+[2026-02-17 23:21:16 -0500] [1245921] [INFO] Listening at: http://127.0.0.1:9054 (1245921)
+[2026-02-17 23:21:16 -0500] [1245921] [INFO] Using worker: sync
+[2026-02-17 23:21:16 -0500] [1245922] [INFO] Booting worker with pid: 1245922
+[2026-02-17 23:21:16 -0500] [1245923] [INFO] Booting worker with pid: 1245923
+[2026-02-17 23:21:16 -0500] [1245924] [INFO] Booting worker with pid: 1245924
+[2026-02-17 23:21:51,051] ERROR in app: Exception on /drugs [GET]
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 175, in drugs_radar
+    return render_template("drugs.html", drugs=drugs, q=q)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: drugs.html
+[2026-02-17 23:23:15,627] ERROR in app: Exception on /drugs [GET]
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 175, in drugs_radar
+    return render_template("drugs.html", drugs=drugs, q=q)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: drugs.html
+[2026-02-17 23:49:09,174] ERROR in app: Exception on /drugs [GET]
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 175, in drugs_radar
+    return render_template("drugs.html", drugs=drugs, q=q)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: drugs.html
+[2026-02-17 23:49:09,898] ERROR in app: Exception on /drugs [GET]
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 175, in drugs_radar
+    return render_template("drugs.html", drugs=drugs, q=q)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: drugs.html
+[2026-02-17 23:49:29 -0500] [1245922] [INFO] Worker exiting (pid: 1245922)
+[2026-02-17 23:49:29 -0500] [1245923] [INFO] Worker exiting (pid: 1245923)
+[2026-02-17 23:49:29 -0500] [1245924] [INFO] Worker exiting (pid: 1245924)
+[2026-02-17 23:49:29 -0500] [1245921] [INFO] Handling signal: term
+[2026-02-17 23:49:29 -0500] [1245921] [ERROR] Worker (pid:1245924) was sent SIGTERM!
+[2026-02-17 23:49:29 -0500] [1245921] [ERROR] Worker (pid:1245923) was sent SIGTERM!
+[2026-02-17 23:49:29 -0500] [1245921] [ERROR] Worker (pid:1245922) was sent SIGTERM!
+[2026-02-17 23:49:30 -0500] [1245921] [INFO] Shutting down: Master
+[2026-02-17 23:49:30 -0500] [1252611] [INFO] Starting gunicorn 23.0.0
+[2026-02-17 23:49:30 -0500] [1252611] [INFO] Listening at: http://127.0.0.1:9054 (1252611)
+[2026-02-17 23:49:30 -0500] [1252611] [INFO] Using worker: sync
+[2026-02-17 23:49:30 -0500] [1252614] [INFO] Booting worker with pid: 1252614
+[2026-02-17 23:49:30 -0500] [1252615] [INFO] Booting worker with pid: 1252615
+[2026-02-17 23:49:30 -0500] [1252616] [INFO] Booting worker with pid: 1252616
+[2026-02-18 00:42:06,472] ERROR in app: Exception on /drugs [GET]
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 175, in drugs_radar
+    return render_template("drugs.html", drugs=drugs, q=q)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: drugs.html
+[2026-02-18 04:19:02,572] ERROR in app: Exception on /drugs [GET]
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 175, in drugs_radar
+    return render_template("drugs.html", drugs=drugs, q=q)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: drugs.html
+[2026-02-18 09:21:06,644] ERROR in app: Exception on /drugs [GET]
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 175, in drugs_radar
+    return render_template("drugs.html", drugs=drugs, q=q)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: drugs.html
+[2026-02-18 09:26:32,159] ERROR in app: Exception on /drugs [GET]
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 175, in drugs_radar
+    return render_template("drugs.html", drugs=drugs, q=q)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: drugs.html
+[2026-02-18 09:43:34 -0500] [1252614] [INFO] Worker exiting (pid: 1252614)
+[2026-02-18 09:43:34 -0500] [1252615] [INFO] Worker exiting (pid: 1252615)
+[2026-02-18 09:43:34 -0500] [1252616] [INFO] Worker exiting (pid: 1252616)
+[2026-02-18 09:43:34 -0500] [1252611] [INFO] Handling signal: term
+[2026-02-18 09:43:34 -0500] [1252611] [ERROR] Worker (pid:1252614) was sent SIGTERM!
+[2026-02-18 09:43:34 -0500] [1252611] [ERROR] Worker (pid:1252615) was sent SIGTERM!
+[2026-02-18 09:43:34 -0500] [1252611] [ERROR] Worker (pid:1252616) was sent SIGTERM!
+[2026-02-18 09:43:34 -0500] [1252611] [INFO] Shutting down: Master
+[2026-02-18 09:43:34 -0500] [1391870] [INFO] Starting gunicorn 23.0.0
+[2026-02-18 09:43:34 -0500] [1391870] [INFO] Listening at: http://127.0.0.1:9054 (1391870)
+[2026-02-18 09:43:34 -0500] [1391870] [INFO] Using worker: sync
+[2026-02-18 09:43:34 -0500] [1391872] [INFO] Booting worker with pid: 1391872
+[2026-02-18 09:43:34 -0500] [1391873] [INFO] Booting worker with pid: 1391873
+[2026-02-18 09:43:34 -0500] [1391874] [INFO] Booting worker with pid: 1391874
+[2026-02-18 10:29:02 -0500] [1391873] [INFO] Worker exiting (pid: 1391873)
+[2026-02-18 10:29:02 -0500] [1391872] [INFO] Worker exiting (pid: 1391872)
+[2026-02-18 10:29:02 -0500] [1391874] [INFO] Worker exiting (pid: 1391874)
+[2026-02-18 10:29:02 -0500] [1391870] [INFO] Handling signal: term
+[2026-02-18 10:29:02 -0500] [1391870] [ERROR] Worker (pid:1391872) was sent SIGTERM!
+[2026-02-18 10:29:02 -0500] [1391870] [ERROR] Worker (pid:1391874) was sent SIGTERM!
+[2026-02-18 10:29:02 -0500] [1391870] [ERROR] Worker (pid:1391873) was sent SIGTERM!
+[2026-02-18 10:29:02 -0500] [1391870] [INFO] Shutting down: Master
+[2026-02-18 10:29:02 -0500] [1402548] [INFO] Starting gunicorn 23.0.0
+[2026-02-18 10:29:02 -0500] [1402548] [INFO] Listening at: http://127.0.0.1:9054 (1402548)
+[2026-02-18 10:29:02 -0500] [1402548] [INFO] Using worker: sync
+[2026-02-18 10:29:02 -0500] [1402551] [INFO] Booting worker with pid: 1402551
+[2026-02-18 10:29:02 -0500] [1402552] [INFO] Booting worker with pid: 1402552
+[2026-02-18 10:29:02 -0500] [1402553] [INFO] Booting worker with pid: 1402553
+[2026-02-18 10:29:06 -0500] [1402551] [INFO] Worker exiting (pid: 1402551)
+[2026-02-18 10:29:06 -0500] [1402553] [INFO] Worker exiting (pid: 1402553)
+[2026-02-18 10:29:06 -0500] [1402552] [INFO] Worker exiting (pid: 1402552)
+[2026-02-18 10:29:06 -0500] [1402548] [INFO] Handling signal: term
+[2026-02-18 10:29:06 -0500] [1402548] [ERROR] Worker (pid:1402553) was sent SIGTERM!
+[2026-02-18 10:29:06 -0500] [1402548] [ERROR] Worker (pid:1402552) was sent SIGTERM!
+[2026-02-18 10:29:06 -0500] [1402548] [ERROR] Worker (pid:1402551) was sent SIGTERM!
+[2026-02-18 10:29:07 -0500] [1402548] [INFO] Shutting down: Master
+[2026-02-18 10:29:07 -0500] [1402565] [INFO] Starting gunicorn 23.0.0
+[2026-02-18 10:29:07 -0500] [1402565] [INFO] Listening at: http://127.0.0.1:9054 (1402565)
+[2026-02-18 10:29:07 -0500] [1402565] [INFO] Using worker: sync
+[2026-02-18 10:29:07 -0500] [1402566] [INFO] Booting worker with pid: 1402566
+[2026-02-18 10:29:07 -0500] [1402567] [INFO] Booting worker with pid: 1402567
+[2026-02-18 10:29:07 -0500] [1402568] [INFO] Booting worker with pid: 1402568
