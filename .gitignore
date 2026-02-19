@@ -38,3 +38,7 @@ coverage.xml
 venv/
 ENV/
 env/
+
+# Environment variables
+.env
+.env.*

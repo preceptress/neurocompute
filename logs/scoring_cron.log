@@ -1,1 +1,35 @@
 /home/chief/neurocompute/venv/bin/python: can't open file '/home/chief/neurocompute/run_scoring.py': [Errno 2] No such file or directory
+/home/chief/neurocompute/venv/bin/python: can't open file '/home/chief/neurocompute/run_scoring.py': [Errno 2] No such file or directory
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/run_scoring.py", line 112, in <module>
+    main()
+  File "/home/chief/neurocompute/run_scoring.py", line 100, in main
+    execute("""
+  File "/home/chief/neurocompute/db.py", line 34, in execute
+    cur.execute(sql, params)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/psycopg2/extras.py", line 236, in execute
+    return super().execute(query, vars)
+psycopg2.errors.UndefinedColumn: column "updated_at" of relation "paper_scores" does not exist
+LINE 2: ... INSERT INTO paper_scores (paper_id, total_score, updated_at...
+                                                             ^
+
+Scored 39 papers.
+Scored 39 papers.
+Scored 39 papers.
+Scored 39 papers.
+Scored 39 papers.
+Scored 39 papers.
+Scored 39 papers.
+Scored 39 papers.
+Scored 39 papers.
+Scored 40 papers.
+Scored 40 papers.
+Scored 40 papers.
+Scored 40 papers.
+Scored 40 papers.
+Scored 40 papers.
+Scored 40 papers.
+Scored 40 papers.
+Scored 40 papers.
+Scored 40 papers.
+Scored 40 papers.

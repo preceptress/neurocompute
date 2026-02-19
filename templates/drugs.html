@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>Drug Radar | Clawbot Neurocompute</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+  <div class="topbar">
+    <div class="brand">
+      <a href="/" class="brandlink">Clawbot <span>Neurocompute</span></a>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="heading">
+      <h2>Drug Radar</h2>
+
+      <div class="navstrip">
+        <a class="pillbtn" href="/">Research</a>
+        <a class="pillbtn" href="/abandoned">Abandoned Trials</a>
+        <a class="pillbtn active" href="/drugs">Drug Radar</a>
+        <a class="pillbtn" href="/sponsors">Sponsors</a>
+      </div>
+
+      <div class="muted">
+        Drugs ranked by number of associated trials.
+      </div>
+    </div>
+
+    <div class="table">
+      <div class="row header" style="grid-template-columns: 1fr .3fr;">
+        <div>Drug</div>
+        <div>Trials</div>
+      </div>
+
+      {% if drugs and drugs|length > 0 %}
+      {% for d in drugs %}
+      <div class="row" style="grid-template-columns: 1fr .3fr;">
+        <div>{{ d.name }}</div>
+        <div class="muted">{{ d.trial_count }}</div>
+      </div>
+      {% endfor %}
+      {% else %}
+      <div class="empty">No drugs found.</div>
+      {% endif %}
+    </div>
+
+  </div>
+
+</body>
+
+</html>

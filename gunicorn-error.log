@@ -730,3 +730,222 @@ jinja2.exceptions.TemplateNotFound: drugs.html
 [2026-02-18 10:29:07 -0500] [1402566] [INFO] Booting worker with pid: 1402566
 [2026-02-18 10:29:07 -0500] [1402567] [INFO] Booting worker with pid: 1402567
 [2026-02-18 10:29:07 -0500] [1402568] [INFO] Booting worker with pid: 1402568
+[2026-02-18 12:44:08 -0500] [1402567] [INFO] Worker exiting (pid: 1402567)
+[2026-02-18 12:44:08 -0500] [1402566] [INFO] Worker exiting (pid: 1402566)
+[2026-02-18 12:44:08 -0500] [1402568] [INFO] Worker exiting (pid: 1402568)
+[2026-02-18 12:44:08 -0500] [1402565] [INFO] Handling signal: term
+[2026-02-18 12:44:08 -0500] [1402565] [ERROR] Worker (pid:1402568) was sent SIGTERM!
+[2026-02-18 12:44:08 -0500] [1402565] [ERROR] Worker (pid:1402567) was sent SIGTERM!
+[2026-02-18 12:44:08 -0500] [1402565] [ERROR] Worker (pid:1402566) was sent SIGTERM!
+[2026-02-18 12:44:08 -0500] [1402565] [INFO] Shutting down: Master
+[2026-02-18 12:44:08 -0500] [1433284] [INFO] Starting gunicorn 23.0.0
+[2026-02-18 12:44:08 -0500] [1433284] [INFO] Listening at: http://127.0.0.1:9054 (1433284)
+[2026-02-18 12:44:08 -0500] [1433284] [INFO] Using worker: sync
+[2026-02-18 12:44:08 -0500] [1433285] [INFO] Booting worker with pid: 1433285
+[2026-02-18 12:44:08 -0500] [1433288] [INFO] Booting worker with pid: 1433288
+[2026-02-18 12:44:08 -0500] [1433289] [INFO] Booting worker with pid: 1433289
+[2026-02-18 13:15:16 -0500] [1433285] [INFO] Worker exiting (pid: 1433285)
+[2026-02-18 13:15:16 -0500] [1433289] [INFO] Worker exiting (pid: 1433289)
+[2026-02-18 13:15:16 -0500] [1433288] [INFO] Worker exiting (pid: 1433288)
+[2026-02-18 13:15:16 -0500] [1433284] [INFO] Handling signal: term
+[2026-02-18 13:15:16 -0500] [1433284] [ERROR] Worker (pid:1433288) was sent SIGTERM!
+[2026-02-18 13:15:16 -0500] [1433284] [ERROR] Worker (pid:1433289) was sent SIGTERM!
+[2026-02-18 13:15:16 -0500] [1433284] [ERROR] Worker (pid:1433285) was sent SIGTERM!
+[2026-02-18 13:15:16 -0500] [1433284] [INFO] Shutting down: Master
+[2026-02-18 13:15:16 -0500] [1441354] [INFO] Starting gunicorn 23.0.0
+[2026-02-18 13:15:16 -0500] [1441354] [INFO] Listening at: http://127.0.0.1:9054 (1441354)
+[2026-02-18 13:15:16 -0500] [1441354] [INFO] Using worker: sync
+[2026-02-18 13:15:16 -0500] [1441356] [INFO] Booting worker with pid: 1441356
+[2026-02-18 13:15:16 -0500] [1441357] [INFO] Booting worker with pid: 1441357
+[2026-02-18 13:15:16 -0500] [1441359] [INFO] Booting worker with pid: 1441359
+[2026-02-18 13:21:11 -0500] [1441357] [INFO] Worker exiting (pid: 1441357)
+[2026-02-18 13:21:11 -0500] [1441359] [INFO] Worker exiting (pid: 1441359)
+[2026-02-18 13:21:11 -0500] [1441356] [INFO] Worker exiting (pid: 1441356)
+[2026-02-18 13:21:11 -0500] [1441354] [INFO] Handling signal: term
+[2026-02-18 13:21:11 -0500] [1441354] [ERROR] Worker (pid:1441359) was sent SIGTERM!
+[2026-02-18 13:21:11 -0500] [1441354] [ERROR] Worker (pid:1441357) was sent SIGTERM!
+[2026-02-18 13:21:11 -0500] [1441354] [ERROR] Worker (pid:1441356) was sent SIGTERM!
+[2026-02-18 13:21:11 -0500] [1441354] [INFO] Shutting down: Master
+[2026-02-18 13:21:11 -0500] [1442779] [INFO] Starting gunicorn 23.0.0
+[2026-02-18 13:21:11 -0500] [1442779] [INFO] Listening at: http://127.0.0.1:9054 (1442779)
+[2026-02-18 13:21:11 -0500] [1442779] [INFO] Using worker: sync
+[2026-02-18 13:21:11 -0500] [1442782] [INFO] Booting worker with pid: 1442782
+[2026-02-18 13:21:11 -0500] [1442783] [INFO] Booting worker with pid: 1442783
+[2026-02-18 13:21:11 -0500] [1442784] [INFO] Booting worker with pid: 1442784
+[2026-02-18 13:25:11 -0500] [1442783] [INFO] Worker exiting (pid: 1442783)
+[2026-02-18 13:25:11 -0500] [1442782] [INFO] Worker exiting (pid: 1442782)
+[2026-02-18 13:25:11 -0500] [1442784] [INFO] Worker exiting (pid: 1442784)
+[2026-02-18 13:25:11 -0500] [1442779] [INFO] Handling signal: term
+[2026-02-18 13:25:11 -0500] [1442779] [ERROR] Worker (pid:1442782) was sent SIGTERM!
+[2026-02-18 13:25:11 -0500] [1442779] [ERROR] Worker (pid:1442783) was sent SIGTERM!
+[2026-02-18 13:25:11 -0500] [1442779] [ERROR] Worker (pid:1442784) was sent SIGTERM!
+[2026-02-18 13:25:11 -0500] [1442779] [INFO] Shutting down: Master
+[2026-02-18 13:25:12 -0500] [1443672] [INFO] Starting gunicorn 23.0.0
+[2026-02-18 13:25:12 -0500] [1443672] [INFO] Listening at: http://127.0.0.1:9054 (1443672)
+[2026-02-18 13:25:12 -0500] [1443672] [INFO] Using worker: sync
+[2026-02-18 13:25:12 -0500] [1443674] [INFO] Booting worker with pid: 1443674
+[2026-02-18 13:25:12 -0500] [1443675] [INFO] Booting worker with pid: 1443675
+[2026-02-18 13:25:12 -0500] [1443676] [INFO] Booting worker with pid: 1443676
+[2026-02-18 14:21:21,327] ERROR in app: Exception on /drugs [GET]
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 175, in drugs_radar
+    return render_template("drugs.html", drugs=drugs, q=q)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: drugs.html
+[2026-02-18 16:37:59,512] ERROR in app: Exception on /drugs [GET]
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 175, in drugs_radar
+    return render_template("drugs.html", drugs=drugs, q=q)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: drugs.html
+[2026-02-18 16:42:42,723] ERROR in app: Exception on /drugs [GET]
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 175, in drugs_radar
+    return render_template("drugs.html", drugs=drugs, q=q)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: drugs.html
+[2026-02-18 17:47:59,210] ERROR in app: Exception on /drugs [GET]
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 175, in drugs_radar
+    return render_template("drugs.html", drugs=drugs, q=q)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: drugs.html
+[2026-02-18 21:40:24 -0500] [1443676] [INFO] Worker exiting (pid: 1443676)
+[2026-02-18 21:40:24 -0500] [1443674] [INFO] Worker exiting (pid: 1443674)
+[2026-02-18 21:40:24 -0500] [1443675] [INFO] Worker exiting (pid: 1443675)
+[2026-02-18 21:40:24 -0500] [1443672] [INFO] Handling signal: term
+[2026-02-18 21:40:24 -0500] [1443672] [ERROR] Worker (pid:1443674) was sent SIGTERM!
+[2026-02-18 21:40:24 -0500] [1443672] [ERROR] Worker (pid:1443676) was sent SIGTERM!
+[2026-02-18 21:40:24 -0500] [1443672] [ERROR] Worker (pid:1443675) was sent SIGTERM!
+[2026-02-18 21:40:24 -0500] [1443672] [INFO] Shutting down: Master
+[2026-02-18 21:40:24 -0500] [1554249] [INFO] Starting gunicorn 23.0.0
+[2026-02-18 21:40:24 -0500] [1554249] [INFO] Listening at: http://127.0.0.1:9054 (1554249)
+[2026-02-18 21:40:24 -0500] [1554249] [INFO] Using worker: sync
+[2026-02-18 21:40:24 -0500] [1554250] [INFO] Booting worker with pid: 1554250
+[2026-02-18 21:40:24 -0500] [1554251] [INFO] Booting worker with pid: 1554251
+[2026-02-18 21:40:24 -0500] [1554252] [INFO] Booting worker with pid: 1554252
+[2026-02-18 22:24:53 -0500] [1554250] [INFO] Worker exiting (pid: 1554250)
+[2026-02-18 22:24:53 -0500] [1554251] [INFO] Worker exiting (pid: 1554251)
+[2026-02-18 22:24:53 -0500] [1554252] [INFO] Worker exiting (pid: 1554252)
+[2026-02-18 22:24:53 -0500] [1554249] [INFO] Handling signal: term
+[2026-02-18 22:24:53 -0500] [1554249] [ERROR] Worker (pid:1554250) was sent SIGTERM!
+[2026-02-18 22:24:53 -0500] [1554249] [ERROR] Worker (pid:1554251) was sent SIGTERM!
+[2026-02-18 22:24:53 -0500] [1554249] [ERROR] Worker (pid:1554252) was sent SIGTERM!
+[2026-02-18 22:24:53 -0500] [1554249] [INFO] Shutting down: Master
+[2026-02-18 22:24:53 -0500] [1565055] [INFO] Starting gunicorn 23.0.0
+[2026-02-18 22:24:53 -0500] [1565055] [INFO] Listening at: http://127.0.0.1:9054 (1565055)
+[2026-02-18 22:24:53 -0500] [1565055] [INFO] Using worker: sync
+[2026-02-18 22:24:53 -0500] [1565057] [INFO] Booting worker with pid: 1565057
+[2026-02-18 22:24:53 -0500] [1565058] [INFO] Booting worker with pid: 1565058
+[2026-02-18 22:24:53 -0500] [1565059] [INFO] Booting worker with pid: 1565059
+[2026-02-18 22:25:09,387] ERROR in app: Exception on /drugs [GET]
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 175, in drugs_radar
+    return render_template("drugs.html", drugs=drugs, q=q)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 149, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1087, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1016, in get_template
+    return self._load_template(name, globals)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 975, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 65, in get_source
+    return self._get_source_fast(environment, template)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 99, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: drugs.html

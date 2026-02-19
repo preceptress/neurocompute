@@ -34,25 +34,27 @@
       </div>
 
       <div class="muted">
-        Sorted by repurpose score (years since end + evidence + sponsor weight).
+        Clinical trials that were terminated, withdrawn, or suspended.
       </div>
     </div>
 
     <div class="table">
-      <div class="row header" style="grid-template-columns: 1.2fr .3fr .25fr .25fr .2fr;">
+      <!-- Header -->
+      <div class="row header" style="grid-template-columns: 1.5fr .4fr .3fr;">
         <div>Trial</div>
         <div>Status</div>
         <div>Phase</div>
-        <div>Evidence</div>
-        <div>Score</div>
       </div>
 
       {% if trials and trials|length > 0 %}
       {% for t in trials %}
-      <a class="row" href="{{ t.url }}" target="_blank" style="grid-template-columns: 1.2fr .3fr .25fr .25fr .2fr;">
+      <a class="row" href="{{ t.url }}" target="_blank" style="grid-template-columns: 1.5fr .4fr .3fr;">
+
         <div class="title">
           {{ t.title }}
-          <div class="snippet">{{ t.nct_id }} · {{ t.sponsor or "—" }}</div>
+          <div class="snippet">
+            {{ t.nct_id }} · {{ t.sponsor or "—" }}
+          </div>
         </div>
 
         <div class="status">
@@ -67,13 +69,10 @@
           {% endif %}
         </div>
 
-        <div class="muted">{{ t.phase or "—" }}</div>
-        <div class="muted">{{ t.evidence_papers or 0 }} papers</div>
-
-        <div class="score">
-          {{ "%.2f"|format(t.repurpose_score or 0) }}
-          <span class="chev">›</span>
+        <div class="muted">
+          {{ t.phase or "—" }}
         </div>
+
       </a>
       {% endfor %}
       {% else %}
