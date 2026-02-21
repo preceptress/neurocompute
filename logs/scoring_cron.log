@@ -33,3 +33,112 @@ Scored 40 papers.
 Scored 40 papers.
 Scored 40 papers.
 Scored 40 papers.
+Scored 40 papers.
+Scored 40 papers.
+Scored 40 papers.
+Scored 40 papers.
+Scored 40 papers.
+Scored 40 papers.
+Scored 40 papers.
+Scored 40 papers.
+Scored 40 papers.
+Scored 40 papers.
+Scored 40 papers.
+Scored 40 papers.
+Scored 40 papers.
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/run_scoring.py", line 12, in <module>
+    from db import execute
+  File "/home/chief/neurocompute/db.py", line 2, in <module>
+    import psycopg
+ModuleNotFoundError: No module named 'psycopg'
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/run_scoring.py", line 12, in <module>
+    from db import execute
+  File "/home/chief/neurocompute/db.py", line 2, in <module>
+    import psycopg
+ModuleNotFoundError: No module named 'psycopg'
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/run_scoring.py", line 12, in <module>
+    from db import execute
+ImportError: cannot import name 'execute' from 'db' (/home/chief/neurocompute/db.py)
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/run_scoring.py", line 12, in <module>
+    from db import execute
+ImportError: cannot import name 'execute' from 'db' (/home/chief/neurocompute/db.py)
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/run_scoring.py", line 12, in <module>
+    from db import execute
+ImportError: cannot import name 'execute' from 'db' (/home/chief/neurocompute/db.py)
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/run_scoring.py", line 12, in <module>
+    from db import execute
+ImportError: cannot import name 'execute' from 'db' (/home/chief/neurocompute/db.py)
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/run_scoring.py", line 12, in <module>
+    from db import execute
+ImportError: cannot import name 'execute' from 'db' (/home/chief/neurocompute/db.py)
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/run_scoring.py", line 12, in <module>
+    from db import execute
+ImportError: cannot import name 'execute' from 'db' (/home/chief/neurocompute/db.py)
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/run_scoring.py", line 12, in <module>
+    from db import execute
+ImportError: cannot import name 'execute' from 'db' (/home/chief/neurocompute/db.py)
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/run_scoring.py", line 12, in <module>
+    from db import execute
+ImportError: cannot import name 'execute' from 'db' (/home/chief/neurocompute/db.py)
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/run_scoring.py", line 12, in <module>
+    from db import execute
+ImportError: cannot import name 'execute' from 'db' (/home/chief/neurocompute/db.py)
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/run_scoring.py", line 12, in <module>
+    from db import execute
+ImportError: cannot import name 'execute' from 'db' (/home/chief/neurocompute/db.py)
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/run_scoring.py", line 12, in <module>
+    from db import execute
+ImportError: cannot import name 'execute' from 'db' (/home/chief/neurocompute/db.py)
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/run_scoring.py", line 12, in <module>
+    from db import execute
+ImportError: cannot import name 'execute' from 'db' (/home/chief/neurocompute/db.py)
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/run_scoring.py", line 12, in <module>
+    from db import execute
+ImportError: cannot import name 'execute' from 'db' (/home/chief/neurocompute/db.py)
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/run_scoring.py", line 12, in <module>
+    from db import execute
+ImportError: cannot import name 'execute' from 'db' (/home/chief/neurocompute/db.py)
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/run_scoring.py", line 12, in <module>
+    from db import execute
+ImportError: cannot import name 'execute' from 'db' (/home/chief/neurocompute/db.py)
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/run_scoring.py", line 12, in <module>
+    from db import execute
+ImportError: cannot import name 'execute' from 'db' (/home/chief/neurocompute/db.py)
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/run_scoring.py", line 12, in <module>
+    from db import execute
+ImportError: cannot import name 'execute' from 'db' (/home/chief/neurocompute/db.py)
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/run_scoring.py", line 12, in <module>
+    from db import execute
+ImportError: cannot import name 'execute' from 'db' (/home/chief/neurocompute/db.py)
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/run_scoring.py", line 12, in <module>
+    from db import execute
+ImportError: cannot import name 'execute' from 'db' (/home/chief/neurocompute/db.py)
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/run_scoring.py", line 12, in <module>
+    from db import execute
+ImportError: cannot import name 'execute' from 'db' (/home/chief/neurocompute/db.py)
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/run_scoring.py", line 12, in <module>
+    from db import execute
+ImportError: cannot import name 'execute' from 'db' (/home/chief/neurocompute/db.py)
