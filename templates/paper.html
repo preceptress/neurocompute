@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>{{ article.title or "Paper" }} | Neurocompute</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #0f1216;
+      --panel: #171b22;
+      --border: rgba(255, 255, 255, .08);
+      --text: #e6e9ef;
+      --muted: #aab0bb;
+      --accent: #5b6cff;
+    }
+
+    html {
+      font-size: 110%;
+    }
+
+    /* +10% */
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .brand {
+      font-weight: 700;
+      letter-spacing: .4px
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none
+    }
+
+    a:hover {
+      text-decoration: underline
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+    }
+
+    h1 {
+      font-size: 1.4rem;
+      line-height: 1.25;
+      margin: 0 0 8px 0;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: .95rem;
+      margin-bottom: 14px;
+    }
+
+    .abstract {
+      white-space: pre-wrap;
+      line-height: 1.55;
+      color: var(--text);
+    }
+
+    .row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: .9rem
+    }
+
+    .pill {
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 6px 12px;
+      background: rgba(255, 255, 255, .03)
+    }
+
+    .back {
+      display: inline-block;
+      margin-top: 16px
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 16px 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="top">
+      <div class="brand">Neurocompute</div>
+      <div class="pill">Paper ID: {{ article.id }}</div>
+    </div>
+
+    <div class="card">
+      <h1>{{ article.title or "Untitled" }}</h1>
+      <div class="meta">
+        {{ article.journal or "Unknown Journal" }}
+        {% if article.publication_date %} — {{ article.publication_date }}{% endif %}
+        {% if article.score is defined and article.score is not none %} • Score: {{ article.score }}{% endif %}
+      </div>
+
+      {% if article.url %}
+      <div class="row">
+        <span class="pill"><a href="{{ article.url }}" target="_blank" rel="noopener">Open source</a></span>
+      </div>
+      {% endif %}
+
+      <hr>
+
+      <div class="abstract">
+        {{ article.abstract or "No abstract available yet." }}
+      </div>
+
+      <a class="back" href="{{ url_for('home') }}">← Back to Research Radar</a>
+    </div>
+
+  </div>
+</body>
+
+</html>

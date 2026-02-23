@@ -1,0 +1,119 @@
+i<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Neurocompute | Insights</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: radial-gradient(1200px 800px at 10% 0%, rgba(255, 0, 80, 0.15), transparent 60%),
+                  radial-gradient(900px 700px at 90% 20%, rgba(0, 160, 255, 0.14), transparent 55%),
+                  #0b0f14;
+      color: #e6e9ef;
+    }
+    .app-wrap { max-width: 1100px; }
+    .panel {
+      background: rgba(0,0,0,0.55);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 18px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.35);
+    }
+    .muted { color: rgba(230,233,239,0.65); }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+    .prebox {
+      white-space: pre-wrap;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 12px;
+      border-radius: 14px;
+      margin: 0;
+      color: #dbe2ea;
+      font-size: 0.95rem;
+    }
+    .badge-live {
+      background: rgba(46, 204, 113, 0.12);
+      border: 1px solid rgba(46, 204, 113, 0.5);
+      color: #aef3c8;
+    }
+    .score {
+      font-size: 1.6rem;
+      line-height: 1;
+    }
+    .pager .page-link {
+      background: rgba(255,255,255,0.04);
+      border-color: rgba(255,255,255,0.10);
+      color: #dbe2ea;
+    }
+    .pager .disabled .page-link { color: rgba(219,226,234,0.35); }
+  </style>
+</head>
+
+<body>
+  <div class="container py-4 app-wrap">
+    <div class="d-flex align-items-center justify-content-between mb-3">
+      <div>
+        <div class="display-6 fw-semibold mb-0">Neurocompute</div>
+        <div class="muted">Investor Dashboard • Live agent insights</div>
+      </div>
+      <div class="badge rounded-pill badge-live px-3 py-2">LIVE</div>
+    </div>
+
+    <div class="panel p-3 mb-3">
+      <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+        <div class="muted">
+          <span class="fw-semibold text-light">{{ total }}</span> insights •
+          Page <span class="fw-semibold text-light">{{ page }}</span> / {{ total_pages }}
+        </div>
+        <a class="btn btn-sm btn-outline-light" href="/">← Back to Dashboard</a>
+      </div>
+    </div>
+
+    {% for it in items %}
+      <div class="panel p-3 mb-3">
+        <div class="d-flex justify-content-between align-items-start gap-3">
+          <div style="min-width: 0;">
+            <div class="d-flex align-items-center gap-2 mb-1">
+              <span class="badge bg-secondary">{{ it.agent_name }}</span>
+              <span class="muted small">{{ it.created_at }}</span>
+            </div>
+
+            <div class="h5 mb-2">{{ it.title }}</div>
+            <pre class="prebox mono">{{ it.summary }}</pre>
+          </div>
+
+          <div class="text-end" style="min-width: 110px;">
+            <div class="muted small">score</div>
+            <div class="score fw-semibold">{{ "%.2f"|format(it.score) }}</div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+
+    <nav class="mt-4">
+      <ul class="pagination justify-content-center pager">
+        {% set prev = page - 1 %}
+        {% set nxt = page + 1 %}
+
+        <li class="page-item {% if page <= 1 %}disabled{% endif %}">
+          <a class="page-link" href="/insights?page={{ prev }}">Prev</a>
+        </li>
+
+        <li class="page-item disabled"><span class="page-link">Page {{ page }}</span></li>
+
+        <li class="page-item {% if page >= total_pages %}disabled{% endif %}">
+          <a class="page-link" href="/insights?page={{ nxt }}">Next</a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="text-center muted small mt-4">
+      Neurocompute • Signals → Agents → Insights • Updated hourly
+    </div>
+  </div>
+</body>
+</html>
+
