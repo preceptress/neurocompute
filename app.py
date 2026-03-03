@@ -1,124 +1,161 @@
-#!/usr/bin/env python3
 import os
-import json
-from datetime import datetime
-from dotenv import load_dotenv
 import psycopg
+from dotenv import load_dotenv
 from flask import Flask, render_template, request
 
 load_dotenv()
-DATABASE_URL = os.getenv("DATABASE_URL", "").strip()
 
 app = Flask(__name__)
+app.config["PROPAGATE_EXCEPTIONS"] = True
+app.config["DEBUG"] = True
 
-def get_conn():
-    return psycopg.connect(DATABASE_URL)
+
+def get_db():
+    db = os.getenv("DATABASE_URL")
+    if not db:
+        raise RuntimeError("DATABASE_URL not set")
+    return db
+
 
 @app.route("/")
 def index():
-    q = (request.args.get("q") or "").strip()
-    limit = int(request.args.get("limit") or 50)
+    db = get_db()
+    q = request.args.get("q")
 
-    with get_conn() as conn:
-        # clawbots + last run
-        clawbots = conn.execute("""
-            SELECT
-              cb.name,
-              cb.description,
-              cb.schedule,
-              cb.is_enabled,
-              cr.started_at,
-              cr.finished_at,
-              cr.status,
-              cr.items_processed
-            FROM clawbots cb
-            LEFT JOIN LATERAL (
-              SELECT started_at, finished_at, status, items_processed
-              FROM clawbot_runs
-              WHERE clawbot_name = cb.name
-              ORDER BY started_at DESC
-              LIMIT 1
-            ) cr ON true
-            ORDER BY cb.name;
-        """).fetchall()
+    with psycopg.connect(db) as conn:
+        with conn.cursor() as cur:
 
-        # articles list with signals joined
-        if q:
-            rows = conn.execute("""
+            # Fetch articles
+            if q:
+                cur.execute("""
+                    SELECT pmid, title, journal, publication_date, score
+                    FROM articles
+                    WHERE title ILIKE %s
+                    ORDER BY score DESC NULLS LAST,
+                             publication_date DESC NULLS LAST,
+                             created_at DESC
+                    LIMIT 50;
+                """, (f"%{q}%",))
+            else:
+                cur.execute("""
+                    SELECT pmid, title, journal, publication_date, score
+                    FROM articles
+                    ORDER BY score DESC NULLS LAST,
+                             publication_date DESC NULLS LAST,
+                             created_at DESC
+                    LIMIT 50;
+                """)
+
+            rows = cur.fetchall()
+
+            # Fetch last successful clawbot run
+            cur.execute("""
+                SELECT finished_at
+                FROM clawbot_runs
+                WHERE status = 'ok'
+                ORDER BY finished_at DESC
+                LIMIT 1;
+            """)
+            last_run = cur.fetchone()
+
+    articles = [
+        {
+            "pmid": r[0],
+            "title": r[1],
+            "journal": r[2],
+            "publication_date": r[3],
+            "score": r[4],
+        }
+        for r in rows
+    ]
+
+    last_updated = last_run[0] if last_run else None
+
+    return render_template(
+        "index.html",
+        articles=articles,
+        q=q,
+        last_updated=last_updated
+    )
+
+@app.route("/paper/<pmid>")
+def paper(pmid):
+    db = get_db()
+
+    with psycopg.connect(db) as conn:
+        with conn.cursor() as cur:
+            cur.execute("""
                 SELECT
-                  a.id, a.title, a.journal, a.pub_date, a.source, a.url,
-                  ps.summary_1_sentence, ps.tags,
-                  ps.repurpose_flag, ps.natural_compound_flag, ps.abandoned_trial_flag,
-                  ps.novelty_score, ps.neglected_score
-                FROM articles a
-                LEFT JOIN paper_signals ps ON ps.article_id = a.id
-                WHERE a.title ILIKE %s OR COALESCE(a.abstract,'') ILIKE %s
-                ORDER BY a.id DESC
-                LIMIT %s;
-            """, (f"%{q}%", f"%{q}%", limit)).fetchall()
-        else:
-            rows = conn.execute("""
-                SELECT
-                  a.id, a.title, a.journal, a.pub_date, a.source, a.url,
-                  ps.summary_1_sentence, ps.tags,
-                  ps.repurpose_flag, ps.natural_compound_flag, ps.abandoned_trial_flag,
-                  ps.novelty_score, ps.neglected_score
-                FROM articles a
-                LEFT JOIN paper_signals ps ON ps.article_id = a.id
-                ORDER BY a.id DESC
-                LIMIT %s;
-            """, (limit,)).fetchall()
+                    pmid,
+                    title,
+                    journal,
+                    publication_date,
+                    score,
+                    created_at,
+                    abstract,
+                    summary_1
+                FROM articles
+                WHERE pmid = %s
+                LIMIT 1;
+            """, (pmid,))
+            row = cur.fetchone()
 
-    # convert tags jsonb -> python list for template
-    def parse_tags(t):
-        if t is None:
-            return []
-        if isinstance(t, list):
-            return t
-        try:
-            return json.loads(t) if isinstance(t, str) else t
-        except Exception:
-            return []
+    if not row:
+        return "Paper not found", 404
 
-    articles = []
-    for r in rows:
-        (aid, title, journal, pub_date, source, url,
-         summary, tags,
-         repurpose, natural, abandoned,
-         novelty, neglected) = r
+    paper = {
+        "pmid": row[0],
+        "title": row[1],
+        "journal": row[2],
+        "publication_date": row[3],
+        "score": row[4],
+        "created_at": row[5],
+        "abstract": row[6] or "",
+        "summary_1": row[7] or "",
+    }
 
-        articles.append({
-            "id": aid,
-            "title": title,
-            "journal": journal,
-            "pub_date": pub_date,
-            "source": source,
-            "url": url,
-            "summary": summary,
-            "tags": parse_tags(tags),
-            "repurpose": repurpose,
-            "natural": natural,
-            "abandoned": abandoned,
-            "novelty": novelty,
-            "neglected": neglected,
-        })
+    return render_template("paper.html", paper=paper)
 
-    clawbot_cards = []
-    for r in clawbots:
-        (name, desc, sched, enabled, started_at, finished_at, status, items_processed) = r
-        clawbot_cards.append({
-            "name": name,
-            "description": desc,
-            "schedule": sched,
-            "enabled": enabled,
-            "started_at": started_at,
-            "finished_at": finished_at,
-            "status": status,
-            "items_processed": items_processed,
-        })
 
-    return render_template("index.html", q=q, articles=articles, clawbots=clawbot_cards)
+@app.route("/ping")
+def ping():
+    return "pong", 200
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=9056, debug=True)
 
+@app.route("/dbcheck")
+def dbcheck():
+    try:
+        with psycopg.connect(get_db()) as conn:
+            with conn.cursor() as cur:
+                cur.execute("SELECT 1;")
+                cur.fetchone()
+        return "DB OK", 200
+    except Exception as e:
+        return f"DB FAIL: {type(e).__name__}: {e}", 500
+
+
+@app.route("/articles_count")
+def articles_count():
+    try:
+        with psycopg.connect(get_db()) as conn:
+            with conn.cursor() as cur:
+                cur.execute("SELECT count(*) FROM articles;")
+                count = cur.fetchone()[0]
+        return f"Articles: {count}", 200
+    except Exception as e:
+        return f"FAIL: {type(e).__name__}: {e}", 500
+
+
+@app.route("/articles_schema")
+def articles_schema():
+    with psycopg.connect(get_db()) as conn:
+        with conn.cursor() as cur:
+            cur.execute("""
+                SELECT column_name
+                FROM information_schema.columns
+                WHERE table_name='articles'
+                ORDER BY ordinal_position;
+            """)
+            cols = [r[0] for r in cur.fetchall()]
+
+    return "<br>".join(cols), 200

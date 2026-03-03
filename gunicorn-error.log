@@ -29346,3 +29346,957 @@ psycopg.errors.InFailedSqlTransaction: current transaction is aborted, commands 
 [2026-02-22 17:56:01 -0500] [2885805] [INFO] Booting worker with pid: 2885805
 [2026-02-22 17:56:01 -0500] [2885806] [INFO] Booting worker with pid: 2885806
 [2026-02-22 17:56:01 -0500] [2885807] [INFO] Booting worker with pid: 2885807
+[2026-02-23 14:53:32 -0500] [3196813] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 14:53:32 -0500] [3196813] [INFO] Listening at: http://127.0.0.1:9054 (3196813)
+[2026-02-23 14:53:32 -0500] [3196813] [INFO] Using worker: sync
+[2026-02-23 14:53:32 -0500] [3196816] [INFO] Booting worker with pid: 3196816
+[2026-02-23 14:53:32 -0500] [3196817] [INFO] Booting worker with pid: 3196817
+[2026-02-23 14:53:32 -0500] [3196818] [INFO] Booting worker with pid: 3196818
+[2026-02-23 14:53:43,878] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 60, in index
+    rows = conn.execute("""
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/psycopg/connection.py", line 300, in execute
+    raise ex.with_traceback(None)
+psycopg.errors.UndefinedColumn: column a.pub_date does not exist
+LINE 3:                   a.id, a.title, a.journal, a.pub_date, a.so...
+                                                    ^
+[2026-02-23 14:57:22,778] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 60, in index
+    rows = conn.execute("""
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/psycopg/connection.py", line 300, in execute
+    raise ex.with_traceback(None)
+psycopg.errors.UndefinedColumn: column a.pub_date does not exist
+LINE 3:                   a.id, a.title, a.journal, a.pub_date, a.so...
+                                                    ^
+[2026-02-23 14:58:32,954] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 60, in index
+    rows = conn.execute("""
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/psycopg/connection.py", line 300, in execute
+    raise ex.with_traceback(None)
+psycopg.errors.UndefinedColumn: column a.pub_date does not exist
+LINE 3:                   a.id, a.title, a.journal, a.pub_date, a.so...
+                                                    ^
+[2026-02-23 14:58:47,071] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 60, in index
+    rows = conn.execute("""
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/psycopg/connection.py", line 300, in execute
+    raise ex.with_traceback(None)
+psycopg.errors.UndefinedColumn: column a.pub_date does not exist
+LINE 3:                   a.id, a.title, a.journal, a.pub_date, a.so...
+                                                    ^
+[2026-02-23 15:01:54,420] ERROR in app: Exception on / [HEAD]
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 60, in index
+    rows = conn.execute("""
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/psycopg/connection.py", line 300, in execute
+    raise ex.with_traceback(None)
+psycopg.errors.UndefinedColumn: column a.pub_date does not exist
+LINE 3:                   a.id, a.title, a.journal, a.pub_date, a.so...
+                                                    ^
+[2026-02-23 15:02:08,620] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 60, in index
+    rows = conn.execute("""
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/psycopg/connection.py", line 300, in execute
+    raise ex.with_traceback(None)
+psycopg.errors.UndefinedColumn: column a.pub_date does not exist
+LINE 3:                   a.id, a.title, a.journal, a.pub_date, a.so...
+                                                    ^
+[2026-02-23 15:03:41,564] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 60, in index
+    rows = conn.execute("""
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/psycopg/connection.py", line 300, in execute
+    raise ex.with_traceback(None)
+psycopg.errors.UndefinedColumn: column a.pub_date does not exist
+LINE 3:                   a.id, a.title, a.journal, a.pub_date, a.so...
+                                                    ^
+[2026-02-23 15:07:15,045] ERROR in app: Exception on / [HEAD]
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 60, in index
+    rows = conn.execute("""
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/psycopg/connection.py", line 300, in execute
+    raise ex.with_traceback(None)
+psycopg.errors.UndefinedColumn: column a.pub_date does not exist
+LINE 3:                   a.id, a.title, a.journal, a.pub_date, a.so...
+                                                    ^
+[2026-02-23 15:10:09 -0500] [3196816] [INFO] Worker exiting (pid: 3196816)
+[2026-02-23 15:10:09 -0500] [3196818] [INFO] Worker exiting (pid: 3196818)
+[2026-02-23 15:10:09 -0500] [3196817] [INFO] Worker exiting (pid: 3196817)
+[2026-02-23 15:10:09 -0500] [3196813] [INFO] Handling signal: term
+[2026-02-23 15:10:09 -0500] [3196813] [ERROR] Worker (pid:3196817) was sent SIGTERM!
+[2026-02-23 15:10:09 -0500] [3196813] [ERROR] Worker (pid:3196816) was sent SIGTERM!
+[2026-02-23 15:10:09 -0500] [3196813] [ERROR] Worker (pid:3196818) was sent SIGTERM!
+[2026-02-23 15:10:09 -0500] [3196813] [INFO] Shutting down: Master
+[2026-02-23 15:10:09 -0500] [3202125] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 15:10:09 -0500] [3202125] [INFO] Listening at: http://127.0.0.1:9054 (3202125)
+[2026-02-23 15:10:09 -0500] [3202125] [INFO] Using worker: sync
+[2026-02-23 15:10:09 -0500] [3202126] [INFO] Booting worker with pid: 3202126
+[2026-02-23 15:10:09 -0500] [3202127] [INFO] Booting worker with pid: 3202127
+[2026-02-23 15:10:09 -0500] [3202128] [INFO] Booting worker with pid: 3202128
+[2026-02-23 15:10:12,507] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 64, in index
+    rows = conn.execute("""
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/psycopg/connection.py", line 300, in execute
+    raise ex.with_traceback(None)
+psycopg.errors.UndefinedColumn: column a.pub_date does not exist
+LINE 3:                   a.id, a.title, a.journal, a.pub_date, a.so...
+                                                    ^
+[2026-02-23 15:12:32 -0500] [3202128] [INFO] Worker exiting (pid: 3202128)
+[2026-02-23 15:12:32 -0500] [3202127] [INFO] Worker exiting (pid: 3202127)
+[2026-02-23 15:12:32 -0500] [3202125] [INFO] Handling signal: term
+[2026-02-23 15:12:32 -0500] [3202126] [INFO] Worker exiting (pid: 3202126)
+[2026-02-23 15:12:32 -0500] [3202125] [ERROR] Worker (pid:3202127) was sent SIGTERM!
+[2026-02-23 15:12:32 -0500] [3202125] [ERROR] Worker (pid:3202128) was sent SIGTERM!
+[2026-02-23 15:12:32 -0500] [3202125] [INFO] Shutting down: Master
+[2026-02-23 15:12:33 -0500] [3202760] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 15:12:33 -0500] [3202760] [INFO] Listening at: http://127.0.0.1:9054 (3202760)
+[2026-02-23 15:12:33 -0500] [3202760] [INFO] Using worker: sync
+[2026-02-23 15:12:33 -0500] [3202762] [INFO] Booting worker with pid: 3202762
+[2026-02-23 15:12:33 -0500] [3202763] [INFO] Booting worker with pid: 3202763
+[2026-02-23 15:12:33 -0500] [3202764] [INFO] Booting worker with pid: 3202764
+[2026-02-23 15:14:39 -0500] [3202763] [INFO] Worker exiting (pid: 3202763)
+[2026-02-23 15:14:39 -0500] [3202762] [INFO] Worker exiting (pid: 3202762)
+[2026-02-23 15:14:39 -0500] [3202764] [INFO] Worker exiting (pid: 3202764)
+[2026-02-23 15:14:39 -0500] [3202760] [INFO] Handling signal: term
+[2026-02-23 15:14:39 -0500] [3202760] [ERROR] Worker (pid:3202764) was sent SIGTERM!
+[2026-02-23 15:14:39 -0500] [3202760] [ERROR] Worker (pid:3202763) was sent SIGTERM!
+[2026-02-23 15:14:39 -0500] [3202760] [ERROR] Worker (pid:3202762) was sent SIGTERM!
+[2026-02-23 15:14:39 -0500] [3202760] [INFO] Shutting down: Master
+[2026-02-23 15:14:39 -0500] [3203360] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 15:14:39 -0500] [3203360] [INFO] Listening at: http://127.0.0.1:9054 (3203360)
+[2026-02-23 15:14:39 -0500] [3203360] [INFO] Using worker: sync
+[2026-02-23 15:14:39 -0500] [3203361] [INFO] Booting worker with pid: 3203361
+[2026-02-23 15:14:39 -0500] [3203364] [INFO] Booting worker with pid: 3203364
+[2026-02-23 15:14:39 -0500] [3203365] [INFO] Booting worker with pid: 3203365
+[2026-02-23 15:16:39 -0500] [3203365] [INFO] Worker exiting (pid: 3203365)
+[2026-02-23 15:16:39 -0500] [3203364] [INFO] Worker exiting (pid: 3203364)
+[2026-02-23 15:16:39 -0500] [3203361] [INFO] Worker exiting (pid: 3203361)
+[2026-02-23 15:16:39 -0500] [3203360] [INFO] Handling signal: term
+[2026-02-23 15:16:39 -0500] [3203360] [ERROR] Worker (pid:3203361) was sent SIGTERM!
+[2026-02-23 15:16:39 -0500] [3203360] [ERROR] Worker (pid:3203364) was sent SIGTERM!
+[2026-02-23 15:16:39 -0500] [3203360] [ERROR] Worker (pid:3203365) was sent SIGTERM!
+[2026-02-23 15:16:39 -0500] [3203360] [INFO] Shutting down: Master
+[2026-02-23 15:16:39 -0500] [3203913] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 15:16:39 -0500] [3203913] [INFO] Listening at: http://127.0.0.1:9054 (3203913)
+[2026-02-23 15:16:39 -0500] [3203913] [INFO] Using worker: sync
+[2026-02-23 15:16:39 -0500] [3203914] [INFO] Booting worker with pid: 3203914
+[2026-02-23 15:16:39 -0500] [3203915] [INFO] Booting worker with pid: 3203915
+[2026-02-23 15:16:39 -0500] [3203916] [INFO] Booting worker with pid: 3203916
+[2026-02-23 15:18:19 -0500] [3203914] [INFO] Worker exiting (pid: 3203914)
+[2026-02-23 15:18:19 -0500] [3203916] [INFO] Worker exiting (pid: 3203916)
+[2026-02-23 15:18:19 -0500] [3203915] [INFO] Worker exiting (pid: 3203915)
+[2026-02-23 15:18:19 -0500] [3203913] [INFO] Handling signal: term
+[2026-02-23 15:18:19 -0500] [3203913] [ERROR] Worker (pid:3203914) was sent SIGTERM!
+[2026-02-23 15:18:19 -0500] [3203913] [ERROR] Worker (pid:3203915) was sent SIGTERM!
+[2026-02-23 15:18:19 -0500] [3203913] [ERROR] Worker (pid:3203916) was sent SIGTERM!
+[2026-02-23 15:18:19 -0500] [3203913] [INFO] Shutting down: Master
+[2026-02-23 15:18:19 -0500] [3204487] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 15:18:19 -0500] [3204487] [INFO] Listening at: http://127.0.0.1:9054 (3204487)
+[2026-02-23 15:18:19 -0500] [3204487] [INFO] Using worker: sync
+[2026-02-23 15:18:19 -0500] [3204489] [INFO] Booting worker with pid: 3204489
+[2026-02-23 15:18:19 -0500] [3204491] [INFO] Booting worker with pid: 3204491
+[2026-02-23 15:18:19 -0500] [3204492] [INFO] Booting worker with pid: 3204492
+[2026-02-23 15:20:25 -0500] [3204492] [INFO] Worker exiting (pid: 3204492)
+[2026-02-23 15:20:25 -0500] [3204489] [INFO] Worker exiting (pid: 3204489)
+[2026-02-23 15:20:25 -0500] [3204487] [INFO] Handling signal: term
+[2026-02-23 15:20:25 -0500] [3204491] [INFO] Worker exiting (pid: 3204491)
+[2026-02-23 15:20:25 -0500] [3204487] [ERROR] Worker (pid:3204489) was sent SIGTERM!
+[2026-02-23 15:20:25 -0500] [3204487] [ERROR] Worker (pid:3204492) was sent SIGTERM!
+[2026-02-23 15:20:25 -0500] [3204487] [INFO] Shutting down: Master
+[2026-02-23 15:20:25 -0500] [3205146] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 15:20:25 -0500] [3205146] [INFO] Listening at: http://127.0.0.1:9054 (3205146)
+[2026-02-23 15:20:25 -0500] [3205146] [INFO] Using worker: sync
+[2026-02-23 15:20:25 -0500] [3205148] [INFO] Booting worker with pid: 3205148
+[2026-02-23 15:20:25 -0500] [3205149] [INFO] Booting worker with pid: 3205149
+[2026-02-23 15:20:25 -0500] [3205150] [INFO] Booting worker with pid: 3205150
+[2026-02-23 15:22:08 -0500] [3205150] [INFO] Worker exiting (pid: 3205150)
+[2026-02-23 15:22:08 -0500] [3205148] [INFO] Worker exiting (pid: 3205148)
+[2026-02-23 15:22:08 -0500] [3205149] [INFO] Worker exiting (pid: 3205149)
+[2026-02-23 15:22:08 -0500] [3205146] [INFO] Handling signal: term
+[2026-02-23 15:22:08 -0500] [3205146] [ERROR] Worker (pid:3205149) was sent SIGTERM!
+[2026-02-23 15:22:08 -0500] [3205146] [ERROR] Worker (pid:3205150) was sent SIGTERM!
+[2026-02-23 15:22:08 -0500] [3205146] [ERROR] Worker (pid:3205148) was sent SIGTERM!
+[2026-02-23 15:22:08 -0500] [3205146] [INFO] Shutting down: Master
+[2026-02-23 15:22:08 -0500] [3205609] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 15:22:08 -0500] [3205609] [INFO] Listening at: http://127.0.0.1:9054 (3205609)
+[2026-02-23 15:22:08 -0500] [3205609] [INFO] Using worker: sync
+[2026-02-23 15:22:08 -0500] [3205611] [INFO] Booting worker with pid: 3205611
+[2026-02-23 15:22:08 -0500] [3205612] [INFO] Booting worker with pid: 3205612
+[2026-02-23 15:22:08 -0500] [3205613] [INFO] Booting worker with pid: 3205613
+[2026-02-23 15:22:10 -0500] [3205611] [INFO] Worker exiting (pid: 3205611)
+[2026-02-23 15:22:10 -0500] [3205612] [INFO] Worker exiting (pid: 3205612)
+[2026-02-23 15:22:10 -0500] [3205609] [INFO] Handling signal: term
+[2026-02-23 15:22:10 -0500] [3205613] [INFO] Worker exiting (pid: 3205613)
+[2026-02-23 15:22:10 -0500] [3205609] [ERROR] Worker (pid:3205612) was sent SIGTERM!
+[2026-02-23 15:22:10 -0500] [3205609] [ERROR] Worker (pid:3205611) was sent SIGTERM!
+[2026-02-23 15:22:11 -0500] [3205609] [INFO] Shutting down: Master
+[2026-02-23 15:22:11 -0500] [3205631] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 15:22:11 -0500] [3205631] [INFO] Listening at: http://127.0.0.1:9054 (3205631)
+[2026-02-23 15:22:11 -0500] [3205631] [INFO] Using worker: sync
+[2026-02-23 15:22:11 -0500] [3205633] [INFO] Booting worker with pid: 3205633
+[2026-02-23 15:22:11 -0500] [3205634] [INFO] Booting worker with pid: 3205634
+[2026-02-23 15:22:11 -0500] [3205635] [INFO] Booting worker with pid: 3205635
+[2026-02-23 15:23:43 -0500] [3205633] [INFO] Worker exiting (pid: 3205633)
+[2026-02-23 15:23:43 -0500] [3205634] [INFO] Worker exiting (pid: 3205634)
+[2026-02-23 15:23:43 -0500] [3205635] [INFO] Worker exiting (pid: 3205635)
+[2026-02-23 15:23:43 -0500] [3205631] [INFO] Handling signal: term
+[2026-02-23 15:23:43 -0500] [3205631] [ERROR] Worker (pid:3205635) was sent SIGTERM!
+[2026-02-23 15:23:43 -0500] [3205631] [ERROR] Worker (pid:3205633) was sent SIGTERM!
+[2026-02-23 15:23:43 -0500] [3205631] [ERROR] Worker (pid:3205634) was sent SIGTERM!
+[2026-02-23 15:23:43 -0500] [3205631] [INFO] Shutting down: Master
+[2026-02-23 15:23:43 -0500] [3206034] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 15:23:43 -0500] [3206034] [INFO] Listening at: http://127.0.0.1:9054 (3206034)
+[2026-02-23 15:23:43 -0500] [3206034] [INFO] Using worker: sync
+[2026-02-23 15:23:43 -0500] [3206043] [INFO] Booting worker with pid: 3206043
+[2026-02-23 15:23:43 -0500] [3206044] [INFO] Booting worker with pid: 3206044
+[2026-02-23 15:23:43 -0500] [3206045] [INFO] Booting worker with pid: 3206045
+[2026-02-23 15:27:20 -0500] [3206045] [INFO] Worker exiting (pid: 3206045)
+[2026-02-23 15:27:20 -0500] [3206044] [INFO] Worker exiting (pid: 3206044)
+[2026-02-23 15:27:20 -0500] [3206043] [INFO] Worker exiting (pid: 3206043)
+[2026-02-23 15:27:20 -0500] [3206034] [INFO] Handling signal: term
+[2026-02-23 15:27:20 -0500] [3206034] [ERROR] Worker (pid:3206043) was sent SIGTERM!
+[2026-02-23 15:27:20 -0500] [3206034] [ERROR] Worker (pid:3206045) was sent SIGTERM!
+[2026-02-23 15:27:20 -0500] [3206034] [ERROR] Worker (pid:3206044) was sent SIGTERM!
+[2026-02-23 15:27:20 -0500] [3206034] [INFO] Shutting down: Master
+[2026-02-23 15:27:20 -0500] [3206918] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 15:27:20 -0500] [3206918] [INFO] Listening at: http://127.0.0.1:9054 (3206918)
+[2026-02-23 15:27:20 -0500] [3206918] [INFO] Using worker: sync
+[2026-02-23 15:27:20 -0500] [3206921] [INFO] Booting worker with pid: 3206921
+[2026-02-23 15:27:20 -0500] [3206924] [INFO] Booting worker with pid: 3206924
+[2026-02-23 15:27:20 -0500] [3206925] [INFO] Booting worker with pid: 3206925
+[2026-02-23 15:30:45 -0500] [3206925] [INFO] Worker exiting (pid: 3206925)
+[2026-02-23 15:30:45 -0500] [3206921] [INFO] Worker exiting (pid: 3206921)
+[2026-02-23 15:30:45 -0500] [3206918] [INFO] Handling signal: term
+[2026-02-23 15:30:45 -0500] [3206924] [INFO] Worker exiting (pid: 3206924)
+[2026-02-23 15:30:45 -0500] [3206918] [ERROR] Worker (pid:3206925) was sent SIGTERM!
+[2026-02-23 15:30:45 -0500] [3206918] [INFO] Shutting down: Master
+[2026-02-23 15:30:45 -0500] [3207673] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 15:30:45 -0500] [3207673] [INFO] Listening at: http://127.0.0.1:9054 (3207673)
+[2026-02-23 15:30:45 -0500] [3207673] [INFO] Using worker: sync
+[2026-02-23 15:30:45 -0500] [3207674] [INFO] Booting worker with pid: 3207674
+[2026-02-23 15:30:45 -0500] [3207675] [INFO] Booting worker with pid: 3207675
+[2026-02-23 15:30:45 -0500] [3207676] [INFO] Booting worker with pid: 3207676
+[2026-02-23 15:31:23 -0500] [3207676] [INFO] Worker exiting (pid: 3207676)
+[2026-02-23 15:31:23 -0500] [3207674] [INFO] Worker exiting (pid: 3207674)
+[2026-02-23 15:31:23 -0500] [3207675] [INFO] Worker exiting (pid: 3207675)
+[2026-02-23 15:31:23 -0500] [3207673] [INFO] Handling signal: term
+[2026-02-23 15:31:23 -0500] [3207673] [ERROR] Worker (pid:3207675) was sent SIGTERM!
+[2026-02-23 15:31:23 -0500] [3207673] [ERROR] Worker (pid:3207674) was sent SIGTERM!
+[2026-02-23 15:31:23 -0500] [3207673] [ERROR] Worker (pid:3207676) was sent SIGTERM!
+[2026-02-23 15:31:23 -0500] [3207673] [INFO] Shutting down: Master
+[2026-02-23 15:31:23 -0500] [3207827] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 15:31:23 -0500] [3207827] [INFO] Listening at: http://127.0.0.1:9054 (3207827)
+[2026-02-23 15:31:23 -0500] [3207827] [INFO] Using worker: sync
+[2026-02-23 15:31:23 -0500] [3207830] [INFO] Booting worker with pid: 3207830
+[2026-02-23 15:31:23 -0500] [3207831] [INFO] Booting worker with pid: 3207831
+[2026-02-23 15:31:23 -0500] [3207832] [INFO] Booting worker with pid: 3207832
+[2026-02-23 15:32:07 -0500] [3207831] [INFO] Worker exiting (pid: 3207831)
+[2026-02-23 15:32:07 -0500] [3207830] [INFO] Worker exiting (pid: 3207830)
+[2026-02-23 15:32:07 -0500] [3207832] [INFO] Worker exiting (pid: 3207832)
+[2026-02-23 15:32:07 -0500] [3207827] [INFO] Handling signal: term
+[2026-02-23 15:32:07 -0500] [3207827] [ERROR] Worker (pid:3207831) was sent SIGTERM!
+[2026-02-23 15:32:07 -0500] [3207827] [ERROR] Worker (pid:3207832) was sent SIGTERM!
+[2026-02-23 15:32:07 -0500] [3207827] [ERROR] Worker (pid:3207830) was sent SIGTERM!
+[2026-02-23 15:32:07 -0500] [3207827] [INFO] Shutting down: Master
+[2026-02-23 15:32:07 -0500] [3207987] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 15:32:07 -0500] [3207987] [INFO] Listening at: http://127.0.0.1:9054 (3207987)
+[2026-02-23 15:32:07 -0500] [3207987] [INFO] Using worker: sync
+[2026-02-23 15:32:07 -0500] [3207989] [INFO] Booting worker with pid: 3207989
+[2026-02-23 15:32:07 -0500] [3207990] [INFO] Booting worker with pid: 3207990
+[2026-02-23 15:32:07 -0500] [3207991] [INFO] Booting worker with pid: 3207991
+[2026-02-23 15:36:41 -0500] [3207991] [INFO] Worker exiting (pid: 3207991)
+[2026-02-23 15:36:41 -0500] [3207990] [INFO] Worker exiting (pid: 3207990)
+[2026-02-23 15:36:41 -0500] [3207989] [INFO] Worker exiting (pid: 3207989)
+[2026-02-23 15:36:41 -0500] [3207987] [INFO] Handling signal: term
+[2026-02-23 15:36:41 -0500] [3207987] [ERROR] Worker (pid:3207991) was sent SIGTERM!
+[2026-02-23 15:36:41 -0500] [3207987] [ERROR] Worker (pid:3207990) was sent SIGTERM!
+[2026-02-23 15:36:41 -0500] [3207987] [INFO] Shutting down: Master
+[2026-02-23 15:36:41 -0500] [3209020] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 15:36:41 -0500] [3209020] [INFO] Listening at: http://127.0.0.1:9054 (3209020)
+[2026-02-23 15:36:41 -0500] [3209020] [INFO] Using worker: sync
+[2026-02-23 15:36:41 -0500] [3209022] [INFO] Booting worker with pid: 3209022
+[2026-02-23 15:36:41 -0500] [3209023] [INFO] Booting worker with pid: 3209023
+[2026-02-23 15:36:42 -0500] [3209024] [INFO] Booting worker with pid: 3209024
+[2026-02-23 15:39:04 -0500] [3209022] [INFO] Worker exiting (pid: 3209022)
+[2026-02-23 15:39:04 -0500] [3209023] [INFO] Worker exiting (pid: 3209023)
+[2026-02-23 15:39:04 -0500] [3209024] [INFO] Worker exiting (pid: 3209024)
+[2026-02-23 15:39:04 -0500] [3209020] [INFO] Handling signal: term
+[2026-02-23 15:39:04 -0500] [3209020] [ERROR] Worker (pid:3209024) was sent SIGTERM!
+[2026-02-23 15:39:04 -0500] [3209020] [ERROR] Worker (pid:3209023) was sent SIGTERM!
+[2026-02-23 15:39:04 -0500] [3209020] [ERROR] Worker (pid:3209022) was sent SIGTERM!
+[2026-02-23 15:39:04 -0500] [3209020] [INFO] Shutting down: Master
+[2026-02-23 15:39:04 -0500] [3209497] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 15:39:04 -0500] [3209497] [INFO] Listening at: http://127.0.0.1:9054 (3209497)
+[2026-02-23 15:39:04 -0500] [3209497] [INFO] Using worker: sync
+[2026-02-23 15:39:04 -0500] [3209501] [INFO] Booting worker with pid: 3209501
+[2026-02-23 15:39:04 -0500] [3209502] [INFO] Booting worker with pid: 3209502
+[2026-02-23 15:39:05 -0500] [3209503] [INFO] Booting worker with pid: 3209503
+[2026-02-23 15:39:23,863] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 40, in index
+    return render_template("index.html", articles=articles)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/chief/neurocompute/templates/index.html", line 12, in top-level template code
+    <strong>{{ a.pmid }}</strong> — {{ a.title }}<br>
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'a' is undefined
+[2026-02-23 15:39:39 -0500] [3209501] [INFO] Worker exiting (pid: 3209501)
+[2026-02-23 15:39:39 -0500] [3209502] [INFO] Worker exiting (pid: 3209502)
+[2026-02-23 15:39:39 -0500] [3209503] [INFO] Worker exiting (pid: 3209503)
+[2026-02-23 15:39:39 -0500] [3209497] [INFO] Handling signal: term
+[2026-02-23 15:39:39 -0500] [3209497] [ERROR] Worker (pid:3209502) was sent SIGTERM!
+[2026-02-23 15:39:39 -0500] [3209497] [ERROR] Worker (pid:3209503) was sent SIGTERM!
+[2026-02-23 15:39:39 -0500] [3209497] [ERROR] Worker (pid:3209501) was sent SIGTERM!
+[2026-02-23 15:39:39 -0500] [3209497] [INFO] Shutting down: Master
+[2026-02-23 15:39:39 -0500] [3209631] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 15:39:39 -0500] [3209631] [INFO] Listening at: http://127.0.0.1:9054 (3209631)
+[2026-02-23 15:39:39 -0500] [3209631] [INFO] Using worker: sync
+[2026-02-23 15:39:39 -0500] [3209632] [INFO] Booting worker with pid: 3209632
+[2026-02-23 15:39:39 -0500] [3209633] [INFO] Booting worker with pid: 3209633
+[2026-02-23 15:39:40 -0500] [3209637] [INFO] Booting worker with pid: 3209637
+[2026-02-23 15:43:15 -0500] [3209637] [INFO] Worker exiting (pid: 3209637)
+[2026-02-23 15:43:15 -0500] [3209633] [INFO] Worker exiting (pid: 3209633)
+[2026-02-23 15:43:15 -0500] [3209632] [INFO] Worker exiting (pid: 3209632)
+[2026-02-23 15:43:15 -0500] [3209631] [INFO] Handling signal: term
+[2026-02-23 15:43:15 -0500] [3209631] [ERROR] Worker (pid:3209632) was sent SIGTERM!
+[2026-02-23 15:43:15 -0500] [3209631] [ERROR] Worker (pid:3209637) was sent SIGTERM!
+[2026-02-23 15:43:15 -0500] [3209631] [ERROR] Worker (pid:3209633) was sent SIGTERM!
+[2026-02-23 15:43:16 -0500] [3209631] [INFO] Shutting down: Master
+[2026-02-23 15:43:16 -0500] [3210391] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 15:43:16 -0500] [3210391] [INFO] Listening at: http://127.0.0.1:9054 (3210391)
+[2026-02-23 15:43:16 -0500] [3210391] [INFO] Using worker: sync
+[2026-02-23 15:43:16 -0500] [3210395] [INFO] Booting worker with pid: 3210395
+[2026-02-23 15:43:16 -0500] [3210396] [INFO] Booting worker with pid: 3210396
+[2026-02-23 15:43:16 -0500] [3210397] [INFO] Booting worker with pid: 3210397
+[2026-02-23 15:43:23,994] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 40, in index
+    return render_template("index.html", articles=articles)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/chief/neurocompute/templates/index.html", line 12, in top-level template code
+    <strong>{{ a.pmid }}</strong> — {{ a.title }}<br>
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'a' is undefined
+[2026-02-23 15:44:52 -0500] [3210395] [INFO] Worker exiting (pid: 3210395)
+[2026-02-23 15:44:52 -0500] [3210396] [INFO] Worker exiting (pid: 3210396)
+[2026-02-23 15:44:52 -0500] [3210397] [INFO] Worker exiting (pid: 3210397)
+[2026-02-23 15:44:52 -0500] [3210391] [INFO] Handling signal: term
+[2026-02-23 15:44:52 -0500] [3210391] [ERROR] Worker (pid:3210395) was sent SIGTERM!
+[2026-02-23 15:44:52 -0500] [3210391] [ERROR] Worker (pid:3210396) was sent SIGTERM!
+[2026-02-23 15:44:52 -0500] [3210391] [ERROR] Worker (pid:3210397) was sent SIGTERM!
+[2026-02-23 15:44:52 -0500] [3210391] [INFO] Shutting down: Master
+[2026-02-23 15:44:52 -0500] [3210800] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 15:44:52 -0500] [3210800] [INFO] Listening at: http://127.0.0.1:9054 (3210800)
+[2026-02-23 15:44:52 -0500] [3210800] [INFO] Using worker: sync
+[2026-02-23 15:44:52 -0500] [3210803] [INFO] Booting worker with pid: 3210803
+[2026-02-23 15:44:52 -0500] [3210804] [INFO] Booting worker with pid: 3210804
+[2026-02-23 15:44:52 -0500] [3210805] [INFO] Booting worker with pid: 3210805
+[2026-02-23 15:47:06 -0500] [3210805] [INFO] Worker exiting (pid: 3210805)
+[2026-02-23 15:47:06 -0500] [3210803] [INFO] Worker exiting (pid: 3210803)
+[2026-02-23 15:47:06 -0500] [3210804] [INFO] Worker exiting (pid: 3210804)
+[2026-02-23 15:47:06 -0500] [3210800] [INFO] Handling signal: term
+[2026-02-23 15:47:06 -0500] [3210800] [ERROR] Worker (pid:3210804) was sent SIGTERM!
+[2026-02-23 15:47:06 -0500] [3210800] [ERROR] Worker (pid:3210803) was sent SIGTERM!
+[2026-02-23 15:47:06 -0500] [3210800] [ERROR] Worker (pid:3210805) was sent SIGTERM!
+[2026-02-23 15:47:07 -0500] [3210800] [INFO] Shutting down: Master
+[2026-02-23 15:47:07 -0500] [3211382] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 15:47:07 -0500] [3211382] [INFO] Listening at: http://127.0.0.1:9054 (3211382)
+[2026-02-23 15:47:07 -0500] [3211382] [INFO] Using worker: sync
+[2026-02-23 15:47:07 -0500] [3211383] [INFO] Booting worker with pid: 3211383
+[2026-02-23 15:47:07 -0500] [3211384] [INFO] Booting worker with pid: 3211384
+[2026-02-23 15:47:07 -0500] [3211385] [INFO] Booting worker with pid: 3211385
+[2026-02-23 15:49:04 -0500] [3211385] [INFO] Worker exiting (pid: 3211385)
+[2026-02-23 15:49:04 -0500] [3211383] [INFO] Worker exiting (pid: 3211383)
+[2026-02-23 15:49:04 -0500] [3211384] [INFO] Worker exiting (pid: 3211384)
+[2026-02-23 15:49:04 -0500] [3211382] [INFO] Handling signal: term
+[2026-02-23 15:49:04 -0500] [3211382] [ERROR] Worker (pid:3211383) was sent SIGTERM!
+[2026-02-23 15:49:04 -0500] [3211382] [ERROR] Worker (pid:3211385) was sent SIGTERM!
+[2026-02-23 15:49:04 -0500] [3211382] [ERROR] Worker (pid:3211384) was sent SIGTERM!
+[2026-02-23 15:49:04 -0500] [3211382] [INFO] Shutting down: Master
+[2026-02-23 15:49:04 -0500] [3211795] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 15:49:04 -0500] [3211795] [INFO] Listening at: http://127.0.0.1:9054 (3211795)
+[2026-02-23 15:49:04 -0500] [3211795] [INFO] Using worker: sync
+[2026-02-23 15:49:04 -0500] [3211798] [INFO] Booting worker with pid: 3211798
+[2026-02-23 15:49:04 -0500] [3211799] [INFO] Booting worker with pid: 3211799
+[2026-02-23 15:49:05 -0500] [3211800] [INFO] Booting worker with pid: 3211800
+[2026-02-23 15:51:11 -0500] [3211800] [INFO] Worker exiting (pid: 3211800)
+[2026-02-23 15:51:11 -0500] [3211799] [INFO] Worker exiting (pid: 3211799)
+[2026-02-23 15:51:11 -0500] [3211798] [INFO] Worker exiting (pid: 3211798)
+[2026-02-23 15:51:11 -0500] [3211795] [INFO] Handling signal: term
+[2026-02-23 15:51:11 -0500] [3211795] [ERROR] Worker (pid:3211799) was sent SIGTERM!
+[2026-02-23 15:51:11 -0500] [3211795] [ERROR] Worker (pid:3211798) was sent SIGTERM!
+[2026-02-23 15:51:11 -0500] [3211795] [ERROR] Worker (pid:3211800) was sent SIGTERM!
+[2026-02-23 15:51:11 -0500] [3211795] [INFO] Shutting down: Master
+[2026-02-23 15:51:11 -0500] [3212240] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 15:51:11 -0500] [3212240] [INFO] Listening at: http://127.0.0.1:9054 (3212240)
+[2026-02-23 15:51:11 -0500] [3212240] [INFO] Using worker: sync
+[2026-02-23 15:51:11 -0500] [3212242] [INFO] Booting worker with pid: 3212242
+[2026-02-23 15:51:11 -0500] [3212243] [INFO] Booting worker with pid: 3212243
+[2026-02-23 15:51:11 -0500] [3212244] [INFO] Booting worker with pid: 3212244
+[2026-02-23 15:51:29,636] ERROR in app: Exception on /paper/41724252 [GET]
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 52, in paper
+    cur.execute("""
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/psycopg/cursor.py", line 117, in execute
+    raise ex.with_traceback(None)
+psycopg.errors.UndefinedColumn: column "summary_1" does not exist
+LINE 9:                        summary_1
+                               ^
+HINT:  Perhaps you meant to reference the column "articles.summary_1s".
+[2026-02-23 15:54:44 -0500] [3212243] [INFO] Worker exiting (pid: 3212243)
+[2026-02-23 15:54:44 -0500] [3212242] [INFO] Worker exiting (pid: 3212242)
+[2026-02-23 15:54:44 -0500] [3212244] [INFO] Worker exiting (pid: 3212244)
+[2026-02-23 15:54:44 -0500] [3212240] [INFO] Handling signal: term
+[2026-02-23 15:54:44 -0500] [3212240] [ERROR] Worker (pid:3212244) was sent SIGTERM!
+[2026-02-23 15:54:44 -0500] [3212240] [ERROR] Worker (pid:3212242) was sent SIGTERM!
+[2026-02-23 15:54:44 -0500] [3212240] [ERROR] Worker (pid:3212243) was sent SIGTERM!
+[2026-02-23 15:54:44 -0500] [3212240] [INFO] Shutting down: Master
+[2026-02-23 15:54:44 -0500] [3213008] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 15:54:44 -0500] [3213008] [INFO] Listening at: http://127.0.0.1:9054 (3213008)
+[2026-02-23 15:54:44 -0500] [3213008] [INFO] Using worker: sync
+[2026-02-23 15:54:44 -0500] [3213011] [INFO] Booting worker with pid: 3213011
+[2026-02-23 15:54:45 -0500] [3213012] [INFO] Booting worker with pid: 3213012
+[2026-02-23 15:54:45 -0500] [3213013] [INFO] Booting worker with pid: 3213013
+[2026-02-23 15:54:47,777] ERROR in app: Exception on /paper/41724252 [GET]
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 81, in paper
+    return render_template("paper.html", paper=paper)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/chief/neurocompute/templates/paper.html", line 6, in top-level template code
+    <title>{{ article.title or "Paper" }} | Neurocompute</title>
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'article' is undefined
+[2026-02-23 15:54:48,368] ERROR in app: Exception on /paper/41724252 [GET]
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 81, in paper
+    return render_template("paper.html", paper=paper)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/chief/neurocompute/templates/paper.html", line 6, in top-level template code
+    <title>{{ article.title or "Paper" }} | Neurocompute</title>
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'article' is undefined
+[2026-02-23 15:56:24 -0500] [3213012] [INFO] Worker exiting (pid: 3213012)
+[2026-02-23 15:56:24 -0500] [3213013] [INFO] Worker exiting (pid: 3213013)
+[2026-02-23 15:56:24 -0500] [3213008] [INFO] Handling signal: term
+[2026-02-23 15:56:24 -0500] [3213011] [INFO] Worker exiting (pid: 3213011)
+[2026-02-23 15:56:24 -0500] [3213008] [ERROR] Worker (pid:3213012) was sent SIGTERM!
+[2026-02-23 15:56:24 -0500] [3213008] [ERROR] Worker (pid:3213013) was sent SIGTERM!
+[2026-02-23 15:56:24 -0500] [3213008] [INFO] Shutting down: Master
+[2026-02-23 15:56:24 -0500] [3213362] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 15:56:24 -0500] [3213362] [INFO] Listening at: http://127.0.0.1:9054 (3213362)
+[2026-02-23 15:56:24 -0500] [3213362] [INFO] Using worker: sync
+[2026-02-23 15:56:24 -0500] [3213363] [INFO] Booting worker with pid: 3213363
+[2026-02-23 15:56:24 -0500] [3213364] [INFO] Booting worker with pid: 3213364
+[2026-02-23 15:56:24 -0500] [3213365] [INFO] Booting worker with pid: 3213365
+[2026-02-23 15:56:30,546] ERROR in app: Exception on /paper/41724252 [GET]
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 81, in paper
+    return render_template("paper.html", paper=paper)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/chief/neurocompute/templates/paper.html", line 6, in top-level template code
+    <title>{{ article.title or "Paper" }} | Neurocompute</title>
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'article' is undefined
+[2026-02-23 15:57:25,815] ERROR in app: Exception on /paper/41724252 [GET]
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 81, in paper
+    return render_template("paper.html", paper=paper)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/chief/neurocompute/templates/paper.html", line 6, in top-level template code
+    <title>{{ article.title or "Paper" }} | Neurocompute</title>
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'article' is undefined
+[2026-02-23 15:57:45,815] ERROR in app: Exception on /paper/41724252 [GET]
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 81, in paper
+    return render_template("paper.html", paper=paper)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/chief/neurocompute/templates/paper.html", line 6, in top-level template code
+    <title>{{ article.title or "Paper" }} | Neurocompute</title>
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'article' is undefined
+[2026-02-23 16:01:09,153] ERROR in app: Exception on /paper/41724252 [GET]
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 81, in paper
+    return render_template("paper.html", paper=paper)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/chief/neurocompute/templates/paper.html", line 6, in top-level template code
+    <title>{{ article.title or "Paper" }} | Neurocompute</title>
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'article' is undefined
+[2026-02-23 16:03:35 -0500] [3213363] [INFO] Worker exiting (pid: 3213363)
+[2026-02-23 16:03:35 -0500] [3213365] [INFO] Worker exiting (pid: 3213365)
+[2026-02-23 16:03:35 -0500] [3213364] [INFO] Worker exiting (pid: 3213364)
+[2026-02-23 16:03:35 -0500] [3213362] [INFO] Handling signal: term
+[2026-02-23 16:03:35 -0500] [3213362] [ERROR] Worker (pid:3213365) was sent SIGTERM!
+[2026-02-23 16:03:35 -0500] [3213362] [ERROR] Worker (pid:3213363) was sent SIGTERM!
+[2026-02-23 16:03:35 -0500] [3213362] [ERROR] Worker (pid:3213364) was sent SIGTERM!
+[2026-02-23 16:03:35 -0500] [3213362] [INFO] Shutting down: Master
+[2026-02-23 16:03:35 -0500] [3214975] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 16:03:35 -0500] [3214975] [INFO] Listening at: http://127.0.0.1:9054 (3214975)
+[2026-02-23 16:03:35 -0500] [3214975] [INFO] Using worker: sync
+[2026-02-23 16:03:35 -0500] [3214976] [INFO] Booting worker with pid: 3214976
+[2026-02-23 16:03:35 -0500] [3214977] [INFO] Booting worker with pid: 3214977
+[2026-02-23 16:03:35 -0500] [3214978] [INFO] Booting worker with pid: 3214978
+[2026-02-23 16:03:48,362] ERROR in app: Exception on /paper/41724252 [GET]
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 88, in paper
+    return render_template("paper.html", paper=paper)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/chief/neurocompute/templates/paper.html", line 6, in top-level template code
+    <title>{{ article.title or "Paper" }} | Neurocompute</title>
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'article' is undefined
+[2026-02-23 16:04:31,308] ERROR in app: Exception on /paper/41724252 [GET]
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 88, in paper
+    return render_template("paper.html", paper=paper)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/chief/neurocompute/templates/paper.html", line 6, in top-level template code
+    <title>{{ article.title or "Paper" }} | Neurocompute</title>
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'article' is undefined
+[2026-02-23 16:05:31 -0500] [3214978] [INFO] Worker exiting (pid: 3214978)
+[2026-02-23 16:05:31 -0500] [3214976] [INFO] Worker exiting (pid: 3214976)
+[2026-02-23 16:05:31 -0500] [3214977] [INFO] Worker exiting (pid: 3214977)
+[2026-02-23 16:05:31 -0500] [3214975] [INFO] Handling signal: term
+[2026-02-23 16:05:31 -0500] [3214975] [ERROR] Worker (pid:3214977) was sent SIGTERM!
+[2026-02-23 16:05:31 -0500] [3214975] [ERROR] Worker (pid:3214976) was sent SIGTERM!
+[2026-02-23 16:05:31 -0500] [3214975] [ERROR] Worker (pid:3214978) was sent SIGTERM!
+[2026-02-23 16:05:31 -0500] [3214975] [INFO] Shutting down: Master
+[2026-02-23 16:05:31 -0500] [3215405] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 16:05:31 -0500] [3215405] [INFO] Listening at: http://127.0.0.1:9054 (3215405)
+[2026-02-23 16:05:31 -0500] [3215405] [INFO] Using worker: sync
+[2026-02-23 16:05:31 -0500] [3215406] [INFO] Booting worker with pid: 3215406
+[2026-02-23 16:05:31 -0500] [3215408] [INFO] Booting worker with pid: 3215408
+[2026-02-23 16:05:31 -0500] [3215409] [INFO] Booting worker with pid: 3215409
+[2026-02-23 16:05:50 -0500] [3215406] [ERROR] Error handling request /paper/41724252
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 91, in paper
+    return render_template("paper.html", paper=paper)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/chief/neurocompute/templates/paper.html", line 6, in top-level template code
+    <title>{{ article.title or "Paper" }} | Neurocompute</title>
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'article' is undefined
+[2026-02-23 16:06:51 -0500] [3215406] [INFO] Worker exiting (pid: 3215406)
+[2026-02-23 16:06:51 -0500] [3215409] [INFO] Worker exiting (pid: 3215409)
+[2026-02-23 16:06:51 -0500] [3215408] [INFO] Worker exiting (pid: 3215408)
+[2026-02-23 16:06:51 -0500] [3215405] [INFO] Handling signal: term
+[2026-02-23 16:06:51 -0500] [3215405] [ERROR] Worker (pid:3215408) was sent SIGTERM!
+[2026-02-23 16:06:51 -0500] [3215405] [ERROR] Worker (pid:3215409) was sent SIGTERM!
+[2026-02-23 16:06:51 -0500] [3215405] [ERROR] Worker (pid:3215406) was sent SIGTERM!
+[2026-02-23 16:06:52 -0500] [3215405] [INFO] Shutting down: Master
+[2026-02-23 16:10:10 -0500] [3216464] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 16:10:10 -0500] [3216464] [INFO] Listening at: http://127.0.0.1:9054 (3216464)
+[2026-02-23 16:10:10 -0500] [3216464] [INFO] Using worker: sync
+[2026-02-23 16:10:10 -0500] [3216467] [INFO] Booting worker with pid: 3216467
+[2026-02-23 16:10:10 -0500] [3216468] [INFO] Booting worker with pid: 3216468
+[2026-02-23 16:10:10 -0500] [3216469] [INFO] Booting worker with pid: 3216469
+[2026-02-23 16:13:45 -0500] [3216469] [INFO] Worker exiting (pid: 3216469)
+[2026-02-23 16:13:45 -0500] [3216468] [INFO] Worker exiting (pid: 3216468)
+[2026-02-23 16:13:45 -0500] [3216467] [INFO] Worker exiting (pid: 3216467)
+[2026-02-23 16:13:45 -0500] [3216464] [INFO] Handling signal: term
+[2026-02-23 16:13:45 -0500] [3216464] [ERROR] Worker (pid:3216467) was sent SIGTERM!
+[2026-02-23 16:13:45 -0500] [3216464] [ERROR] Worker (pid:3216468) was sent SIGTERM!
+[2026-02-23 16:13:45 -0500] [3216464] [ERROR] Worker (pid:3216469) was sent SIGTERM!
+[2026-02-23 16:13:45 -0500] [3216464] [INFO] Shutting down: Master
+[2026-02-23 16:13:46 -0500] [3217202] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 16:13:46 -0500] [3217202] [INFO] Listening at: http://127.0.0.1:9054 (3217202)
+[2026-02-23 16:13:46 -0500] [3217202] [INFO] Using worker: sync
+[2026-02-23 16:13:46 -0500] [3217205] [INFO] Booting worker with pid: 3217205
+[2026-02-23 16:13:46 -0500] [3217214] [INFO] Booting worker with pid: 3217214
+[2026-02-23 16:13:46 -0500] [3217215] [INFO] Booting worker with pid: 3217215
+[2026-02-23 16:13:50 -0500] [3217214] [INFO] Worker exiting (pid: 3217214)
+[2026-02-23 16:13:50 -0500] [3217205] [INFO] Worker exiting (pid: 3217205)
+[2026-02-23 16:13:50 -0500] [3217215] [INFO] Worker exiting (pid: 3217215)
+[2026-02-23 16:13:50 -0500] [3217202] [INFO] Handling signal: term
+[2026-02-23 16:13:50 -0500] [3217202] [ERROR] Worker (pid:3217205) was sent SIGTERM!
+[2026-02-23 16:13:50 -0500] [3217202] [ERROR] Worker (pid:3217215) was sent SIGTERM!
+[2026-02-23 16:13:50 -0500] [3217202] [ERROR] Worker (pid:3217214) was sent SIGTERM!
+[2026-02-23 16:13:50 -0500] [3217202] [INFO] Shutting down: Master
+[2026-02-23 16:13:50 -0500] [3217224] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 16:13:50 -0500] [3217224] [INFO] Listening at: http://127.0.0.1:9054 (3217224)
+[2026-02-23 16:13:50 -0500] [3217224] [INFO] Using worker: sync
+[2026-02-23 16:13:50 -0500] [3217226] [INFO] Booting worker with pid: 3217226
+[2026-02-23 16:13:50 -0500] [3217227] [INFO] Booting worker with pid: 3217227
+[2026-02-23 16:13:50 -0500] [3217228] [INFO] Booting worker with pid: 3217228
+[2026-02-23 16:26:33 -0500] [3217227] [INFO] Worker exiting (pid: 3217227)
+[2026-02-23 16:26:33 -0500] [3217228] [INFO] Worker exiting (pid: 3217228)
+[2026-02-23 16:26:33 -0500] [3217226] [INFO] Worker exiting (pid: 3217226)
+[2026-02-23 16:26:33 -0500] [3217224] [INFO] Handling signal: term
+[2026-02-23 16:26:33 -0500] [3217224] [ERROR] Worker (pid:3217228) was sent SIGTERM!
+[2026-02-23 16:26:33 -0500] [3217224] [ERROR] Worker (pid:3217226) was sent SIGTERM!
+[2026-02-23 16:26:33 -0500] [3217224] [ERROR] Worker (pid:3217227) was sent SIGTERM!
+[2026-02-23 16:26:33 -0500] [3217224] [INFO] Shutting down: Master
+[2026-02-23 16:26:33 -0500] [3220244] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 16:26:33 -0500] [3220244] [INFO] Listening at: http://127.0.0.1:9054 (3220244)
+[2026-02-23 16:26:33 -0500] [3220244] [INFO] Using worker: sync
+[2026-02-23 16:26:33 -0500] [3220247] [INFO] Booting worker with pid: 3220247
+[2026-02-23 16:26:33 -0500] [3220248] [INFO] Booting worker with pid: 3220248
+[2026-02-23 16:26:33 -0500] [3220250] [INFO] Booting worker with pid: 3220250
+[2026-02-23 16:28:17 -0500] [3220248] [INFO] Worker exiting (pid: 3220248)
+[2026-02-23 16:28:17 -0500] [3220247] [INFO] Worker exiting (pid: 3220247)
+[2026-02-23 16:28:17 -0500] [3220250] [INFO] Worker exiting (pid: 3220250)
+[2026-02-23 16:28:17 -0500] [3220244] [INFO] Handling signal: term
+[2026-02-23 16:28:17 -0500] [3220244] [ERROR] Worker (pid:3220247) was sent SIGTERM!
+[2026-02-23 16:28:17 -0500] [3220244] [ERROR] Worker (pid:3220250) was sent SIGTERM!
+[2026-02-23 16:28:17 -0500] [3220244] [ERROR] Worker (pid:3220248) was sent SIGTERM!
+[2026-02-23 16:28:17 -0500] [3220244] [INFO] Shutting down: Master
+[2026-02-23 16:28:17 -0500] [3220611] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 16:28:17 -0500] [3220611] [INFO] Listening at: http://127.0.0.1:9054 (3220611)
+[2026-02-23 16:28:17 -0500] [3220611] [INFO] Using worker: sync
+[2026-02-23 16:28:17 -0500] [3220614] [INFO] Booting worker with pid: 3220614
+[2026-02-23 16:28:17 -0500] [3220615] [INFO] Booting worker with pid: 3220615
+[2026-02-23 16:28:17 -0500] [3220616] [INFO] Booting worker with pid: 3220616
+[2026-02-23 16:30:38 -0500] [3220615] [INFO] Worker exiting (pid: 3220615)
+[2026-02-23 16:30:38 -0500] [3220614] [INFO] Worker exiting (pid: 3220614)
+[2026-02-23 16:30:38 -0500] [3220611] [INFO] Handling signal: term
+[2026-02-23 16:30:38 -0500] [3220616] [INFO] Worker exiting (pid: 3220616)
+[2026-02-23 16:30:38 -0500] [3220611] [ERROR] Worker (pid:3220614) was sent SIGTERM!
+[2026-02-23 16:30:38 -0500] [3220611] [ERROR] Worker (pid:3220615) was sent SIGTERM!
+[2026-02-23 16:30:38 -0500] [3220611] [INFO] Shutting down: Master
+[2026-02-23 16:30:38 -0500] [3221148] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 16:30:38 -0500] [3221148] [INFO] Listening at: http://127.0.0.1:9054 (3221148)
+[2026-02-23 16:30:38 -0500] [3221148] [INFO] Using worker: sync
+[2026-02-23 16:30:38 -0500] [3221151] [INFO] Booting worker with pid: 3221151
+[2026-02-23 16:30:39 -0500] [3221152] [INFO] Booting worker with pid: 3221152
+[2026-02-23 16:30:39 -0500] [3221153] [INFO] Booting worker with pid: 3221153
+[2026-02-23 16:32:20 -0500] [3221151] [INFO] Worker exiting (pid: 3221151)
+[2026-02-23 16:32:20 -0500] [3221153] [INFO] Worker exiting (pid: 3221153)
+[2026-02-23 16:32:20 -0500] [3221152] [INFO] Worker exiting (pid: 3221152)
+[2026-02-23 16:32:20 -0500] [3221148] [INFO] Handling signal: term
+[2026-02-23 16:32:20 -0500] [3221148] [ERROR] Worker (pid:3221153) was sent SIGTERM!
+[2026-02-23 16:32:20 -0500] [3221148] [ERROR] Worker (pid:3221151) was sent SIGTERM!
+[2026-02-23 16:32:20 -0500] [3221148] [INFO] Shutting down: Master
+[2026-02-23 16:32:20 -0500] [3221506] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 16:32:20 -0500] [3221506] [INFO] Listening at: http://127.0.0.1:9054 (3221506)
+[2026-02-23 16:32:20 -0500] [3221506] [INFO] Using worker: sync
+[2026-02-23 16:32:20 -0500] [3221508] [INFO] Booting worker with pid: 3221508
+[2026-02-23 16:32:20 -0500] [3221509] [INFO] Booting worker with pid: 3221509
+[2026-02-23 16:32:20 -0500] [3221510] [INFO] Booting worker with pid: 3221510
+[2026-02-23 16:35:05 -0500] [3221510] [INFO] Worker exiting (pid: 3221510)
+[2026-02-23 16:35:05 -0500] [3221508] [INFO] Worker exiting (pid: 3221508)
+[2026-02-23 16:35:05 -0500] [3221509] [INFO] Worker exiting (pid: 3221509)
+[2026-02-23 16:35:05 -0500] [3221506] [INFO] Handling signal: term
+[2026-02-23 16:35:05 -0500] [3221506] [ERROR] Worker (pid:3221508) was sent SIGTERM!
+[2026-02-23 16:35:05 -0500] [3221506] [ERROR] Worker (pid:3221509) was sent SIGTERM!
+[2026-02-23 16:35:05 -0500] [3221506] [ERROR] Worker (pid:3221510) was sent SIGTERM!
+[2026-02-23 16:35:05 -0500] [3221506] [INFO] Shutting down: Master
+[2026-02-23 16:35:06 -0500] [3222080] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 16:35:06 -0500] [3222080] [INFO] Listening at: http://127.0.0.1:9054 (3222080)
+[2026-02-23 16:35:06 -0500] [3222080] [INFO] Using worker: sync
+[2026-02-23 16:35:06 -0500] [3222081] [INFO] Booting worker with pid: 3222081
+[2026-02-23 16:35:06 -0500] [3222084] [INFO] Booting worker with pid: 3222084
+[2026-02-23 16:35:06 -0500] [3222085] [INFO] Booting worker with pid: 3222085
+[2026-02-23 16:36:11 -0500] [3222081] [INFO] Worker exiting (pid: 3222081)
+[2026-02-23 16:36:11 -0500] [3222084] [INFO] Worker exiting (pid: 3222084)
+[2026-02-23 16:36:11 -0500] [3222085] [INFO] Worker exiting (pid: 3222085)
+[2026-02-23 16:36:11 -0500] [3222080] [INFO] Handling signal: term
+[2026-02-23 16:36:11 -0500] [3222080] [ERROR] Worker (pid:3222081) was sent SIGTERM!
+[2026-02-23 16:36:11 -0500] [3222080] [ERROR] Worker (pid:3222084) was sent SIGTERM!
+[2026-02-23 16:36:12 -0500] [3222080] [INFO] Shutting down: Master
+[2026-02-23 16:36:12 -0500] [3222331] [INFO] Starting gunicorn 23.0.0
+[2026-02-23 16:36:12 -0500] [3222331] [INFO] Listening at: http://127.0.0.1:9054 (3222331)
+[2026-02-23 16:36:12 -0500] [3222331] [INFO] Using worker: sync
+[2026-02-23 16:36:12 -0500] [3222334] [INFO] Booting worker with pid: 3222334
+[2026-02-23 16:36:12 -0500] [3222335] [INFO] Booting worker with pid: 3222335
+[2026-02-23 16:36:12 -0500] [3222336] [INFO] Booting worker with pid: 3222336
+[2026-02-24 15:09:09 -0500] [3222334] [INFO] Worker exiting (pid: 3222334)
+[2026-02-24 15:09:09 -0500] [3222335] [INFO] Worker exiting (pid: 3222335)
+[2026-02-24 15:09:09 -0500] [3222336] [INFO] Worker exiting (pid: 3222336)
+[2026-02-24 15:09:09 -0500] [3222331] [INFO] Handling signal: term
+[2026-02-24 15:09:09 -0500] [3222331] [ERROR] Worker (pid:3222336) was sent SIGTERM!
+[2026-02-24 15:09:09 -0500] [3222331] [ERROR] Worker (pid:3222335) was sent SIGTERM!
+[2026-02-24 15:09:09 -0500] [3222331] [ERROR] Worker (pid:3222334) was sent SIGTERM!
+[2026-02-24 15:09:09 -0500] [3222331] [INFO] Shutting down: Master
+[2026-02-24 15:09:09 -0500] [3515593] [INFO] Starting gunicorn 23.0.0
+[2026-02-24 15:09:09 -0500] [3515593] [INFO] Listening at: http://127.0.0.1:9054 (3515593)
+[2026-02-24 15:09:09 -0500] [3515593] [INFO] Using worker: sync
+[2026-02-24 15:09:09 -0500] [3515595] [INFO] Booting worker with pid: 3515595
+[2026-02-24 15:09:09 -0500] [3515596] [INFO] Booting worker with pid: 3515596
+[2026-02-24 15:09:09 -0500] [3515597] [INFO] Booting worker with pid: 3515597
+[2026-02-24 15:09:21 -0500] [3515596] [INFO] Worker exiting (pid: 3515596)
+[2026-02-24 15:09:21 -0500] [3515597] [INFO] Worker exiting (pid: 3515597)
+[2026-02-24 15:09:21 -0500] [3515595] [INFO] Worker exiting (pid: 3515595)
+[2026-02-24 15:09:21 -0500] [3515593] [INFO] Handling signal: term
+[2026-02-24 15:09:21 -0500] [3515593] [ERROR] Worker (pid:3515597) was sent SIGTERM!
+[2026-02-24 15:09:21 -0500] [3515593] [ERROR] Worker (pid:3515596) was sent SIGTERM!
+[2026-02-24 15:09:21 -0500] [3515593] [ERROR] Worker (pid:3515595) was sent SIGTERM!
+[2026-02-24 15:09:21 -0500] [3515593] [INFO] Shutting down: Master
+[2026-02-24 15:09:22 -0500] [3515633] [INFO] Starting gunicorn 23.0.0
+[2026-02-24 15:09:22 -0500] [3515633] [INFO] Listening at: http://127.0.0.1:9054 (3515633)
+[2026-02-24 15:09:22 -0500] [3515633] [INFO] Using worker: sync
+[2026-02-24 15:09:22 -0500] [3515634] [INFO] Booting worker with pid: 3515634
+[2026-02-24 15:09:22 -0500] [3515635] [INFO] Booting worker with pid: 3515635
+[2026-02-24 15:09:22 -0500] [3515636] [INFO] Booting worker with pid: 3515636

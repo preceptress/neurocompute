@@ -1,0 +1,120 @@
+[ingest_pubmed] starting (hours=24, max=unlimited)
+[ingest_pubmed] query matched 727 ids: ("Parkinson Disease"[MeSH Terms] OR parkinson*[Title/Abstract])
+[ingest_pubmed] query matched 1200 ids: ("Alzheimer Disease"[MeSH Terms] OR alzheimer*[Title/Abstract])
+[ingest_pubmed] total unique pmids: 1783
+[ingest_pubmed] batch 1/9: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 2/9: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 3/9: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 4/9: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 5/9: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 6/9: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 7/9: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 8/9: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 9/9: pmids=183 parsed=183 upserted=183
+[ingest_pubmed] done. parsed=1783 upserted=1783
+[ingest_pubmed] starting (hours=24, max=unlimited)
+[ingest_pubmed] query matched 727 ids: ("Parkinson Disease"[MeSH Terms] OR parkinson*[Title/Abstract])
+[ingest_pubmed] query matched 1207 ids: ("Alzheimer Disease"[MeSH Terms] OR alzheimer*[Title/Abstract])
+[ingest_pubmed] total unique pmids: 1792
+[ingest_pubmed] batch 1/9: pmids=200 parsed=199 upserted=199
+[ingest_pubmed] batch 2/9: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 3/9: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 4/9: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 5/9: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 6/9: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 7/9: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 8/9: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 9/9: pmids=192 parsed=192 upserted=192
+[ingest_pubmed] done. parsed=1791 upserted=1791
+[ingest_pubmed] starting (hours=24, max=unlimited)
+[ingest_pubmed] query matched 729 ids: ("Parkinson Disease"[MeSH Terms] OR parkinson*[Title/Abstract])
+[ingest_pubmed] query matched 1217 ids: ("Alzheimer Disease"[MeSH Terms] OR alzheimer*[Title/Abstract])
+[ingest_pubmed] total unique pmids: 1804
+[ingest_pubmed] batch 1/10: pmids=200 parsed=199 upserted=199
+[ingest_pubmed] batch 2/10: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 3/10: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 4/10: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 5/10: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 6/10: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 7/10: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 8/10: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 9/10: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 10/10: pmids=4 parsed=4 upserted=4
+[ingest_pubmed] done. parsed=1803 upserted=1803
+[ingest_pubmed] starting (hours=24, max=unlimited)
+[ingest_pubmed] query matched 741 ids: ("Parkinson Disease"[MeSH Terms] OR parkinson*[Title/Abstract])
+[ingest_pubmed] query matched 1244 ids: ("Alzheimer Disease"[MeSH Terms] OR alzheimer*[Title/Abstract])
+[ingest_pubmed] total unique pmids: 1841
+[ingest_pubmed] batch 1/10: pmids=200 parsed=199 upserted=199
+[ingest_pubmed] batch 2/10: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 3/10: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 4/10: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 5/10: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 6/10: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 7/10: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 8/10: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 9/10: pmids=200 parsed=156 upserted=156
+[ingest_pubmed] batch 10/10: pmids=41 parsed=5 upserted=5
+[ingest_pubmed] done. parsed=1760 upserted=1760
+[ingest_pubmed] starting (hours=24, max=unlimited)
+[ingest_pubmed] query matched 751 ids: ("Parkinson Disease"[MeSH Terms] OR parkinson*[Title/Abstract])
+[ingest_pubmed] query matched 1252 ids: ("Alzheimer Disease"[MeSH Terms] OR alzheimer*[Title/Abstract])
+[ingest_pubmed] total unique pmids: 1856
+[ingest_pubmed] batch 1/10: pmids=200 parsed=199 upserted=199
+[ingest_pubmed] batch 2/10: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 3/10: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 4/10: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 5/10: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 6/10: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 7/10: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 8/10: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 9/10: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 10/10: pmids=56 parsed=56 upserted=56
+[ingest_pubmed] done. parsed=1855 upserted=1855
+[ingest_pubmed] starting (hours=24, max=unlimited)
+[ingest_pubmed] query matched 824 ids: ("Parkinson Disease"[MeSH Terms] OR parkinson*[Title/Abstract])
+[ingest_pubmed] query matched 1357 ids: ("Alzheimer Disease"[MeSH Terms] OR alzheimer*[Title/Abstract])
+[ingest_pubmed] total unique pmids: 2016
+[ingest_pubmed] batch 1/11: pmids=200 parsed=199 upserted=199
+[ingest_pubmed] batch 2/11: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 3/11: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 4/11: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 5/11: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 6/11: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 7/11: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 8/11: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 9/11: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 10/11: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 11/11: pmids=16 parsed=16 upserted=16
+[ingest_pubmed] done. parsed=2015 upserted=2015
+[ingest_pubmed] starting (hours=24, max=unlimited)
+[ingest_pubmed] query matched 819 ids: ("Parkinson Disease"[MeSH Terms] OR parkinson*[Title/Abstract])
+[ingest_pubmed] query matched 1364 ids: ("Alzheimer Disease"[MeSH Terms] OR alzheimer*[Title/Abstract])
+[ingest_pubmed] total unique pmids: 2019
+[ingest_pubmed] batch 1/11: pmids=200 parsed=199 upserted=199
+[ingest_pubmed] batch 2/11: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 3/11: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 4/11: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 5/11: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 6/11: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 7/11: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 8/11: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 9/11: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 10/11: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 11/11: pmids=19 parsed=19 upserted=19
+[ingest_pubmed] done. parsed=2018 upserted=2018
+[ingest_pubmed] starting (hours=24, max=unlimited)
+[ingest_pubmed] query matched 776 ids: ("Parkinson Disease"[MeSH Terms] OR parkinson*[Title/Abstract])
+[ingest_pubmed] query matched 1311 ids: ("Alzheimer Disease"[MeSH Terms] OR alzheimer*[Title/Abstract])
+[ingest_pubmed] total unique pmids: 1934
+[ingest_pubmed] batch 1/10: pmids=200 parsed=199 upserted=199
+[ingest_pubmed] batch 2/10: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 3/10: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 4/10: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 5/10: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 6/10: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 7/10: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 8/10: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 9/10: pmids=200 parsed=200 upserted=200
+[ingest_pubmed] batch 10/10: pmids=134 parsed=134 upserted=134
+[ingest_pubmed] done. parsed=1933 upserted=1933

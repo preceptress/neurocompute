@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 ingest_pubmed.py
-One-shot PubMed ingest for Parkinson's + Alzheimer's (last 24 hours).
+PubMed ingest for Parkinson's + Alzheimer's (last N hours), upserting into Postgres.
 
 Requirements:
   pip install requests psycopg[binary] python-dotenv
@@ -33,11 +33,9 @@ NCBI_API_KEY = os.getenv("NCBI_API_KEY", "").strip()
 INGEST_HOURS = int(os.getenv("INGEST_HOURS", "24"))
 INGEST_MAX = int(os.getenv("INGEST_MAX", "0"))  # 0 = unlimited
 
-# PubMed E-utilities endpoints
 ESEARCH = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi"
 EFETCH = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi"
 
-# Two “disease radar” queries. You can tweak these later.
 QUERIES = [
     # Parkinson’s
     '("Parkinson Disease"[MeSH Terms] OR parkinson*[Title/Abstract])',
@@ -45,9 +43,11 @@ QUERIES = [
     '("Alzheimer Disease"[MeSH Terms] OR alzheimer*[Title/Abstract])',
 ]
 
+
 def die(msg: str, code: int = 1):
     print(f"[ingest_pubmed] ERROR: {msg}", file=sys.stderr)
     sys.exit(code)
+
 
 def _ncbi_params(extra: dict) -> dict:
     p = dict(extra)
@@ -57,31 +57,41 @@ def _ncbi_params(extra: dict) -> dict:
         p["api_key"] = NCBI_API_KEY
     return p
 
+
+def _sleep_if_no_key():
+    # NCBI rate limiting is much friendlier with an API key.
+    if not NCBI_API_KEY:
+        time.sleep(0.34)
+
+
 def esearch_ids(term: str, hours: int) -> list[int]:
     """
-    Find all PubMed IDs matching the term in the last `hours`.
-    We use datetype=edat (Entrez date) so it tracks PubMed indexing/entry.
+    Find PubMed IDs matching term in the last `hours`.
+
+    NOTE: PubMed ESearch `reldate` is in DAYS, not hours.
+    So we approximate: ceil(hours / 24).
     """
-    # Get total count first
+    days = max(1, math.ceil(hours / 24))
+
     params = _ncbi_params({
         "db": "pubmed",
         "term": term,
         "retmode": "json",
         "datetype": "edat",
-        "reldate": str(hours * 24 // 24),  # reldate is in days. We'll approximate via days.
-        # If you want exact hours, use mindate/maxdate in YYYY/MM/DD and accept day precision.
+        "reldate": str(days),
         "retmax": "0",
     })
+
     r = requests.get(ESEARCH, params=params, timeout=30)
     r.raise_for_status()
     data = r.json()
+
     count = int(data["esearchresult"]["count"])
     if count == 0:
         return []
 
-    # Page through IDs
     ids: list[int] = []
-    retmax = 5000  # PubMed allows big batches
+    retmax = 5000
     pages = math.ceil(count / retmax)
 
     for page in range(pages):
@@ -92,22 +102,19 @@ def esearch_ids(term: str, hours: int) -> list[int]:
         r2 = requests.get(ESEARCH, params=p2, timeout=30)
         r2.raise_for_status()
         d2 = r2.json()
+
         batch = [int(x) for x in d2["esearchresult"].get("idlist", [])]
         ids.extend(batch)
 
         if INGEST_MAX > 0 and len(ids) >= INGEST_MAX:
             return ids[:INGEST_MAX]
 
-        # be nice to NCBI if no API key
-        if not NCBI_API_KEY:
-            time.sleep(0.34)
+        _sleep_if_no_key()
 
     return ids
 
+
 def efetch_xml(pmids: list[int]) -> str:
-    """
-    Fetch PubMed records in XML for a list of IDs.
-    """
     if not pmids:
         return ""
     params = _ncbi_params({
@@ -117,18 +124,11 @@ def efetch_xml(pmids: list[int]) -> str:
     })
     r = requests.get(EFETCH, params=params, timeout=60)
     r.raise_for_status()
-
-    if not NCBI_API_KEY:
-        time.sleep(0.34)
-
+    _sleep_if_no_key()
     return r.text
 
+
 def parse_pubmed_xml(xml_text: str) -> list[dict]:
-    """
-    Minimal XML parse without heavy deps.
-    For “million dollar” polish later we can switch to BioPython or lxml.
-    """
-    # To keep this dependency-light, we'll do a very pragmatic parse using stdlib xml.
     import xml.etree.ElementTree as ET
 
     if not xml_text.strip():
@@ -138,25 +138,22 @@ def parse_pubmed_xml(xml_text: str) -> list[dict]:
     out: list[dict] = []
 
     for article in root.findall(".//PubmedArticle"):
-        # PMID
         pmid_el = article.find(".//MedlineCitation/PMID")
         pmid = int(pmid_el.text) if pmid_el is not None and pmid_el.text else None
         if not pmid:
             continue
 
-        # DOI + URL
         doi = None
         for aid in article.findall(".//ArticleIdList/ArticleId"):
             if (aid.get("IdType") or "").lower() == "doi" and aid.text:
                 doi = aid.text.strip()
                 break
+
         url = f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/"
 
-        # Title
         title_el = article.find(".//Article/ArticleTitle")
         title = "".join(title_el.itertext()).strip() if title_el is not None else ""
 
-        # Abstract
         abs_parts = []
         for a in article.findall(".//Article/Abstract/AbstractText"):
             label = a.get("Label")
@@ -166,17 +163,15 @@ def parse_pubmed_xml(xml_text: str) -> list[dict]:
             abs_parts.append(f"{label}: {txt}" if label else txt)
         abstract = "\n\n".join(abs_parts).strip()
 
-        # Journal
         j_el = article.find(".//Article/Journal/Title")
         journal = j_el.text.strip() if j_el is not None and j_el.text else None
 
-        # Publication date (best-effort)
         pub_date = None
         y = article.findtext(".//Article/Journal/JournalIssue/PubDate/Year")
         m = article.findtext(".//Article/Journal/JournalIssue/PubDate/Month")
         d = article.findtext(".//Article/Journal/JournalIssue/PubDate/Day")
 
-        def month_to_int(mm: str) -> int | None:
+        def month_to_int(mm: str):
             if not mm:
                 return None
             mm = mm.strip()
@@ -186,8 +181,7 @@ def parse_pubmed_xml(xml_text: str) -> list[dict]:
                 "jan": 1, "feb": 2, "mar": 3, "apr": 4, "may": 5, "jun": 6,
                 "jul": 7, "aug": 8, "sep": 9, "oct": 10, "nov": 11, "dec": 12
             }
-            key = mm[:3].lower()
-            return lookup.get(key)
+            return lookup.get(mm[:3].lower())
 
         try:
             if y:
@@ -198,7 +192,6 @@ def parse_pubmed_xml(xml_text: str) -> list[dict]:
         except Exception:
             pub_date = None
 
-        # Authors
         authors = []
         for au in article.findall(".//Article/AuthorList/Author"):
             last = au.findtext("LastName") or ""
@@ -207,13 +200,11 @@ def parse_pubmed_xml(xml_text: str) -> list[dict]:
             if name:
                 authors.append(name)
 
-        # Keywords
         keywords = []
         for kw in article.findall(".//KeywordList/Keyword"):
             if kw.text:
                 keywords.append(kw.text.strip())
 
-        # MeSH terms
         mesh_terms = []
         for mh in article.findall(".//MeshHeadingList/MeshHeading/DescriptorName"):
             if mh.text:
@@ -234,58 +225,153 @@ def parse_pubmed_xml(xml_text: str) -> list[dict]:
 
     return out
 
+
 UPSERT_SQL = """
-INSERT INTO articles
-    (pmid, doi, url, title, abstract, journal, publication_date, authors, keywords, mesh_terms, created_at, updated_at)
+INSERT INTO public.articles
+    (pmid, doi, url, title, abstract, journal, publication_date,
+     authors, keywords, mesh_terms,
+     created_at, updated_at,
+     agent_status, agent_score, summary_1s, tags, score_components, scored_at)
 VALUES
     (%(pmid)s, %(doi)s, %(url)s, %(title)s, %(abstract)s, %(journal)s, %(publication_date)s,
      %(authors)s::jsonb, %(keywords)s::jsonb, %(mesh_terms)s::jsonb,
-     now(), now())
+     now(), now(),
+     'pending', NULL, NULL, NULL, NULL, NULL)
 ON CONFLICT (pmid)
 DO UPDATE SET
-    doi = COALESCE(EXCLUDED.doi, articles.doi),
-    url = COALESCE(EXCLUDED.url, articles.url),
-    title = COALESCE(NULLIF(EXCLUDED.title,''), articles.title),
-    abstract = COALESCE(NULLIF(EXCLUDED.abstract,''), articles.abstract),
-    journal = COALESCE(EXCLUDED.journal, articles.journal),
-    publication_date = COALESCE(EXCLUDED.publication_date, articles.publication_date),
-    authors = CASE WHEN EXCLUDED.authors IS NOT NULL THEN EXCLUDED.authors ELSE articles.authors END,
-    keywords = CASE WHEN EXCLUDED.keywords IS NOT NULL THEN EXCLUDED.keywords ELSE articles.keywords END,
-    mesh_terms = CASE WHEN EXCLUDED.mesh_terms IS NOT NULL THEN EXCLUDED.mesh_terms ELSE articles.mesh_terms END,
+    doi = COALESCE(EXCLUDED.doi, public.articles.doi),
+    url = COALESCE(EXCLUDED.url, public.articles.url),
+    title = COALESCE(NULLIF(EXCLUDED.title,''), public.articles.title),
+    abstract = COALESCE(NULLIF(EXCLUDED.abstract,''), public.articles.abstract),
+    journal = COALESCE(EXCLUDED.journal, public.articles.journal),
+    publication_date = COALESCE(EXCLUDED.publication_date, public.articles.publication_date),
+    authors = CASE WHEN EXCLUDED.authors IS NOT NULL THEN EXCLUDED.authors ELSE public.articles.authors END,
+    keywords = CASE WHEN EXCLUDED.keywords IS NOT NULL THEN EXCLUDED.keywords ELSE public.articles.keywords END,
+    mesh_terms = CASE WHEN EXCLUDED.mesh_terms IS NOT NULL THEN EXCLUDED.mesh_terms ELSE public.articles.mesh_terms END,
+
+    agent_status = CASE
+        WHEN (COALESCE(NULLIF(EXCLUDED.title,''), public.articles.title) IS DISTINCT FROM public.articles.title)
+          OR (COALESCE(NULLIF(EXCLUDED.abstract,''), public.articles.abstract) IS DISTINCT FROM public.articles.abstract)
+        THEN 'pending'
+        ELSE public.articles.agent_status
+    END,
+
+    agent_score = CASE
+        WHEN (COALESCE(NULLIF(EXCLUDED.title,''), public.articles.title) IS DISTINCT FROM public.articles.title)
+          OR (COALESCE(NULLIF(EXCLUDED.abstract,''), public.articles.abstract) IS DISTINCT FROM public.articles.abstract)
+        THEN NULL
+        ELSE public.articles.agent_score
+    END,
+    summary_1s = CASE
+        WHEN (COALESCE(NULLIF(EXCLUDED.title,''), public.articles.title) IS DISTINCT FROM public.articles.title)
+          OR (COALESCE(NULLIF(EXCLUDED.abstract,''), public.articles.abstract) IS DISTINCT FROM public.articles.abstract)
+        THEN NULL
+        ELSE public.articles.summary_1s
+    END,
+    tags = CASE
+        WHEN (COALESCE(NULLIF(EXCLUDED.title,''), public.articles.title) IS DISTINCT FROM public.articles.title)
+          OR (COALESCE(NULLIF(EXCLUDED.abstract,''), public.articles.abstract) IS DISTINCT FROM public.articles.abstract)
+        THEN NULL
+        ELSE public.articles.tags
+    END,
+    score_components = CASE
+        WHEN (COALESCE(NULLIF(EXCLUDED.title,''), public.articles.title) IS DISTINCT FROM public.articles.title)
+          OR (COALESCE(NULLIF(EXCLUDED.abstract,''), public.articles.abstract) IS DISTINCT FROM public.articles.abstract)
+        THEN NULL
+        ELSE public.articles.score_components
+    END,
+    scored_at = CASE
+        WHEN (COALESCE(NULLIF(EXCLUDED.title,''), public.articles.title) IS DISTINCT FROM public.articles.title)
+          OR (COALESCE(NULLIF(EXCLUDED.abstract,''), public.articles.abstract) IS DISTINCT FROM public.articles.abstract)
+        THEN NULL
+        ELSE public.articles.scored_at
+    END,
+
     updated_at = now()
-;
+RETURNING (xmax = 0) AS inserted;
 """
 
-def upsert_articles(rows: list[dict]) -> tuple[int, int]:
+
+def db_preflight(conn: psycopg.Connection):
+    with conn.cursor() as cur:
+        cur.execute("SELECT current_database(), current_user;")
+        dbname, dbuser = cur.fetchone()
+        print(f"[ingest_pubmed] connected: db={dbname} user={dbuser}")
+
+        cur.execute("SELECT to_regclass('public.articles');")
+        reg = cur.fetchone()[0]
+        if not reg:
+            die("public.articles table not found. Wrong DB or schema not applied.")
+
+        # Ensure pmid has a unique constraint or unique index.
+        cur.execute("""
+            SELECT
+              EXISTS (
+                SELECT 1
+                FROM pg_index i
+                JOIN pg_class c ON c.oid = i.indrelid
+                JOIN pg_attribute a ON a.attrelid = c.oid
+                WHERE c.relname = 'articles'
+                  AND i.indisunique
+                  AND a.attname = 'pmid'
+              ) AS has_unique_pmid;
+        """)
+        has_unique = cur.fetchone()[0]
+        if not has_unique:
+            die("No UNIQUE index/constraint found on articles.pmid. ON CONFLICT (pmid) will fail.")
+
+
+def upsert_articles(rows: list[dict]) -> tuple[int, int, int]:
     """
-    Returns (seen, upserted)
+    Returns (seen, inserted, updated)
     """
     if not DATABASE_URL:
         die("DATABASE_URL is not set (check your .env and systemd EnvironmentFile).")
 
     if not rows:
-        return (0, 0)
+        return (0, 0, 0)
 
-    now = datetime.now(timezone.utc).isoformat()
     seen = len(rows)
-    upserted = 0
+
+    payloads = []
+    for r in rows:
+        payloads.append({
+            **r,
+            "authors": json.dumps(r.get("authors") or []),
+            "keywords": json.dumps(r.get("keywords") or []),
+            "mesh_terms": json.dumps(r.get("mesh_terms") or []),
+        })
+
+    inserted = 0
+    updated = 0
 
     with psycopg.connect(DATABASE_URL) as conn:
-        with conn.cursor() as cur:
-            for r in rows:
-                payload = dict(r)
-                payload["authors"] = json.dumps(r.get("authors") or [])
-                payload["keywords"] = json.dumps(r.get("keywords") or [])
-                payload["mesh_terms"] = json.dumps(r.get("mesh_terms") or [])
+        db_preflight(conn)
 
-                cur.execute(UPSERT_SQL, payload)
-                upserted += 1
+        with conn.cursor() as cur:
+            # Batch insert/upsert, but still get per-row RETURNING.
+            # psycopg3: executemany + RETURNING is supported via cur.executemany then fetchall per statement
+            # We'll just loop in chunks for clarity and reliability.
+            chunk = 200
+            for i in range(0, len(payloads), chunk):
+                batch = payloads[i:i+chunk]
+                for p in batch:
+                    cur.execute(UPSERT_SQL, p)
+                    was_inserted = cur.fetchone()[0]
+                    if was_inserted:
+                        inserted += 1
+                    else:
+                        updated += 1
+
         conn.commit()
 
-    return (seen, upserted)
+    return (seen, inserted, updated)
 
-def ingest_last_24h():
+
+def ingest_last_n_hours():
     print(f"[ingest_pubmed] starting (hours={INGEST_HOURS}, max={INGEST_MAX or 'unlimited'})")
+    if not NCBI_EMAIL:
+        print("[ingest_pubmed] NOTE: NCBI_EMAIL not set (recommended by NCBI).")
 
     combined_ids: set[int] = set()
     for q in QUERIES:
@@ -300,25 +386,31 @@ def ingest_last_24h():
         print("[ingest_pubmed] nothing to ingest")
         return
 
-    # EFETCH in chunks
-    chunk = 200
+    fetch_chunk = 200
     total = len(pmids)
-    inserted_total = 0
-    seen_total = 0
 
-    for i in range(0, total, chunk):
-        batch = pmids[i:i+chunk]
+    parsed_total = 0
+    inserted_total = 0
+    updated_total = 0
+
+    for i in range(0, total, fetch_chunk):
+        batch = pmids[i:i+fetch_chunk]
         xml = efetch_xml(batch)
         rows = parse_pubmed_xml(xml)
-        seen, upserted = upsert_articles(rows)
 
-        seen_total += seen
-        inserted_total += upserted
+        seen, ins, upd = upsert_articles(rows)
 
-        print(f"[ingest_pubmed] batch {i//chunk+1}/{math.ceil(total/chunk)}: pmids={len(batch)} parsed={seen} upserted={upserted}")
+        parsed_total += seen
+        inserted_total += ins
+        updated_total += upd
 
-    print(f"[ingest_pubmed] done. parsed={seen_total} upserted={inserted_total}")
+        print(
+            f"[ingest_pubmed] batch {i//fetch_chunk+1}/{math.ceil(total/fetch_chunk)}: "
+            f"pmids={len(batch)} parsed={seen} inserted={ins} updated={upd}"
+        )
+
+    print(f"[ingest_pubmed] done. parsed={parsed_total} inserted={inserted_total} updated={updated_total}")
+
 
 if __name__ == "__main__":
-    ingest_last_24h()
-
+    ingest_last_n_hours()

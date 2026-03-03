@@ -1,95 +1,337 @@
 <!doctype html>
-<html>
+<html lang="en">
+
 <head>
   <meta charset="utf-8" />
-  <title>Neurocompute | Clawbots</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Neurocompute</title>
+
+  <!-- Keep your shared stylesheet if you want (this file is fully styled even without it). -->
   <link rel="stylesheet" href="/static/style.css">
+
+  <style>
+    :root {
+      --bg0: #070A0F;
+      --bg1: #0B1020;
+      --panel: rgba(255, 255, 255, .04);
+      --panel2: rgba(255, 255, 255, .06);
+      --border: rgba(255, 255, 255, .10);
+      --text: rgba(255, 255, 255, .92);
+      --muted: rgba(255, 255, 255, .62);
+
+      /* spot colors */
+      --accent: #77B6FF;
+      /* cool blue */
+      --accent2: #A78BFA;
+      /* violet */
+      --good: #34D399;
+      /* green */
+      --warn: #FBBF24;
+      /* amber */
+
+      --shadow: 0 18px 50px rgba(0, 0, 0, .55);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background:
+        radial-gradient(1200px 600px at 15% -10%, rgba(119, 182, 255, .18), transparent 55%),
+        radial-gradient(900px 520px at 85% 0%, rgba(167, 139, 250, .16), transparent 55%),
+        radial-gradient(900px 520px at 35% 110%, rgba(52, 211, 153, .10), transparent 55%),
+        linear-gradient(180deg, var(--bg1), var(--bg0));
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      background: linear-gradient(180deg, rgba(7, 10, 15, .86), rgba(7, 10, 15, .55));
+      border-bottom: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .topbar-inner {
+      width: min(1180px, calc(100% - 56px));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      letter-spacing: .2px;
+      min-width: 220px;
+    }
+
+    .brand .name {
+      font-weight: 900;
+      font-size: 20px;
+      letter-spacing: -.3px;
+    }
+
+    .brand .tag {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, .10);
+      background: rgba(255, 255, 255, .04);
+      color: rgba(255, 255, 255, .78);
+      font-size: 12px;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .badge .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--good);
+      box-shadow: 0 0 0 4px rgba(52, 211, 153, .12);
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 56px));
+      margin: 0 auto;
+      padding: 28px 0 70px;
+    }
+
+    .hero {
+      margin-top: 22px;
+      padding: 28px 28px;
+      border: 1px solid rgba(255, 255, 255, .10);
+      background: linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .03));
+      border-radius: calc(var(--radius) + 6px);
+      box-shadow: var(--shadow);
+    }
+
+    .hero h1 {
+      margin: 0 0 10px 0;
+      font-size: 56px;
+      /* ~2x */
+      letter-spacing: -1.1px;
+      line-height: 1.05;
+    }
+
+    .hero p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 16px;
+      /* bigger */
+      max-width: 70ch;
+    }
+
+    .grid {
+      margin-top: 18px;
+      display: grid;
+      gap: 14px;
+    }
+
+    /* Make the entire card clickable */
+    a.card {
+      display: block;
+      border: 1px solid rgba(255, 255, 255, .10);
+      background: rgba(255, 255, 255, .04);
+      border-radius: 18px;
+      padding: 20px 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+      transition: transform .12s ease, border-color .12s ease, background .12s ease;
+    }
+
+    a.card:hover {
+      transform: translateY(-1px);
+      border-color: rgba(119, 182, 255, .28);
+      background: rgba(255, 255, 255, .055);
+    }
+
+    .titleline {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+
+    .pmid {
+      flex: 0 0 auto;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-weight: 900;
+      font-size: 14px;
+      /* bigger */
+      color: rgba(255, 255, 255, .82);
+      padding: 5px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, .10);
+      background: rgba(255, 255, 255, .03);
+      line-height: 1;
+      margin-top: 3px;
+    }
+
+    .card h2 {
+      margin: 0;
+      font-size: 20px;
+      /* ~2x feel */
+      line-height: 1.35;
+      letter-spacing: -.3px;
+    }
+
+    /* Title color = nice blue to signal clickability */
+    a.card h2 {
+      color: rgba(255, 255, 255, .94);
+    }
+
+    a.card:hover h2 {
+      color: var(--accent);
+      text-shadow: 0 0 10px rgba(119, 182, 255, .20);
+    }
+
+    .meta {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      color: var(--muted);
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, .09);
+      background: rgba(0, 0, 0, .22);
+      font-size: 13px;
+      /* bigger */
+      line-height: 1;
+    }
+
+    .chip strong {
+      color: rgba(255, 255, 255, .82);
+      font-weight: 900;
+    }
+
+    .chip.score {
+      border-color: rgba(119, 182, 255, .18);
+    }
+
+    .chip.score strong {
+      color: var(--accent);
+    }
+
+    .footer {
+      margin-top: 18px;
+      color: rgba(255, 255, 255, .45);
+      font-size: 12px;
+    }
+  </style>
 </head>
 
 <body>
-  <div class="app">
 
-    <div class="topbar">
+  <div class="topbar">
+    <div class="topbar-inner">
       <div class="brand">
-        <div class="brand-title">Neurocompute</div>
-        <div class="brand-sub">Parkinson’s + Alzheimer’s evidence atlas</div>
-      </div>
-
-      <form class="search" method="GET">
-        <input name="q" value="{{ q }}" placeholder="Search titles + abstracts..." />
-        <button type="submit">Search</button>
-      </form>
-    </div>
-
-    <div class="panel">
-      <div class="panel-title">Clawbots</div>
-      <div class="clawbots">
-        {% for cb in clawbots %}
-          <div class="clawbot">
-            <div class="clawbot-head">
-              <div class="clawbot-name">{{ cb.name }}</div>
-              <div class="clawbot-status status-{{ cb.status or 'none' }}">
-                {{ cb.status or 'none' }}
-              </div>
-            </div>
-            <div class="clawbot-desc">{{ cb.description }}</div>
-            <div class="clawbot-meta">
-              <span>Schedule: {{ cb.schedule or '—' }}</span>
-              <span>Processed: {{ cb.items_processed or 0 }}</span>
-              <span>Last run: {{ cb.finished_at or cb.started_at or '—' }}</span>
-            </div>
-          </div>
-        {% endfor %}
-      </div>
-    </div>
-
-    <div class="panel">
-      <div class="panel-title">Articles</div>
-
-      {% for a in articles %}
-        <div class="article">
-          <div class="article-top">
-            <div class="article-title">
-              {% if a.url %}
-                <a href="{{ a.url }}" target="_blank" rel="noopener">{{ a.title }}</a>
-              {% else %}
-                {{ a.title }}
-              {% endif %}
-            </div>
-
-            <div class="scores">
-              <span class="score">Novelty: {{ a.novelty if a.novelty is not none else '—' }}</span>
-              <span class="score">Neglected: {{ a.neglected if a.neglected is not none else '—' }}</span>
-            </div>
-          </div>
-
-          <div class="article-sub">
-            <span>{{ a.journal or '—' }}</span>
-            <span>•</span>
-            <span>{{ a.pub_date or '—' }}</span>
-            <span>•</span>
-            <span>{{ a.source or '—' }}</span>
-          </div>
-
-          {% if a.summary %}
-            <div class="summary">{{ a.summary }}</div>
+        <div class="name">Neurocompute</div>
+        <div class="tag">
+          Updates every 24 hours
+          {% if last_updated %}
+          • Last updated {{ last_updated }}
           {% endif %}
+        </div>
+      </div>
 
-          <div class="chips">
-            {% if a.repurpose %}<span class="chip chip-flag">Repurpose</span>{% endif %}
-            {% if a.natural %}<span class="chip chip-flag">Natural</span>{% endif %}
-            {% if a.abandoned %}<span class="chip chip-flag">Abandoned</span>{% endif %}
+      <div class="badge" title="Service is running">
+        <span class="dot"></span>
+        Live
+      </div>
+    </div>
+  </div>
 
-            {% for t in a.tags %}
-              <span class="chip">{{ t }}</span>
-            {% endfor %}
+  <div class="container">
+
+    <div class="hero">
+      <h1>Neurocompute</h1>
+      <p>
+        A living index of Parkinson’s &amp; Alzheimer’s research — ingested, tracked, and ranked.
+        Click any paper to open the full record.
+      </p>
+    </div>
+
+    <div class="grid">
+      {% for a in articles %}
+      <a class="card" href="/paper/{{ a.pmid }}">
+        <div class="titleline">
+          <div class="pmid">{{ a.pmid }}</div>
+          <div>
+            <h2>{{ a.title }}</h2>
+
+            <div class="meta">
+              <span class="chip">
+                <strong>Journal</strong>
+                {{ a.journal or "—" }}
+              </span>
+
+              <span class="chip">
+                <strong>Date</strong>
+                {{ a.publication_date or "—" }}
+              </span>
+
+              {% set s = a.score %}
+              <span class="chip score
+                {% if s is not none %}
+                  {% if s >= 80 %}high
+                  {% elif s >= 60 %}medium
+                  {% elif s >= 40 %}warn
+                  {% else %}low
+                  {% endif %}
+                {% endif %}
+              ">
+                <strong>Score</strong>
+                {{ s if s is not none else "—" }}
+              </span>
+            </div>
           </div>
         </div>
+      </a>
       {% endfor %}
     </div>
 
-  </div>
-</body>
-</html>
+    <div class="footer">
+      Powered by Neurocompute ingestion + scoring. (Next: summaries, tags, and ranking signals.)
+    </div>
 
+  </div>
+
+</body>
+
+</html>
