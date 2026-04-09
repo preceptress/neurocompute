@@ -30579,3 +30579,362 @@ TypeError: 'NoneType' object is not subscriptable
 [2026-04-09 15:18:37 -0400] [1335340] [INFO] Booting worker with pid: 1335340
 [2026-04-09 15:18:37 -0400] [1335342] [INFO] Booting worker with pid: 1335342
 [2026-04-09 15:18:37 -0400] [1335344] [INFO] Booting worker with pid: 1335344
+[2026-04-09 15:21:48 -0400] [1335340] [INFO] Worker exiting (pid: 1335340)
+[2026-04-09 15:21:48 -0400] [1335344] [INFO] Worker exiting (pid: 1335344)
+[2026-04-09 15:21:48 -0400] [1335342] [INFO] Worker exiting (pid: 1335342)
+[2026-04-09 15:21:48 -0400] [1335339] [INFO] Handling signal: term
+[2026-04-09 15:21:48 -0400] [1335339] [ERROR] Worker (pid:1335340) was sent SIGTERM!
+[2026-04-09 15:21:48 -0400] [1335339] [ERROR] Worker (pid:1335342) was sent SIGTERM!
+[2026-04-09 15:21:48 -0400] [1335339] [ERROR] Worker (pid:1335344) was sent SIGTERM!
+[2026-04-09 15:21:48 -0400] [1335339] [INFO] Shutting down: Master
+[2026-04-09 15:21:48 -0400] [1335484] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 15:21:48 -0400] [1335484] [INFO] Listening at: http://127.0.0.1:9054 (1335484)
+[2026-04-09 15:21:48 -0400] [1335484] [INFO] Using worker: sync
+[2026-04-09 15:21:48 -0400] [1335485] [INFO] Booting worker with pid: 1335485
+[2026-04-09 15:21:48 -0400] [1335486] [INFO] Booting worker with pid: 1335486
+[2026-04-09 15:21:48 -0400] [1335487] [INFO] Booting worker with pid: 1335487
+[2026-04-09 15:21:59 -0400] [1335486] [INFO] Worker exiting (pid: 1335486)
+[2026-04-09 15:21:59 -0400] [1335487] [INFO] Worker exiting (pid: 1335487)
+[2026-04-09 15:21:59 -0400] [1335485] [INFO] Worker exiting (pid: 1335485)
+[2026-04-09 15:21:59 -0400] [1335484] [INFO] Handling signal: term
+[2026-04-09 15:21:59 -0400] [1335484] [ERROR] Worker (pid:1335486) was sent SIGTERM!
+[2026-04-09 15:21:59 -0400] [1335484] [ERROR] Worker (pid:1335487) was sent SIGTERM!
+[2026-04-09 15:21:59 -0400] [1335484] [INFO] Shutting down: Master
+[2026-04-09 15:21:59 -0400] [1335499] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 15:21:59 -0400] [1335499] [INFO] Listening at: http://127.0.0.1:9054 (1335499)
+[2026-04-09 15:21:59 -0400] [1335499] [INFO] Using worker: sync
+[2026-04-09 15:21:59 -0400] [1335501] [INFO] Booting worker with pid: 1335501
+[2026-04-09 15:21:59 -0400] [1335502] [INFO] Booting worker with pid: 1335502
+[2026-04-09 15:21:59 -0400] [1335503] [INFO] Booting worker with pid: 1335503
+[2026-04-09 15:28:42 -0400] [1335502] [INFO] Worker exiting (pid: 1335502)
+[2026-04-09 15:28:42 -0400] [1335503] [INFO] Worker exiting (pid: 1335503)
+[2026-04-09 15:28:42 -0400] [1335501] [INFO] Worker exiting (pid: 1335501)
+[2026-04-09 15:28:42 -0400] [1335499] [INFO] Handling signal: term
+[2026-04-09 15:28:42 -0400] [1335499] [ERROR] Worker (pid:1335502) was sent SIGTERM!
+[2026-04-09 15:28:42 -0400] [1335499] [ERROR] Worker (pid:1335503) was sent SIGTERM!
+[2026-04-09 15:28:42 -0400] [1335499] [ERROR] Worker (pid:1335501) was sent SIGTERM!
+[2026-04-09 15:28:42 -0400] [1335499] [INFO] Shutting down: Master
+[2026-04-09 15:28:43 -0400] [1335820] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 15:28:43 -0400] [1335820] [INFO] Listening at: http://127.0.0.1:9054 (1335820)
+[2026-04-09 15:28:43 -0400] [1335820] [INFO] Using worker: sync
+[2026-04-09 15:28:43 -0400] [1335823] [INFO] Booting worker with pid: 1335823
+[2026-04-09 15:28:43 -0400] [1335824] [INFO] Booting worker with pid: 1335824
+[2026-04-09 15:28:43 -0400] [1335825] [INFO] Booting worker with pid: 1335825
+[2026-04-09 15:28:57 -0400] [1335823] [INFO] Worker exiting (pid: 1335823)
+[2026-04-09 15:28:57 -0400] [1335825] [INFO] Worker exiting (pid: 1335825)
+[2026-04-09 15:28:57 -0400] [1335824] [INFO] Worker exiting (pid: 1335824)
+[2026-04-09 15:28:57 -0400] [1335820] [INFO] Handling signal: term
+[2026-04-09 15:28:57 -0400] [1335820] [ERROR] Worker (pid:1335824) was sent SIGTERM!
+[2026-04-09 15:28:57 -0400] [1335820] [ERROR] Worker (pid:1335825) was sent SIGTERM!
+[2026-04-09 15:28:57 -0400] [1335820] [ERROR] Worker (pid:1335823) was sent SIGTERM!
+[2026-04-09 15:28:57 -0400] [1335820] [INFO] Shutting down: Master
+[2026-04-09 15:28:57 -0400] [1335869] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 15:28:57 -0400] [1335869] [INFO] Listening at: http://127.0.0.1:9054 (1335869)
+[2026-04-09 15:28:57 -0400] [1335869] [INFO] Using worker: sync
+[2026-04-09 15:28:57 -0400] [1335870] [INFO] Booting worker with pid: 1335870
+[2026-04-09 15:28:57 -0400] [1335871] [INFO] Booting worker with pid: 1335871
+[2026-04-09 15:28:58 -0400] [1335872] [INFO] Booting worker with pid: 1335872
+[2026-04-09 15:48:43 -0400] [1335871] [INFO] Worker exiting (pid: 1335871)
+[2026-04-09 15:48:43 -0400] [1335872] [INFO] Worker exiting (pid: 1335872)
+[2026-04-09 15:48:43 -0400] [1335870] [INFO] Worker exiting (pid: 1335870)
+[2026-04-09 15:48:43 -0400] [1335869] [INFO] Handling signal: term
+[2026-04-09 15:48:43 -0400] [1335869] [ERROR] Worker (pid:1335872) was sent SIGTERM!
+[2026-04-09 15:48:43 -0400] [1335869] [ERROR] Worker (pid:1335871) was sent SIGTERM!
+[2026-04-09 15:48:43 -0400] [1335869] [INFO] Shutting down: Master
+[2026-04-09 15:48:43 -0400] [1337167] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 15:48:43 -0400] [1337167] [INFO] Listening at: http://127.0.0.1:9054 (1337167)
+[2026-04-09 15:48:43 -0400] [1337167] [INFO] Using worker: sync
+[2026-04-09 15:48:43 -0400] [1337169] [INFO] Booting worker with pid: 1337169
+[2026-04-09 15:48:43 -0400] [1337170] [INFO] Booting worker with pid: 1337170
+[2026-04-09 15:48:43 -0400] [1337171] [INFO] Booting worker with pid: 1337171
+[2026-04-09 15:49:53 -0400] [1337170] [INFO] Worker exiting (pid: 1337170)
+[2026-04-09 15:49:53 -0400] [1337169] [INFO] Worker exiting (pid: 1337169)
+[2026-04-09 15:49:53 -0400] [1337171] [INFO] Worker exiting (pid: 1337171)
+[2026-04-09 15:49:53 -0400] [1337167] [INFO] Handling signal: term
+[2026-04-09 15:49:53 -0400] [1337167] [ERROR] Worker (pid:1337171) was sent SIGTERM!
+[2026-04-09 15:49:53 -0400] [1337167] [ERROR] Worker (pid:1337170) was sent SIGTERM!
+[2026-04-09 15:49:53 -0400] [1337167] [ERROR] Worker (pid:1337169) was sent SIGTERM!
+[2026-04-09 15:49:53 -0400] [1337167] [INFO] Shutting down: Master
+[2026-04-09 15:49:53 -0400] [1337245] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 15:49:53 -0400] [1337245] [INFO] Listening at: http://127.0.0.1:9054 (1337245)
+[2026-04-09 15:49:53 -0400] [1337245] [INFO] Using worker: sync
+[2026-04-09 15:49:53 -0400] [1337247] [INFO] Booting worker with pid: 1337247
+[2026-04-09 15:49:53 -0400] [1337248] [INFO] Booting worker with pid: 1337248
+[2026-04-09 15:49:53 -0400] [1337249] [INFO] Booting worker with pid: 1337249
+[2026-04-09 16:00:04 -0400] [1337247] [INFO] Worker exiting (pid: 1337247)
+[2026-04-09 16:00:04 -0400] [1337249] [INFO] Worker exiting (pid: 1337249)
+[2026-04-09 16:00:04 -0400] [1337248] [INFO] Worker exiting (pid: 1337248)
+[2026-04-09 16:00:04 -0400] [1337245] [INFO] Handling signal: term
+[2026-04-09 16:00:04 -0400] [1337245] [ERROR] Worker (pid:1337247) was sent SIGTERM!
+[2026-04-09 16:00:04 -0400] [1337245] [ERROR] Worker (pid:1337249) was sent SIGTERM!
+[2026-04-09 16:00:04 -0400] [1337245] [ERROR] Worker (pid:1337248) was sent SIGTERM!
+[2026-04-09 16:00:04 -0400] [1337245] [INFO] Shutting down: Master
+[2026-04-09 16:00:04 -0400] [1337815] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 16:00:04 -0400] [1337815] [INFO] Listening at: http://127.0.0.1:9054 (1337815)
+[2026-04-09 16:00:04 -0400] [1337815] [INFO] Using worker: sync
+[2026-04-09 16:00:04 -0400] [1337818] [INFO] Booting worker with pid: 1337818
+[2026-04-09 16:00:04 -0400] [1337819] [INFO] Booting worker with pid: 1337819
+[2026-04-09 16:00:04 -0400] [1337820] [INFO] Booting worker with pid: 1337820
+[2026-04-09 16:12:31 -0400] [1337819] [INFO] Worker exiting (pid: 1337819)
+[2026-04-09 16:12:31 -0400] [1337818] [INFO] Worker exiting (pid: 1337818)
+[2026-04-09 16:12:31 -0400] [1337820] [INFO] Worker exiting (pid: 1337820)
+[2026-04-09 16:12:31 -0400] [1337815] [INFO] Handling signal: term
+[2026-04-09 16:12:31 -0400] [1337815] [ERROR] Worker (pid:1337818) was sent SIGTERM!
+[2026-04-09 16:12:31 -0400] [1337815] [ERROR] Worker (pid:1337819) was sent SIGTERM!
+[2026-04-09 16:12:31 -0400] [1337815] [ERROR] Worker (pid:1337820) was sent SIGTERM!
+[2026-04-09 16:12:31 -0400] [1337815] [INFO] Shutting down: Master
+[2026-04-09 16:12:31 -0400] [1339260] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 16:12:31 -0400] [1339260] [INFO] Listening at: http://127.0.0.1:9054 (1339260)
+[2026-04-09 16:12:31 -0400] [1339260] [INFO] Using worker: sync
+[2026-04-09 16:12:31 -0400] [1339262] [INFO] Booting worker with pid: 1339262
+[2026-04-09 16:12:31 -0400] [1339263] [INFO] Booting worker with pid: 1339263
+[2026-04-09 16:12:31 -0400] [1339264] [INFO] Booting worker with pid: 1339264
+[2026-04-09 16:14:42 -0400] [1339264] [INFO] Worker exiting (pid: 1339264)
+[2026-04-09 16:14:42 -0400] [1339263] [INFO] Worker exiting (pid: 1339263)
+[2026-04-09 16:14:42 -0400] [1339262] [INFO] Worker exiting (pid: 1339262)
+[2026-04-09 16:14:42 -0400] [1339260] [INFO] Handling signal: term
+[2026-04-09 16:14:42 -0400] [1339260] [ERROR] Worker (pid:1339262) was sent SIGTERM!
+[2026-04-09 16:14:42 -0400] [1339260] [ERROR] Worker (pid:1339263) was sent SIGTERM!
+[2026-04-09 16:14:42 -0400] [1339260] [ERROR] Worker (pid:1339264) was sent SIGTERM!
+[2026-04-09 16:14:42 -0400] [1339260] [INFO] Shutting down: Master
+[2026-04-09 16:14:42 -0400] [1339384] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 16:14:42 -0400] [1339384] [INFO] Listening at: http://127.0.0.1:9054 (1339384)
+[2026-04-09 16:14:42 -0400] [1339384] [INFO] Using worker: sync
+[2026-04-09 16:14:42 -0400] [1339386] [INFO] Booting worker with pid: 1339386
+[2026-04-09 16:14:42 -0400] [1339387] [INFO] Booting worker with pid: 1339387
+[2026-04-09 16:14:42 -0400] [1339388] [INFO] Booting worker with pid: 1339388
+[2026-04-09 16:18:03 -0400] [1339386] [INFO] Worker exiting (pid: 1339386)
+[2026-04-09 16:18:03 -0400] [1339388] [INFO] Worker exiting (pid: 1339388)
+[2026-04-09 16:18:03 -0400] [1339387] [INFO] Worker exiting (pid: 1339387)
+[2026-04-09 16:18:03 -0400] [1339384] [INFO] Handling signal: term
+[2026-04-09 16:18:03 -0400] [1339384] [ERROR] Worker (pid:1339386) was sent SIGTERM!
+[2026-04-09 16:18:03 -0400] [1339384] [ERROR] Worker (pid:1339388) was sent SIGTERM!
+[2026-04-09 16:18:03 -0400] [1339384] [ERROR] Worker (pid:1339387) was sent SIGTERM!
+[2026-04-09 16:18:04 -0400] [1339384] [INFO] Shutting down: Master
+[2026-04-09 16:18:04 -0400] [1339639] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 16:18:04 -0400] [1339639] [INFO] Listening at: http://127.0.0.1:9054 (1339639)
+[2026-04-09 16:18:04 -0400] [1339639] [INFO] Using worker: sync
+[2026-04-09 16:18:04 -0400] [1339640] [INFO] Booting worker with pid: 1339640
+[2026-04-09 16:18:04 -0400] [1339643] [INFO] Booting worker with pid: 1339643
+[2026-04-09 16:18:04 -0400] [1339644] [INFO] Booting worker with pid: 1339644
+[2026-04-09 16:19:28 -0400] [1339640] [INFO] Worker exiting (pid: 1339640)
+[2026-04-09 16:19:28 -0400] [1339643] [INFO] Worker exiting (pid: 1339643)
+[2026-04-09 16:19:28 -0400] [1339644] [INFO] Worker exiting (pid: 1339644)
+[2026-04-09 16:19:28 -0400] [1339639] [INFO] Handling signal: term
+[2026-04-09 16:19:28 -0400] [1339639] [ERROR] Worker (pid:1339640) was sent SIGTERM!
+[2026-04-09 16:19:28 -0400] [1339639] [ERROR] Worker (pid:1339643) was sent SIGTERM!
+[2026-04-09 16:19:28 -0400] [1339639] [ERROR] Worker (pid:1339644) was sent SIGTERM!
+[2026-04-09 16:19:28 -0400] [1339639] [INFO] Shutting down: Master
+[2026-04-09 16:19:28 -0400] [1339715] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 16:19:28 -0400] [1339715] [INFO] Listening at: http://127.0.0.1:9054 (1339715)
+[2026-04-09 16:19:28 -0400] [1339715] [INFO] Using worker: sync
+[2026-04-09 16:19:28 -0400] [1339717] [INFO] Booting worker with pid: 1339717
+[2026-04-09 16:19:28 -0400] [1339718] [INFO] Booting worker with pid: 1339718
+[2026-04-09 16:19:28 -0400] [1339719] [INFO] Booting worker with pid: 1339719
+[2026-04-09 16:21:28 -0400] [1339718] [INFO] Worker exiting (pid: 1339718)
+[2026-04-09 16:21:28 -0400] [1339717] [INFO] Worker exiting (pid: 1339717)
+[2026-04-09 16:21:28 -0400] [1339719] [INFO] Worker exiting (pid: 1339719)
+[2026-04-09 16:21:28 -0400] [1339715] [INFO] Handling signal: term
+[2026-04-09 16:21:28 -0400] [1339715] [ERROR] Worker (pid:1339717) was sent SIGTERM!
+[2026-04-09 16:21:28 -0400] [1339715] [ERROR] Worker (pid:1339718) was sent SIGTERM!
+[2026-04-09 16:21:28 -0400] [1339715] [ERROR] Worker (pid:1339719) was sent SIGTERM!
+[2026-04-09 16:21:28 -0400] [1339715] [INFO] Shutting down: Master
+[2026-04-09 16:21:28 -0400] [1339836] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 16:21:28 -0400] [1339836] [INFO] Listening at: http://127.0.0.1:9054 (1339836)
+[2026-04-09 16:21:28 -0400] [1339836] [INFO] Using worker: sync
+[2026-04-09 16:21:28 -0400] [1339839] [INFO] Booting worker with pid: 1339839
+[2026-04-09 16:21:28 -0400] [1339840] [INFO] Booting worker with pid: 1339840
+[2026-04-09 16:21:28 -0400] [1339841] [INFO] Booting worker with pid: 1339841
+[2026-04-09 16:23:49 -0400] [1339840] [INFO] Worker exiting (pid: 1339840)
+[2026-04-09 16:23:49 -0400] [1339839] [INFO] Worker exiting (pid: 1339839)
+[2026-04-09 16:23:49 -0400] [1339841] [INFO] Worker exiting (pid: 1339841)
+[2026-04-09 16:23:49 -0400] [1339836] [INFO] Handling signal: term
+[2026-04-09 16:23:49 -0400] [1339836] [ERROR] Worker (pid:1339840) was sent SIGTERM!
+[2026-04-09 16:23:49 -0400] [1339836] [ERROR] Worker (pid:1339841) was sent SIGTERM!
+[2026-04-09 16:23:49 -0400] [1339836] [ERROR] Worker (pid:1339839) was sent SIGTERM!
+[2026-04-09 16:23:49 -0400] [1339836] [INFO] Shutting down: Master
+[2026-04-09 16:23:49 -0400] [1339958] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 16:23:49 -0400] [1339958] [INFO] Listening at: http://127.0.0.1:9054 (1339958)
+[2026-04-09 16:23:49 -0400] [1339958] [INFO] Using worker: sync
+[2026-04-09 16:23:49 -0400] [1339959] [INFO] Booting worker with pid: 1339959
+[2026-04-09 16:23:49 -0400] [1339961] [INFO] Booting worker with pid: 1339961
+[2026-04-09 16:23:49 -0400] [1339962] [INFO] Booting worker with pid: 1339962
+[2026-04-09 16:49:14 -0400] [1339961] [INFO] Worker exiting (pid: 1339961)
+[2026-04-09 16:49:14 -0400] [1339959] [INFO] Worker exiting (pid: 1339959)
+[2026-04-09 16:49:14 -0400] [1339962] [INFO] Worker exiting (pid: 1339962)
+[2026-04-09 16:49:14 -0400] [1339958] [INFO] Handling signal: term
+[2026-04-09 16:49:14 -0400] [1339958] [ERROR] Worker (pid:1339959) was sent SIGTERM!
+[2026-04-09 16:49:14 -0400] [1339958] [ERROR] Worker (pid:1339961) was sent SIGTERM!
+[2026-04-09 16:49:14 -0400] [1339958] [ERROR] Worker (pid:1339962) was sent SIGTERM!
+[2026-04-09 16:49:14 -0400] [1339958] [INFO] Shutting down: Master
+[2026-04-09 16:49:14 -0400] [1341700] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 16:49:14 -0400] [1341700] [INFO] Listening at: http://127.0.0.1:9054 (1341700)
+[2026-04-09 16:49:14 -0400] [1341700] [INFO] Using worker: sync
+[2026-04-09 16:49:14 -0400] [1341702] [INFO] Booting worker with pid: 1341702
+[2026-04-09 16:49:14 -0400] [1341703] [INFO] Booting worker with pid: 1341703
+[2026-04-09 16:49:14 -0400] [1341704] [INFO] Booting worker with pid: 1341704
+[2026-04-09 16:50:50 -0400] [1341702] [INFO] Worker exiting (pid: 1341702)
+[2026-04-09 16:50:50 -0400] [1341704] [INFO] Worker exiting (pid: 1341704)
+[2026-04-09 16:50:50 -0400] [1341703] [INFO] Worker exiting (pid: 1341703)
+[2026-04-09 16:50:50 -0400] [1341700] [INFO] Handling signal: term
+[2026-04-09 16:50:50 -0400] [1341700] [ERROR] Worker (pid:1341703) was sent SIGTERM!
+[2026-04-09 16:50:50 -0400] [1341700] [ERROR] Worker (pid:1341702) was sent SIGTERM!
+[2026-04-09 16:50:50 -0400] [1341700] [ERROR] Worker (pid:1341704) was sent SIGTERM!
+[2026-04-09 16:50:51 -0400] [1341700] [INFO] Shutting down: Master
+[2026-04-09 16:50:51 -0400] [1341790] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 16:50:51 -0400] [1341790] [INFO] Listening at: http://127.0.0.1:9054 (1341790)
+[2026-04-09 16:50:51 -0400] [1341790] [INFO] Using worker: sync
+[2026-04-09 16:50:51 -0400] [1341791] [INFO] Booting worker with pid: 1341791
+[2026-04-09 16:50:51 -0400] [1341793] [INFO] Booting worker with pid: 1341793
+[2026-04-09 16:50:51 -0400] [1341794] [INFO] Booting worker with pid: 1341794
+[2026-04-09 16:51:15 -0400] [1341794] [INFO] Worker exiting (pid: 1341794)
+[2026-04-09 16:51:15 -0400] [1341791] [INFO] Worker exiting (pid: 1341791)
+[2026-04-09 16:51:15 -0400] [1341793] [INFO] Worker exiting (pid: 1341793)
+[2026-04-09 16:51:15 -0400] [1341790] [INFO] Handling signal: term
+[2026-04-09 16:51:15 -0400] [1341790] [ERROR] Worker (pid:1341794) was sent SIGTERM!
+[2026-04-09 16:51:15 -0400] [1341790] [ERROR] Worker (pid:1341791) was sent SIGTERM!
+[2026-04-09 16:51:15 -0400] [1341790] [ERROR] Worker (pid:1341793) was sent SIGTERM!
+[2026-04-09 16:51:15 -0400] [1341790] [INFO] Shutting down: Master
+[2026-04-09 16:51:15 -0400] [1341882] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 16:51:15 -0400] [1341882] [INFO] Listening at: http://127.0.0.1:9054 (1341882)
+[2026-04-09 16:51:15 -0400] [1341882] [INFO] Using worker: sync
+[2026-04-09 16:51:15 -0400] [1341883] [INFO] Booting worker with pid: 1341883
+[2026-04-09 16:51:15 -0400] [1341885] [INFO] Booting worker with pid: 1341885
+[2026-04-09 16:51:15 -0400] [1341886] [INFO] Booting worker with pid: 1341886
+[2026-04-09 16:51:42 -0400] [1341886] [INFO] Worker exiting (pid: 1341886)
+[2026-04-09 16:51:42 -0400] [1341883] [INFO] Worker exiting (pid: 1341883)
+[2026-04-09 16:51:42 -0400] [1341885] [INFO] Worker exiting (pid: 1341885)
+[2026-04-09 16:51:42 -0400] [1341882] [INFO] Handling signal: term
+[2026-04-09 16:51:42 -0400] [1341882] [ERROR] Worker (pid:1341886) was sent SIGTERM!
+[2026-04-09 16:51:42 -0400] [1341882] [ERROR] Worker (pid:1341883) was sent SIGTERM!
+[2026-04-09 16:51:42 -0400] [1341882] [ERROR] Worker (pid:1341885) was sent SIGTERM!
+[2026-04-09 16:51:42 -0400] [1341882] [INFO] Shutting down: Master
+[2026-04-09 16:51:42 -0400] [1341910] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 16:51:42 -0400] [1341910] [INFO] Listening at: http://127.0.0.1:9054 (1341910)
+[2026-04-09 16:51:42 -0400] [1341910] [INFO] Using worker: sync
+[2026-04-09 16:51:42 -0400] [1341911] [INFO] Booting worker with pid: 1341911
+[2026-04-09 16:51:42 -0400] [1341913] [INFO] Booting worker with pid: 1341913
+[2026-04-09 16:51:43 -0400] [1341914] [INFO] Booting worker with pid: 1341914
+[2026-04-09 16:54:09 -0400] [1341911] [INFO] Worker exiting (pid: 1341911)
+[2026-04-09 16:54:09 -0400] [1341914] [INFO] Worker exiting (pid: 1341914)
+[2026-04-09 16:54:09 -0400] [1341913] [INFO] Worker exiting (pid: 1341913)
+[2026-04-09 16:54:09 -0400] [1341910] [INFO] Handling signal: term
+[2026-04-09 16:54:09 -0400] [1341910] [ERROR] Worker (pid:1341914) was sent SIGTERM!
+[2026-04-09 16:54:09 -0400] [1341910] [INFO] Shutting down: Master
+[2026-04-09 16:54:09 -0400] [1342484] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 16:54:09 -0400] [1342484] [INFO] Listening at: http://127.0.0.1:9054 (1342484)
+[2026-04-09 16:54:09 -0400] [1342484] [INFO] Using worker: sync
+[2026-04-09 16:54:09 -0400] [1342485] [INFO] Booting worker with pid: 1342485
+[2026-04-09 16:54:09 -0400] [1342487] [INFO] Booting worker with pid: 1342487
+[2026-04-09 16:54:09 -0400] [1342488] [INFO] Booting worker with pid: 1342488
+[2026-04-09 16:54:55 -0400] [1342487] [INFO] Worker exiting (pid: 1342487)
+[2026-04-09 16:54:55 -0400] [1342485] [INFO] Worker exiting (pid: 1342485)
+[2026-04-09 16:54:55 -0400] [1342488] [INFO] Worker exiting (pid: 1342488)
+[2026-04-09 16:54:55 -0400] [1342484] [INFO] Handling signal: term
+[2026-04-09 16:54:55 -0400] [1342484] [ERROR] Worker (pid:1342488) was sent SIGTERM!
+[2026-04-09 16:54:55 -0400] [1342484] [ERROR] Worker (pid:1342487) was sent SIGTERM!
+[2026-04-09 16:54:55 -0400] [1342484] [ERROR] Worker (pid:1342485) was sent SIGTERM!
+[2026-04-09 16:54:55 -0400] [1342484] [INFO] Shutting down: Master
+[2026-04-09 16:54:55 -0400] [1342561] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 16:54:55 -0400] [1342561] [INFO] Listening at: http://127.0.0.1:9054 (1342561)
+[2026-04-09 16:54:55 -0400] [1342561] [INFO] Using worker: sync
+[2026-04-09 16:54:55 -0400] [1342563] [INFO] Booting worker with pid: 1342563
+[2026-04-09 16:54:55 -0400] [1342564] [INFO] Booting worker with pid: 1342564
+[2026-04-09 16:54:55 -0400] [1342565] [INFO] Booting worker with pid: 1342565
+[2026-04-09 16:57:37 -0400] [1342564] [INFO] Worker exiting (pid: 1342564)
+[2026-04-09 16:57:37 -0400] [1342563] [INFO] Worker exiting (pid: 1342563)
+[2026-04-09 16:57:37 -0400] [1342565] [INFO] Worker exiting (pid: 1342565)
+[2026-04-09 16:57:37 -0400] [1342561] [INFO] Handling signal: term
+[2026-04-09 16:57:37 -0400] [1342561] [ERROR] Worker (pid:1342564) was sent SIGTERM!
+[2026-04-09 16:57:37 -0400] [1342561] [ERROR] Worker (pid:1342565) was sent SIGTERM!
+[2026-04-09 16:57:37 -0400] [1342561] [ERROR] Worker (pid:1342563) was sent SIGTERM!
+[2026-04-09 16:57:37 -0400] [1342561] [INFO] Shutting down: Master
+[2026-04-09 16:57:37 -0400] [1342873] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 16:57:37 -0400] [1342873] [INFO] Listening at: http://127.0.0.1:9054 (1342873)
+[2026-04-09 16:57:37 -0400] [1342873] [INFO] Using worker: sync
+[2026-04-09 16:57:37 -0400] [1342874] [INFO] Booting worker with pid: 1342874
+[2026-04-09 16:57:37 -0400] [1342876] [INFO] Booting worker with pid: 1342876
+[2026-04-09 16:57:37 -0400] [1342877] [INFO] Booting worker with pid: 1342877
+[2026-04-09 17:00:44 -0400] [1342874] [INFO] Worker exiting (pid: 1342874)
+[2026-04-09 17:00:44 -0400] [1342876] [INFO] Worker exiting (pid: 1342876)
+[2026-04-09 17:00:44 -0400] [1342877] [INFO] Worker exiting (pid: 1342877)
+[2026-04-09 17:00:44 -0400] [1342873] [INFO] Handling signal: term
+[2026-04-09 17:00:44 -0400] [1342873] [ERROR] Worker (pid:1342877) was sent SIGTERM!
+[2026-04-09 17:00:44 -0400] [1342873] [ERROR] Worker (pid:1342876) was sent SIGTERM!
+[2026-04-09 17:00:44 -0400] [1342873] [ERROR] Worker (pid:1342874) was sent SIGTERM!
+[2026-04-09 17:00:44 -0400] [1342873] [INFO] Shutting down: Master
+[2026-04-09 17:00:44 -0400] [1343526] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 17:00:44 -0400] [1343526] [INFO] Listening at: http://127.0.0.1:9054 (1343526)
+[2026-04-09 17:00:44 -0400] [1343526] [INFO] Using worker: sync
+[2026-04-09 17:00:44 -0400] [1343527] [INFO] Booting worker with pid: 1343527
+[2026-04-09 17:00:44 -0400] [1343529] [INFO] Booting worker with pid: 1343529
+[2026-04-09 17:00:44 -0400] [1343530] [INFO] Booting worker with pid: 1343530
+[2026-04-09 17:03:24 -0400] [1343527] [INFO] Worker exiting (pid: 1343527)
+[2026-04-09 17:03:24 -0400] [1343530] [INFO] Worker exiting (pid: 1343530)
+[2026-04-09 17:03:24 -0400] [1343529] [INFO] Worker exiting (pid: 1343529)
+[2026-04-09 17:03:24 -0400] [1343526] [INFO] Handling signal: term
+[2026-04-09 17:03:24 -0400] [1343526] [ERROR] Worker (pid:1343527) was sent SIGTERM!
+[2026-04-09 17:03:24 -0400] [1343526] [ERROR] Worker (pid:1343529) was sent SIGTERM!
+[2026-04-09 17:03:24 -0400] [1343526] [INFO] Shutting down: Master
+[2026-04-09 17:03:24 -0400] [1343699] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 17:03:24 -0400] [1343699] [INFO] Listening at: http://127.0.0.1:9054 (1343699)
+[2026-04-09 17:03:24 -0400] [1343699] [INFO] Using worker: sync
+[2026-04-09 17:03:24 -0400] [1343700] [INFO] Booting worker with pid: 1343700
+[2026-04-09 17:03:24 -0400] [1343701] [INFO] Booting worker with pid: 1343701
+[2026-04-09 17:03:24 -0400] [1343702] [INFO] Booting worker with pid: 1343702
+[2026-04-09 17:08:17 -0400] [1343700] [INFO] Worker exiting (pid: 1343700)
+[2026-04-09 17:08:17 -0400] [1343701] [INFO] Worker exiting (pid: 1343701)
+[2026-04-09 17:08:17 -0400] [1343702] [INFO] Worker exiting (pid: 1343702)
+[2026-04-09 17:08:17 -0400] [1343699] [INFO] Handling signal: term
+[2026-04-09 17:08:17 -0400] [1343699] [ERROR] Worker (pid:1343702) was sent SIGTERM!
+[2026-04-09 17:08:17 -0400] [1343699] [ERROR] Worker (pid:1343701) was sent SIGTERM!
+[2026-04-09 17:08:17 -0400] [1343699] [ERROR] Worker (pid:1343700) was sent SIGTERM!
+[2026-04-09 17:08:17 -0400] [1343699] [INFO] Shutting down: Master
+[2026-04-09 17:08:17 -0400] [1344116] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 17:08:17 -0400] [1344116] [INFO] Listening at: http://127.0.0.1:9054 (1344116)
+[2026-04-09 17:08:17 -0400] [1344116] [INFO] Using worker: sync
+[2026-04-09 17:08:17 -0400] [1344117] [INFO] Booting worker with pid: 1344117
+[2026-04-09 17:08:17 -0400] [1344120] [INFO] Booting worker with pid: 1344120
+[2026-04-09 17:08:17 -0400] [1344121] [INFO] Booting worker with pid: 1344121
+[2026-04-09 17:15:10 -0400] [1344121] [INFO] Worker exiting (pid: 1344121)
+[2026-04-09 17:15:10 -0400] [1344117] [INFO] Worker exiting (pid: 1344117)
+[2026-04-09 17:15:10 -0400] [1344120] [INFO] Worker exiting (pid: 1344120)
+[2026-04-09 17:15:10 -0400] [1344116] [INFO] Handling signal: term
+[2026-04-09 17:15:10 -0400] [1344116] [ERROR] Worker (pid:1344117) was sent SIGTERM!
+[2026-04-09 17:15:10 -0400] [1344116] [ERROR] Worker (pid:1344121) was sent SIGTERM!
+[2026-04-09 17:15:10 -0400] [1344116] [ERROR] Worker (pid:1344120) was sent SIGTERM!
+[2026-04-09 17:15:10 -0400] [1344116] [INFO] Shutting down: Master
+[2026-04-09 17:15:10 -0400] [1344533] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 17:15:10 -0400] [1344533] [INFO] Listening at: http://127.0.0.1:9054 (1344533)
+[2026-04-09 17:15:10 -0400] [1344533] [INFO] Using worker: sync
+[2026-04-09 17:15:10 -0400] [1344534] [INFO] Booting worker with pid: 1344534
+[2026-04-09 17:15:10 -0400] [1344535] [INFO] Booting worker with pid: 1344535
+[2026-04-09 17:15:10 -0400] [1344536] [INFO] Booting worker with pid: 1344536
+[2026-04-09 17:17:12 -0400] [1344536] [INFO] Worker exiting (pid: 1344536)
+[2026-04-09 17:17:12 -0400] [1344535] [INFO] Worker exiting (pid: 1344535)
+[2026-04-09 17:17:12 -0400] [1344534] [INFO] Worker exiting (pid: 1344534)
+[2026-04-09 17:17:12 -0400] [1344533] [INFO] Handling signal: term
+[2026-04-09 17:17:12 -0400] [1344533] [ERROR] Worker (pid:1344535) was sent SIGTERM!
+[2026-04-09 17:17:12 -0400] [1344533] [ERROR] Worker (pid:1344536) was sent SIGTERM!
+[2026-04-09 17:17:12 -0400] [1344533] [ERROR] Worker (pid:1344534) was sent SIGTERM!
+[2026-04-09 17:17:12 -0400] [1344533] [INFO] Shutting down: Master
+[2026-04-09 17:17:12 -0400] [1344655] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 17:17:12 -0400] [1344655] [INFO] Listening at: http://127.0.0.1:9054 (1344655)
+[2026-04-09 17:17:12 -0400] [1344655] [INFO] Using worker: sync
+[2026-04-09 17:17:12 -0400] [1344656] [INFO] Booting worker with pid: 1344656
+[2026-04-09 17:17:12 -0400] [1344659] [INFO] Booting worker with pid: 1344659
+[2026-04-09 17:17:12 -0400] [1344661] [INFO] Booting worker with pid: 1344661
+[2026-04-09 17:20:06 -0400] [1344656] [INFO] Worker exiting (pid: 1344656)
+[2026-04-09 17:20:06 -0400] [1344661] [INFO] Worker exiting (pid: 1344661)
+[2026-04-09 17:20:06 -0400] [1344659] [INFO] Worker exiting (pid: 1344659)
+[2026-04-09 17:20:06 -0400] [1344655] [INFO] Handling signal: term
+[2026-04-09 17:20:06 -0400] [1344655] [ERROR] Worker (pid:1344659) was sent SIGTERM!
+[2026-04-09 17:20:06 -0400] [1344655] [ERROR] Worker (pid:1344661) was sent SIGTERM!
+[2026-04-09 17:20:06 -0400] [1344655] [ERROR] Worker (pid:1344656) was sent SIGTERM!
+[2026-04-09 17:20:06 -0400] [1344655] [INFO] Shutting down: Master
+[2026-04-09 17:20:06 -0400] [1344804] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 17:20:06 -0400] [1344804] [INFO] Listening at: http://127.0.0.1:9054 (1344804)
+[2026-04-09 17:20:06 -0400] [1344804] [INFO] Using worker: sync
+[2026-04-09 17:20:06 -0400] [1344805] [INFO] Booting worker with pid: 1344805
+[2026-04-09 17:20:06 -0400] [1344806] [INFO] Booting worker with pid: 1344806
+[2026-04-09 17:20:06 -0400] [1344807] [INFO] Booting worker with pid: 1344807

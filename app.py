@@ -7,8 +7,10 @@ from flask import Flask, render_template, request
 load_dotenv()
 
 app = Flask(__name__)
-
 PER_PAGE = 25
+
+# rough demo estimate for total Parkinson's literature universe
+ESTIMATED_TOTAL_PAPERS = 120000
 
 
 def get_db():
@@ -35,7 +37,6 @@ def grade(score):
 @app.route("/")
 def index():
     db = get_db()
-
     page = request.args.get("page", 1, type=int)
     sort = (request.args.get("sort", "rank") or "rank").strip().lower()
     q = (request.args.get("q") or "").strip()
@@ -55,6 +56,20 @@ def index():
 
     with psycopg.connect(db) as conn:
         with conn.cursor() as cur:
+            # global stats for the hero bars/cards
+            cur.execute("SELECT count(*) FROM public.articles")
+            total_row = cur.fetchone()
+            total = total_row[0] if total_row else 0
+
+            cur.execute("SELECT count(*) FROM public.articles WHERE rank_score IS NOT NULL")
+            scored_row = cur.fetchone()
+            scored_count = scored_row[0] if scored_row else 0
+
+            cur.execute("SELECT count(*) FROM public.articles WHERE ai_score IS NOT NULL")
+            ai_row = cur.fetchone()
+            ai_count = ai_row[0] if ai_row else 0
+
+            # filtered results
             if q:
                 like = f"%{q}%"
 
@@ -67,8 +82,9 @@ def index():
                         ai_score,
                         base_score,
                         rank_score,
-                        summary_1s
-                    FROM articles
+                        ai_summary,
+                        why_it_matters
+                    FROM public.articles
                     WHERE
                         title ILIKE %s
                         OR abstract ILIKE %s
@@ -81,15 +97,14 @@ def index():
 
                 cur.execute("""
                     SELECT count(*)
-                    FROM articles
+                    FROM public.articles
                     WHERE
                         title ILIKE %s
                         OR abstract ILIKE %s
                         OR journal ILIKE %s
                         OR CAST(pmid AS TEXT) ILIKE %s
                 """, (like, like, like, like))
-                total_row = cur.fetchone()
-
+                filtered_total_row = cur.fetchone()
             else:
                 cur.execute(f"""
                     SELECT
@@ -100,18 +115,18 @@ def index():
                         ai_score,
                         base_score,
                         rank_score,
-                        summary_1s
-                    FROM articles
+                        ai_summary,
+                        why_it_matters
+                    FROM public.articles
                     ORDER BY {sort_sql}
                     LIMIT %s OFFSET %s
                 """, (PER_PAGE, offset))
                 rows = cur.fetchall()
 
-                cur.execute("SELECT count(*) FROM articles")
-                total_row = cur.fetchone()
+                filtered_total_row = total_row
 
-    total = total_row[0] if total_row else 0
-    total_pages = max(1, math.ceil(total / PER_PAGE))
+    filtered_total = filtered_total_row[0] if filtered_total_row else 0
+    total_pages = max(1, math.ceil(filtered_total / PER_PAGE))
 
     if page > total_pages:
         page = total_pages
@@ -119,7 +134,6 @@ def index():
     articles = []
     for r in rows:
         score_for_grade = r[6] if r[6] is not None else (r[4] if r[4] is not None else r[5])
-
         articles.append({
             "pmid": r[0],
             "title": r[1],
@@ -128,9 +142,17 @@ def index():
             "ai_score": r[4],
             "base_score": r[5],
             "rank_score": r[6],
-            "summary_1s": r[7] or "",
-            "grade": grade(score_for_grade)
+            "ai_summary": r[7] or "",
+            "why_it_matters": r[8] or "",
+            "grade": grade(score_for_grade),
         })
+
+    coverage = (total / ESTIMATED_TOTAL_PAPERS) if ESTIMATED_TOTAL_PAPERS else 0
+    if coverage > 1:
+        coverage = 1
+
+    scored_pct = (scored_count / total) if total else 0
+    ai_pct = (ai_count / total) if total else 0
 
     return render_template(
         "index.html",
@@ -138,8 +160,14 @@ def index():
         page=page,
         total_pages=total_pages,
         total=total,
+        filtered_total=filtered_total,
         sort=sort,
-        q=q
+        q=q,
+        coverage=coverage,
+        scored_pct=scored_pct,
+        ai_pct=ai_pct,
+        scored_count=scored_count,
+        ai_count=ai_count,
     )
 
 
@@ -159,8 +187,15 @@ def paper(pmid):
                     base_score,
                     rank_score,
                     abstract,
-                    summary_1s
-                FROM articles
+                    ai_summary,
+                    why_it_matters,
+                    mechanisms,
+                    candidate_interventions,
+                    red_flags,
+                    ai_confidence,
+                    narrative_score,
+                    score_components
+                FROM public.articles
                 WHERE pmid = %s
                 LIMIT 1
             """, (pmid,))
@@ -178,8 +213,15 @@ def paper(pmid):
         "base_score": row[5],
         "rank_score": row[6],
         "abstract": row[7] or "",
-        "summary_1s": row[8] or "",
-        "grade": grade(row[6] if row[6] is not None else (row[4] if row[4] is not None else row[5]))
+        "ai_summary": row[8] or "",
+        "why_it_matters": row[9] or "",
+        "mechanisms": row[10] or [],
+        "candidate_interventions": row[11] or [],
+        "red_flags": row[12] or [],
+        "ai_confidence": row[13],
+        "narrative_score": row[14],
+        "score_components": row[15],
+        "grade": grade(row[6] if row[6] is not None else (row[4] if row[4] is not None else row[5])),
     }
 
     return render_template("paper.html", paper=paper_data)

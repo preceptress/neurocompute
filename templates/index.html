@@ -6,851 +6,190 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Neurocompute</title>
 
-  <style>
-    :root {
-      --bg0: #050811;
-      --bg1: #0a1020;
-      --bg2: #0d1630;
-      --panel: rgba(255, 255, 255, .045);
-      --panel2: rgba(255, 255, 255, .065);
-      --border: rgba(255, 255, 255, .10);
-      --text: rgba(255, 255, 255, .94);
-      --muted: rgba(255, 255, 255, .64);
-      --accent: #77B6FF;
-      --accent2: #A78BFA;
-      --cyan: #62e8ff;
-      --good: #34D399;
-      --warn: #FBBF24;
-      --low: #FB7185;
-      --shadow: 0 18px 50px rgba(0, 0, 0, .55);
-      --radius: 18px;
-      --maxw: 1180px;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
-    html,
-    body {
-      min-height: 100%;
-    }
-
-    body {
-      margin: 0;
-      color: var(--text);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      background:
-        radial-gradient(1200px 650px at 12% -10%, rgba(119, 182, 255, .18), transparent 55%),
-        radial-gradient(900px 540px at 84% 4%, rgba(167, 139, 250, .16), transparent 55%),
-        radial-gradient(900px 540px at 50% 105%, rgba(52, 211, 153, .08), transparent 55%),
-        linear-gradient(180deg, var(--bg2), var(--bg1) 32%, var(--bg0));
-      overflow-x: hidden;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background:
-        linear-gradient(rgba(255, 255, 255, .025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, .025) 1px, transparent 1px);
-      background-size: 34px 34px;
-      mask-image: linear-gradient(180deg, rgba(0, 0, 0, .35), transparent 85%);
-      opacity: .18;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      background: linear-gradient(180deg, rgba(7, 10, 15, .88), rgba(7, 10, 15, .58));
-      border-bottom: 1px solid rgba(255, 255, 255, .08);
-    }
-
-    .topbar-inner {
-      width: min(var(--maxw), calc(100% - 56px));
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 16px 0;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .brand-mark {
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
-      display: grid;
-      place-items: center;
-      background:
-        radial-gradient(circle at 30% 30%, rgba(98, 232, 255, .34), transparent 45%),
-        linear-gradient(135deg, rgba(119, 182, 255, .20), rgba(167, 139, 250, .14));
-      border: 1px solid rgba(255, 255, 255, .12);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08), 0 10px 20px rgba(0, 0, 0, .28);
-      font-weight: 900;
-      color: #fff;
-      font-size: 14px;
-    }
-
-    .brand-copy {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .brand .name {
-      font-weight: 900;
-      font-size: 20px;
-      letter-spacing: -.3px;
-      line-height: 1;
-    }
-
-    .brand .tag {
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 700;
-      line-height: 1.2;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 9px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, .10);
-      background: rgba(255, 255, 255, .04);
-      color: rgba(255, 255, 255, .80);
-      font-size: 12px;
-      font-weight: 800;
-      white-space: nowrap;
-    }
-
-    .badge .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--good);
-      box-shadow: 0 0 0 4px rgba(52, 211, 153, .12);
-    }
-
-    .container {
-      width: min(var(--maxw), calc(100% - 56px));
-      margin: 0 auto;
-      padding: 28px 0 70px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-shell {
-      margin-top: 22px;
-      border-radius: 34px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(255, 255, 255, .10);
-      background:
-        radial-gradient(650px 300px at 15% 15%, rgba(98, 232, 255, .12), transparent 60%),
-        radial-gradient(700px 320px at 90% 10%, rgba(167, 139, 250, .12), transparent 60%),
-        linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .03));
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 1.35fr .8fr;
-      gap: 22px;
-      padding: 34px 34px 30px;
-    }
-
-    .hero-left h1 {
-      margin: 0 0 12px;
-      font-size: 64px;
-      letter-spacing: -1.6px;
-      line-height: 1.02;
-    }
-
-    .hero-left p {
-      margin: 0 0 22px;
-      color: var(--muted);
-      line-height: 1.65;
-      font-size: 17px;
-      max-width: 72ch;
-    }
-
-    .hero-kickers {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .hero-kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, .11);
-      background: rgba(255, 255, 255, .04);
-      color: rgba(255, 255, 255, .82);
-      font-size: 13px;
-      font-weight: 800;
-    }
-
-    .hero-right {
-      display: grid;
-      gap: 14px;
-      align-content: start;
-    }
-
-    .glass-panel {
-      border: 1px solid rgba(255, 255, 255, .10);
-      background: linear-gradient(180deg, rgba(255, 255, 255, .055), rgba(255, 255, 255, .03));
-      border-radius: 22px;
-      padding: 18px;
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, .04);
-    }
-
-    .panel-label {
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: .16em;
-      font-size: 11px;
-      font-weight: 900;
-      margin-bottom: 10px;
-    }
-
-    .signal-lines {
-      display: grid;
-      gap: 10px;
-    }
-
-    .signal-line {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      font-size: 13px;
-    }
-
-    .signal-line span:first-child {
-      color: rgba(255, 255, 255, .74);
-      font-weight: 700;
-      min-width: 90px;
-    }
-
-    .signal-bar {
-      flex: 1;
-      height: 8px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, .06);
-      overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, .06);
-    }
-
-    .signal-fill {
-      height: 100%;
-      border-radius: 999px;
-      background: linear-gradient(90deg, var(--accent), var(--accent2), var(--cyan));
-    }
-
-    .hero-stat {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
-    }
-
-    .hero-stat-card {
-      border-radius: 18px;
-      padding: 14px;
-      background: rgba(255, 255, 255, .03);
-      border: 1px solid rgba(255, 255, 255, .08);
-    }
-
-    .hero-stat-card .k {
-      color: var(--muted);
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: .14em;
-      font-weight: 900;
-      margin-bottom: 6px;
-    }
-
-    .hero-stat-card .v {
-      font-size: 24px;
-      font-weight: 900;
-      letter-spacing: -.4px;
-    }
-
-    .section-head {
-      margin-top: 22px;
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .section-head h2 {
-      margin: 0;
-      font-size: 26px;
-      letter-spacing: -.6px;
-    }
-
-    .section-head p {
-      margin: 6px 0 0;
-      color: var(--muted);
-      max-width: 70ch;
-      line-height: 1.55;
-      font-size: 14px;
-    }
-
-    .controls {
-      margin-top: 18px;
-      display: grid;
-      grid-template-columns: 1.6fr .7fr auto;
-      gap: 12px;
-      align-items: center;
-      padding: 16px;
-      border-radius: 22px;
-      border: 1px solid rgba(255, 255, 255, .10);
-      background: rgba(255, 255, 255, .04);
-    }
-
-    .control-group {
-      display: grid;
-      gap: 7px;
-    }
-
-    .control-label {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: .14em;
-      font-weight: 900;
-      color: var(--muted);
-    }
-
-    .control-input,
-    .control-select {
-      width: 100%;
-      border: 1px solid rgba(255, 255, 255, .10);
-      background: rgba(0, 0, 0, .26);
-      color: #fff;
-      border-radius: 14px;
-      padding: 12px 14px;
-      font-size: 14px;
-      outline: none;
-    }
-
-    .control-submit {
-      margin-top: 18px;
-      align-self: end;
-      border: 1px solid rgba(119, 182, 255, .24);
-      background: linear-gradient(135deg, rgba(119, 182, 255, .18), rgba(167, 139, 250, .14));
-      color: #fff;
-      border-radius: 14px;
-      padding: 12px 18px;
-      font-weight: 800;
-      cursor: pointer;
-    }
-
-    .overview-grid {
-      margin-top: 16px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-
-    .overview-card {
-      border: 1px solid rgba(255, 255, 255, .10);
-      background: rgba(255, 255, 255, .04);
-      border-radius: 22px;
-      padding: 18px;
-      box-shadow: 0 10px 28px rgba(0, 0, 0, .30);
-    }
-
-    .overview-card h3 {
-      margin: 0 0 10px;
-      font-size: 18px;
-      letter-spacing: -.3px;
-    }
-
-    .overview-card p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.65;
-      font-size: 14px;
-    }
-
-    .grid {
-      margin-top: 18px;
-      display: grid;
-      gap: 14px;
-    }
-
-    a.card {
-      display: block;
-      border: 1px solid rgba(255, 255, 255, .10);
-      background: rgba(255, 255, 255, .04);
-      border-radius: 20px;
-      padding: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
-      transition: transform .12s ease, border-color .12s ease, background .12s ease, box-shadow .12s ease;
-    }
-
-    a.card:hover {
-      transform: translateY(-1px);
-      border-color: rgba(119, 182, 255, .28);
-      background: rgba(255, 255, 255, .055);
-      box-shadow: 0 14px 36px rgba(0, 0, 0, .40);
-    }
-
-    .titleline {
-      display: flex;
-      gap: 14px;
-      align-items: flex-start;
-    }
-
-    .pmid {
-      flex: 0 0 auto;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-      font-weight: 900;
-      font-size: 14px;
-      color: rgba(255, 255, 255, .82);
-      padding: 5px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, .10);
-      background: rgba(255, 255, 255, .03);
-      line-height: 1;
-      margin-top: 3px;
-    }
-
-    .card h3 {
-      margin: 0;
-      font-size: 20px;
-      line-height: 1.35;
-      letter-spacing: -.3px;
-      color: rgba(255, 255, 255, .94);
-    }
-
-    a.card:hover h3 {
-      color: var(--accent);
-      text-shadow: 0 0 10px rgba(119, 182, 255, .20);
-    }
-
-    .summary {
-      margin-top: 10px;
-      color: var(--muted);
-      line-height: 1.6;
-      font-size: 14px;
-      max-width: 90ch;
-    }
-
-    .meta {
-      margin-top: 14px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      color: var(--muted);
-    }
-
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, .09);
-      background: rgba(0, 0, 0, .22);
-      font-size: 13px;
-      line-height: 1;
-    }
-
-    .chip strong {
-      color: rgba(255, 255, 255, .82);
-      font-weight: 900;
-    }
-
-    .chip.grade-A {
-      border-color: rgba(52, 211, 153, .35);
-    }
-
-    .chip.grade-A strong {
-      color: var(--good);
-    }
-
-    .chip.grade-B {
-      border-color: rgba(119, 182, 255, .35);
-    }
-
-    .chip.grade-B strong {
-      color: var(--accent);
-    }
-
-    .chip.grade-C {
-      border-color: rgba(251, 191, 36, .35);
-    }
-
-    .chip.grade-C strong {
-      color: var(--warn);
-    }
-
-    .chip.grade-D,
-    .chip.grade-E,
-    .chip.grade-U {
-      border-color: rgba(251, 113, 133, .25);
-    }
-
-    .chip.grade-D strong,
-    .chip.grade-E strong,
-    .chip.grade-U strong {
-      color: var(--low);
-    }
-
-    .pagination {
-      margin-top: 22px;
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .page-link,
-    .page-current {
-      padding: 10px 14px;
-      border-radius: 12px;
-      border: 1px solid rgba(255, 255, 255, .10);
-      background: rgba(255, 255, 255, .04);
-      font-size: 14px;
-      font-weight: 800;
-    }
-
-    .page-current {
-      border-color: rgba(119, 182, 255, .24);
-      color: var(--accent);
-    }
-
-    .footer {
-      margin-top: 34px;
-      padding: 22px 0 10px;
-      border-top: 1px solid rgba(255, 255, 255, .08);
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-      color: rgba(255, 255, 255, .50);
-      font-size: 13px;
-    }
-
-    @media (max-width: 980px) {
-
-      .hero,
-      .overview-grid,
-      .hero-stat,
-      .controls {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 720px) {
-
-      .topbar-inner,
-      .container {
-        width: min(var(--maxw), calc(100% - 28px));
-      }
-
-      .hero-left h1 {
-        font-size: 42px;
-      }
-
-      .titleline {
-        flex-direction: column;
-      }
-    }
-
-
-    .footer {
-      margin-top: 60px;
-      padding: 40px 0 30px;
-      border-top: 1px solid rgba(255, 255, 255, .08);
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, .35));
-    }
-
-    .footer-inner {
-      width: min(1180px, calc(100% - 56px));
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr;
-      gap: 40px;
-    }
-
-    .footer-col {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .footer-title {
-      font-size: 12px;
-      letter-spacing: .18em;
-      font-weight: 900;
-      color: rgba(255, 255, 255, .55);
-    }
-
-    .footer-text {
-      font-size: 14px;
-      line-height: 1.6;
-      color: rgba(255, 255, 255, .75);
-    }
-
-    .footer-link a {
-      font-size: 16px;
-      font-weight: 800;
-      color: #7dd3fc;
-      text-decoration: none;
-    }
-
-    .footer-link a:hover {
-      text-decoration: underline;
-      color: #a5f3fc;
-    }
-
-    /* mobile */
-    @media (max-width: 900px) {
-      .footer-inner {
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
-
-  <div class="topbar">
-    <div class="topbar-inner">
-      <div class="brand">
-        <div class="brand-mark">NC</div>
-        <div class="brand-copy">
-          <div class="name">Neurocompute</div>
-          <div class="tag">{{ total }} papers indexed</div>
-        </div>
-      </div>
-
-      <div class="badge">
-        <span class="dot"></span>
-        Live
-      </div>
-    </div>
-  </div>
-
-  <div class="container">
-
-    <section class="hero-shell">
-      <div class="hero">
-        <div class="hero-left">
-          <h1>Therapeutic discovery, mapped across the literature.</h1>
-          <p>
-            Neurocompute turns a very large research corpus into a navigable intelligence layer.
-            We ingest papers, score them, grade them, and surface the strongest candidates first
-            so users are not overwhelmed by raw volume.
-          </p>
-
-          <div class="hero-kickers">
-            <div class="hero-kicker">90,000+ indexed papers</div>
-            <div class="hero-kicker">AI + base + rank scoring</div>
-            <div class="hero-kicker">Searchable literature index</div>
+  <div class="app-shell">
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="brand">
+          <div class="brand-mark">NC</div>
+          <div class="brand-copy">
+            <div class="name">Neurocompute</div>
+            <div class="tag">{{ total }} papers indexed</div>
           </div>
         </div>
-
-        <div class="hero-right">
-          <div class="glass-panel">
-            <div class="panel-label">Signal overview</div>
-            <div class="signal-lines">
-              <div class="signal-line">
-                <span>Coverage</span>
-                <div class="signal-bar">
-                  <div class="signal-fill" style="width: 92%;"></div>
-                </div>
-              </div>
-              <div class="signal-line">
-                <span>Scoring</span>
-                <div class="signal-bar">
-                  <div class="signal-fill" style="width: 24%;"></div>
-                </div>
-              </div>
-              <div class="signal-line">
-                <span>Ranking</span>
-                <div class="signal-bar">
-                  <div class="signal-fill" style="width: 18%;"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="hero-stat">
-            <div class="hero-stat-card">
-              <div class="k">Indexed</div>
-              <div class="v">{{ total }}</div>
-            </div>
-            <div class="hero-stat-card">
-              <div class="k">Showing</div>
-              <div class="v">{{ articles|length }}</div>
-            </div>
-            <div class="hero-stat-card">
-              <div class="k">Page</div>
-              <div class="v">{{ page }}/{{ total_pages }}</div>
-            </div>
-          </div>
+        <div class="badge">
+          <span class="dot"></span>
+          Live
         </div>
-      </div>
-    </section>
-
-    <div class="section-head">
-      <div>
-        <h2>Explore the literature</h2>
-        <p>
-          Start with the highest-ranked view, then use search and sorting to navigate the corpus.
-          This keeps the interface clear while still giving access to the full database.
-        </p>
       </div>
     </div>
 
-    <form class="controls" method="get" action="/">
-      <div class="control-group">
-        <label class="control-label" for="q">Search</label>
-        <input class="control-input" id="q" name="q" type="text" value="{{ q or '' }}"
-          placeholder="Search title, abstract, journal, or PMID">
-      </div>
-
-      <div class="control-group">
-        <label class="control-label" for="sort">Sort by</label>
-        <select class="control-select" id="sort" name="sort">
-          <option value="rank" {% if sort=="rank" %}selected{% endif %}>Top Ranked</option>
-          <option value="ai" {% if sort=="ai" %}selected{% endif %}>AI Score</option>
-          <option value="base" {% if sort=="base" %}selected{% endif %}>Base Score</option>
-          <option value="newest" {% if sort=="newest" %}selected{% endif %}>Newest</option>
-          <option value="oldest" {% if sort=="oldest" %}selected{% endif %}>Oldest</option>
-        </select>
-      </div>
-
-      <button class="control-submit" type="submit">Apply</button>
-    </form>
-
-    <div class="overview-grid">
-      <div class="overview-card">
-        <h3>Why this page works</h3>
-        <p>
-          Instead of dumping all records at once, the home page shows a ranked slice of the corpus.
-          That gives users a strong first view without overwhelming them.
-        </p>
-      </div>
-
-      <div class="overview-card">
-        <h3>Scoring model</h3>
-        <p>
-          Each paper can carry a base score, an AI score, and a rank score.
-          The visible grade is derived from the best available score.
-        </p>
-      </div>
-
-      <div class="overview-card">
-        <h3>Next layer</h3>
-        <p>
-          Next up: richer summaries, topic filters, score explanations, and full paper navigation for discovery work.
-        </p>
-      </div>
-    </div>
-
-    <div class="grid">
-      {% for a in articles %}
-      <a class="card" href="/paper/{{ a.pmid }}">
-        <div class="titleline">
-          <div class="pmid">{{ a.pmid }}</div>
+    <div class="container">
+      <section class="hero-shell">
+        <div class="hero">
           <div>
-            <h3>{{ a.title }}</h3>
+            <h1>Hidden therapeutic signals across the Parkinson’s literature.</h1>
+            <p>
+              Neurocompute ingests the literature, applies structured scoring, then uses AI to identify undernoticed
+              therapeutic signals, repurposing clues, mechanistic convergence, and emerging narratives across the
+              science.
+            </p>
+            <div class="hero-kickers">
+              <div class="hero-kicker">Full-corpus ingest</div>
+              <div class="hero-kicker">Rules + AI scoring</div>
+              <div class="hero-kicker">Narrative velocity for science</div>
+            </div>
+          </div>
 
-            {% if a.summary_1s %}
-            <div class="summary">{{ a.summary_1s }}</div>
-            {% endif %}
+          <div>
+            <div class="glass-panel">
+              <div class="panel-label">Signal overview</div>
 
-            <div class="meta">
-              <span class="chip">
-                <strong>Journal</strong>
-                {{ a.journal or "—" }}
-              </span>
+              <div class="signal-row">
+                <div class="signal-label">Coverage</div>
+                <div class="signal-bar">
+                  <div class="signal-fill" style="width: {{ ((coverage or 0) * 100)|round(1) }}%;"></div>
+                </div>
+              </div>
 
-              <span class="chip">
-                <strong>Date</strong>
-                {{ a.publication_date or "—" }}
-              </span>
+              <div class="signal-row">
+                <div class="signal-label">Scoring</div>
+                <div class="signal-bar">
+                  <div class="signal-fill alt" style="width: {{ ((scored_pct or 0) * 100)|round(1) }}%;"></div>
+                </div>
+              </div>
 
-              <span class="chip grade-{{ a.grade }}">
-                <strong>Grade</strong>
-                {{ a.grade }}
-              </span>
+              <div class="signal-row">
+                <div class="signal-label">AI Layer</div>
+                <div class="signal-bar">
+                  <div class="signal-fill alt2" style="width: {{ ((ai_pct or 0) * 100)|round(1) }}%;"></div>
+                </div>
+              </div>
+            </div>
 
-              <span class="chip">
-                <strong>Rank</strong>
-                {{ a.rank_score if a.rank_score is not none else "—" }}
-              </span>
-
-              <span class="chip">
-                <strong>AI</strong>
-                {{ a.ai_score if a.ai_score is not none else "—" }}
-              </span>
-
-              <span class="chip">
-                <strong>Base</strong>
-                {{ a.base_score if a.base_score is not none else "—" }}
-              </span>
+            <div class="hero-stat">
+              <div class="hero-stat-card">
+                <div class="k">Indexed</div>
+                <div class="v">{{ total }}</div>
+              </div>
+              <div class="hero-stat-card">
+                <div class="k">Showing</div>
+                <div class="v">{{ articles|length }}</div>
+              </div>
+              <div class="hero-stat-card">
+                <div class="k">Page</div>
+                <div class="v">{{ page }}/{{ total_pages }}</div>
+              </div>
             </div>
           </div>
         </div>
-      </a>
-      {% endfor %}
-    </div>
+      </section>
 
-    <div class="pagination">
-      {% if page > 1 %}
-      <a class="page-link" href="/?q={{ q or '' }}&sort={{ sort }}&page={{ page - 1 }}">← Previous</a>
-      {% endif %}
+      <form class="controls" method="get" action="/">
+        <div class="control-group">
+          <label class="control-label" for="q">Search</label>
+          <input class="control-input" id="q" name="q" type="text" value="{{ q or '' }}"
+            placeholder="Search title, abstract, journal, or PMID">
+        </div>
 
-      <span class="page-current">Page {{ page }} of {{ total_pages }}</span>
+        <div class="control-group">
+          <label class="control-label" for="sort">Sort by</label>
+          <select class="control-select" id="sort" name="sort">
+            <option value="rank" {% if sort=="rank" %}selected{% endif %}>Top Ranked</option>
+            <option value="ai" {% if sort=="ai" %}selected{% endif %}>AI Score</option>
+            <option value="base" {% if sort=="base" %}selected{% endif %}>Base Score</option>
+            <option value="newest" {% if sort=="newest" %}selected{% endif %}>Newest</option>
+            <option value="oldest" {% if sort=="oldest" %}selected{% endif %}>Oldest</option>
+          </select>
+        </div>
 
-      {% if page < total_pages %} <a class="page-link" href="/?q={{ q or '' }}&sort={{ sort }}&page={{ page + 1 }}">Next
-        →</a>
+        <button class="control-submit" type="submit">Apply</button>
+      </form>
+
+      <div class="grid">
+        {% for a in articles %}
+        <a class="card" href="/paper/{{ a.pmid }}">
+          <div class="titleline">
+            <div class="pmid">{{ a.pmid }}</div>
+            <div>
+              <h3>{{ a.title }}</h3>
+
+              {% if a.ai_summary %}
+              <div class="summary">{{ a.ai_summary }}</div>
+              {% endif %}
+
+              {% if a.why_it_matters %}
+              <div class="why">
+                <strong style="color:#cbe3ff;">Why it matters:</strong>
+                {{ a.why_it_matters }}
+              </div>
+              {% endif %}
+
+              <div class="meta">
+                <span class="chip">
+                  <strong>Journal</strong>
+                  {{ a.journal or "—" }}
+                </span>
+
+                <span class="chip">
+                  <strong>Date</strong>
+                  {{ a.publication_date or "—" }}
+                </span>
+
+                <span class="chip grade-{{ a.grade }}">
+                  <strong>Grade</strong>
+                  {{ a.grade }}
+                </span>
+
+                <span class="chip">
+                  <strong>Rank</strong>
+                  {{ a.rank_score if a.rank_score is not none else "—" }}
+                </span>
+
+                <span class="chip">
+                  <strong>AI</strong>
+                  {{ a.ai_score if a.ai_score is not none else "—" }}
+                </span>
+
+                <span class="chip">
+                  <strong>Base</strong>
+                  {{ a.base_score if a.base_score is not none else "—" }}
+                </span>
+              </div>
+            </div>
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+
+      <div class="pagination">
+        {% if page > 1 %}
+        <a class="page-link" href="/?q={{ q or '' }}&sort={{ sort }}&page={{ page - 1 }}">← Previous</a>
         {% endif %}
+
+        <span class="page-current">Page {{ page }} of {{ total_pages }}</span>
+
+        {% if page < total_pages %} <a class="page-link" href="/?q={{ q or '' }}&sort={{ sort }}&page={{ page + 1 }}">
+          Next
+          →</a>
+          {% endif %}
+      </div>
     </div>
 
     <div class="footer">
       <div class="footer-inner">
-
-        <div class="footer-col">
+        <div>
           <div class="footer-title">PRECEPTRESS / NARRATIVE INTELLIGENCE</div>
           <div class="footer-text">
             © 2026 Preceptress<br>
-            Real-time narrative intelligence systems for markets, research,
-            and decision-making.
+            Real-time narrative intelligence systems for markets, research, and decision-making.
           </div>
         </div>
 
-        <div class="footer-col">
+        <div>
           <div class="footer-title">NEUROCOMPUTE</div>
           <div class="footer-text">
             AI-powered research discovery engine.<br>
@@ -858,18 +197,15 @@
           </div>
         </div>
 
-        <div class="footer-col">
+        <div>
           <div class="footer-title">CONTACT</div>
           <div class="footer-link">
             <a href="mailto:info@preceptress.ai">info@preceptress.ai</a>
           </div>
         </div>
-
       </div>
     </div>
-
   </div>
-
 </body>
 
 </html>
