@@ -2,49 +2,40 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{{ paper.title or "Paper" }} | Neurocompute</title>
-
-  <link rel="stylesheet" href="/static/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ paper.title }} • Neurocompute</title>
 
   <style>
     :root {
-      --bg0: #070A0F;
-      --bg1: #0B1020;
-      --panel: rgba(255, 255, 255, .04);
-      --panel2: rgba(255, 255, 255, .06);
+      --bg0: #050811;
+      --bg1: #0a1020;
+      --bg2: #0d1630;
+      --panel: rgba(255, 255, 255, .045);
       --border: rgba(255, 255, 255, .10);
-      --text: rgba(255, 255, 255, .92);
-      --muted: rgba(255, 255, 255, .62);
-
+      --text: rgba(255, 255, 255, .94);
+      --muted: rgba(255, 255, 255, .64);
       --accent: #77B6FF;
       --accent2: #A78BFA;
       --good: #34D399;
       --warn: #FBBF24;
-
-      --shadow: 0 18px 50px rgba(0, 0, 0, .55);
-      --radius: 18px;
+      --low: #FB7185;
+      --maxw: 980px;
+      --shadow: 0 18px 50px rgba(0, 0, 0, .50);
     }
 
     * {
       box-sizing: border-box;
     }
 
-    html,
-    body {
-      height: 100%;
-    }
-
     body {
       margin: 0;
       color: var(--text);
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
       background:
-        radial-gradient(1200px 600px at 15% -10%, rgba(119, 182, 255, .18), transparent 55%),
-        radial-gradient(900px 520px at 85% 0%, rgba(167, 139, 250, .16), transparent 55%),
-        radial-gradient(900px 520px at 35% 110%, rgba(52, 211, 153, .10), transparent 55%),
-        linear-gradient(180deg, var(--bg1), var(--bg0));
+        radial-gradient(1200px 650px at 12% -10%, rgba(119, 182, 255, .18), transparent 55%),
+        radial-gradient(900px 540px at 84% 4%, rgba(167, 139, 250, .16), transparent 55%),
+        linear-gradient(180deg, var(--bg2), var(--bg1) 32%, var(--bg0));
     }
 
     a {
@@ -52,97 +43,52 @@
       text-decoration: none;
     }
 
-    a:hover {
-      text-decoration: none;
-    }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      backdrop-filter: blur(14px);
-      background: linear-gradient(180deg, rgba(7, 10, 15, .82), rgba(7, 10, 15, .55));
-      border-bottom: 1px solid rgba(255, 255, 255, .08);
-    }
-
-    .topbar-inner {
-      width: min(1100px, calc(100% - 48px));
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 16px 0;
-    }
-
-    .brand {
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-      letter-spacing: .2px;
-    }
-
-    .brand .name {
-      font-weight: 800;
-      font-size: 18px;
-    }
-
-    .brand .tag {
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 600;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, .10);
-      background: rgba(255, 255, 255, .04);
-      color: rgba(255, 255, 255, .78);
-      font-size: 12px;
-      font-weight: 700;
-      user-select: none;
-    }
-
-    .badge .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--good);
-      box-shadow: 0 0 0 4px rgba(52, 211, 153, .12);
-    }
-
-    .container {
-      width: min(1100px, calc(100% - 48px));
+    .wrap {
+      width: min(var(--maxw), calc(100% - 36px));
       margin: 0 auto;
       padding: 28px 0 60px;
     }
 
-    .hero {
-      margin-top: 22px;
-      padding: 22px;
+    .topline {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .back {
+      display: inline-flex;
+      padding: 10px 14px;
+      border-radius: 999px;
       border: 1px solid rgba(255, 255, 255, .10);
-      background: linear-gradient(180deg, rgba(255, 255, 255, .05), rgba(255, 255, 255, .03));
-      border-radius: var(--radius);
+      background: rgba(255, 255, 255, .04);
+      font-weight: 800;
+      color: var(--muted);
+    }
+
+    .panel {
+      border: 1px solid rgba(255, 255, 255, .10);
+      background: rgba(255, 255, 255, .04);
+      border-radius: 24px;
+      padding: 24px;
+      margin-bottom: 16px;
       box-shadow: var(--shadow);
     }
 
-    .hero h1 {
-      margin: 0 0 10px 0;
-      font-size: 34px;
-      letter-spacing: -.6px;
-      line-height: 1.15;
+    h1 {
+      margin: 0 0 12px;
+      font-size: 40px;
+      line-height: 1.12;
+      letter-spacing: -1px;
     }
 
     .meta {
-      margin-top: 14px;
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
-      color: var(--muted);
+      margin-top: 14px;
     }
 
     .chip {
@@ -158,125 +104,92 @@
 
     .chip strong {
       color: rgba(255, 255, 255, .82);
-      font-weight: 800;
+      font-weight: 900;
     }
 
-    .chip.score {
-      border-color: rgba(119, 182, 255, .18);
+    .grade-A {
+      border-color: rgba(52, 211, 153, .35);
     }
 
-    .chip.score strong {
+    .grade-A strong {
+      color: var(--good);
+    }
+
+    .grade-B {
+      border-color: rgba(119, 182, 255, .35);
+    }
+
+    .grade-B strong {
       color: var(--accent);
     }
 
-    .paper {
-      margin-top: 16px;
-      padding: 22px;
-      border: 1px solid rgba(255, 255, 255, .10);
-      background: rgba(255, 255, 255, .04);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+    .grade-C {
+      border-color: rgba(251, 191, 36, .35);
     }
 
-    .paper h2 {
-      margin: 0 0 10px 0;
-      font-size: 16px;
-      letter-spacing: -.2px;
-      color: rgba(255, 255, 255, .85);
+    .grade-C strong {
+      color: var(--warn);
     }
 
-    .paper .abstract {
-      margin: 0;
-      padding: 16px 16px;
-      border-radius: 16px;
-      border: 1px solid rgba(255, 255, 255, .10);
-      background: rgba(0, 0, 0, .22);
-      color: rgba(255, 255, 255, .78);
+    .grade-D,
+    .grade-E {
+      border-color: rgba(251, 113, 133, .35);
+    }
+
+    .grade-D strong,
+    .grade-E strong {
+      color: var(--low);
+    }
+
+    .section-title {
+      margin: 0 0 10px;
+      font-size: 18px;
+      letter-spacing: -.3px;
+    }
+
+    .body-copy {
+      color: rgba(255, 255, 255, .84);
+      line-height: 1.75;
       white-space: pre-wrap;
-      line-height: 1.7;
-      font-size: 14px;
     }
 
-    .back {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: rgba(255, 255, 255, .78);
-      font-weight: 800;
-    }
-
-    .back:hover {
-      color: rgba(255, 255, 255, .92);
-    }
-
-    .back .arrow {
-      width: 28px;
-      height: 28px;
-      border-radius: 999px;
-      border: 1px solid rgba(255, 255, 255, .10);
-      background: rgba(255, 255, 255, .04);
-      display: grid;
-      place-items: center;
+    .muted {
+      color: var(--muted);
     }
   </style>
 </head>
 
 <body>
-
-  <div class="topbar">
-    <div class="topbar-inner">
-      <div class="brand">
-        <a class="name" href="/">Neurocompute</a>
-        <div class="tag">Updates every 24 hours</div>
-      </div>
-
-      <div class="badge">
-        <span class="dot"></span>
-        Live
-      </div>
+  <div class="wrap">
+    <div class="topline">
+      <a class="back" href="/">← Back to results</a>
+      <div class="muted">Neurocompute paper view</div>
     </div>
-  </div>
 
-  <div class="container">
-
-    <a class="back" href="/">
-      <span class="arrow">←</span>
-      Back to feed
-    </a>
-
-    <div class="hero">
+    <div class="panel">
       <h1>{{ paper.title }}</h1>
 
       <div class="meta">
-        <span class="chip"><strong>PMID</strong> {{ paper.pmid }}</span>
-
-        {% if paper.journal %}
-        <span class="chip"><strong>Journal</strong> {{ paper.journal }}</span>
-        {% endif %}
-
-        {% if paper.publication_date %}
-        <span class="chip"><strong>Date</strong> {{ paper.publication_date }}</span>
-        {% endif %}
-
-        {% if paper.score is not none %}
-        <span class="chip score"><strong>Score</strong> {{ paper.score }}</span>
-        {% endif %}
-
-        {# drop ingested by default; uncomment if you want it #}
-        {# {% if paper.created_at %}<span class="chip"><strong>Ingested</strong> {{ paper.created_at }}</span>{% endif
-        %} #}
+        <span class="chip"><strong>PMID</strong>{{ paper.pmid }}</span>
+        <span class="chip"><strong>Journal</strong>{{ paper.journal or "—" }}</span>
+        <span class="chip"><strong>Date</strong>{{ paper.publication_date or "—" }}</span>
+        <span class="chip grade-{{ paper.grade }}"><strong>Grade</strong>{{ paper.grade }}</span>
+        <span class="chip"><strong>Rank</strong>{{ paper.rank_score if paper.rank_score is not none else "—" }}</span>
+        <span class="chip"><strong>AI</strong>{{ paper.ai_score if paper.ai_score is not none else "—" }}</span>
+        <span class="chip"><strong>Base</strong>{{ paper.base_score if paper.base_score is not none else "—" }}</span>
       </div>
     </div>
 
-    <div class="paper">
-      <h2>Abstract</h2>
-      <div class="abstract">
-        {{ paper.abstract or "No abstract available." }}
-      </div>
+    <div class="panel">
+      <h2 class="section-title">Summary</h2>
+      <div class="body-copy">{{ paper.summary_1s or "No summary yet." }}</div>
     </div>
 
+    <div class="panel">
+      <h2 class="section-title">Abstract</h2>
+      <div class="body-copy">{{ paper.abstract or "No abstract available." }}</div>
+    </div>
   </div>
-
 </body>
 
 </html>

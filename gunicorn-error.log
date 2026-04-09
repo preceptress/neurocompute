@@ -30331,3 +30331,251 @@ Traceback (most recent call last):
 psycopg.errors.UndefinedColumn: column "score" does not exist
 LINE 2: ...        SELECT pmid, title, journal, publication_date, score
                                                                   ^
+[2026-04-09 14:29:31 -0400] [1331093] [INFO] Worker exiting (pid: 1331093)
+[2026-04-09 14:29:31 -0400] [1331096] [INFO] Worker exiting (pid: 1331096)
+[2026-04-09 14:29:31 -0400] [1331097] [INFO] Worker exiting (pid: 1331097)
+[2026-04-09 14:29:31 -0400] [1331092] [INFO] Handling signal: term
+[2026-04-09 14:29:31 -0400] [1331092] [ERROR] Worker (pid:1331093) was sent SIGTERM!
+[2026-04-09 14:29:31 -0400] [1331092] [ERROR] Worker (pid:1331096) was sent SIGTERM!
+[2026-04-09 14:29:31 -0400] [1331092] [ERROR] Worker (pid:1331097) was sent SIGTERM!
+[2026-04-09 14:29:31 -0400] [1331092] [INFO] Shutting down: Master
+[2026-04-09 14:29:31 -0400] [1332098] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 14:29:31 -0400] [1332098] [INFO] Listening at: http://127.0.0.1:9054 (1332098)
+[2026-04-09 14:29:31 -0400] [1332098] [INFO] Using worker: sync
+[2026-04-09 14:29:31 -0400] [1332101] [INFO] Booting worker with pid: 1332101
+[2026-04-09 14:29:31 -0400] [1332104] [INFO] Booting worker with pid: 1332104
+[2026-04-09 14:29:31 -0400] [1332105] [INFO] Booting worker with pid: 1332105
+[2026-04-09 14:34:29 -0400] [1332105] [INFO] Worker exiting (pid: 1332105)
+[2026-04-09 14:34:29 -0400] [1332104] [INFO] Worker exiting (pid: 1332104)
+[2026-04-09 14:34:29 -0400] [1332101] [INFO] Worker exiting (pid: 1332101)
+[2026-04-09 14:34:29 -0400] [1332098] [INFO] Handling signal: term
+[2026-04-09 14:34:29 -0400] [1332098] [ERROR] Worker (pid:1332104) was sent SIGTERM!
+[2026-04-09 14:34:29 -0400] [1332098] [ERROR] Worker (pid:1332105) was sent SIGTERM!
+[2026-04-09 14:34:29 -0400] [1332098] [INFO] Shutting down: Master
+[2026-04-09 14:34:29 -0400] [1332380] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 14:34:29 -0400] [1332380] [INFO] Listening at: http://127.0.0.1:9054 (1332380)
+[2026-04-09 14:34:29 -0400] [1332380] [INFO] Using worker: sync
+[2026-04-09 14:34:29 -0400] [1332382] [INFO] Booting worker with pid: 1332382
+[2026-04-09 14:34:29 -0400] [1332383] [INFO] Booting worker with pid: 1332383
+[2026-04-09 14:34:29 -0400] [1332384] [INFO] Booting worker with pid: 1332384
+[2026-04-09 14:34:33 -0400] [1332383] [ERROR] Error handling request /
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 89, in index
+    return render_template(
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 150, in render_template
+    return _render(app, template, context)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/templating.py", line 131, in _render
+    rv = template.render(context)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 1295, in render
+    self.environment.handle_exception()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/jinja2/environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/chief/neurocompute/templates/index.html", line 312, in top-level template code
+    {% if s >= 80 %}high
+jinja2.exceptions.UndefinedError: 'dict object' has no attribute 'score'
+[2026-04-09 14:35:12 -0400] [1332382] [INFO] Worker exiting (pid: 1332382)
+[2026-04-09 14:35:12 -0400] [1332383] [INFO] Worker exiting (pid: 1332383)
+[2026-04-09 14:35:12 -0400] [1332384] [INFO] Worker exiting (pid: 1332384)
+[2026-04-09 14:35:12 -0400] [1332380] [INFO] Handling signal: term
+[2026-04-09 14:35:12 -0400] [1332380] [ERROR] Worker (pid:1332384) was sent SIGTERM!
+[2026-04-09 14:35:12 -0400] [1332380] [ERROR] Worker (pid:1332382) was sent SIGTERM!
+[2026-04-09 14:35:12 -0400] [1332380] [ERROR] Worker (pid:1332383) was sent SIGTERM!
+[2026-04-09 14:35:12 -0400] [1332380] [INFO] Shutting down: Master
+[2026-04-09 14:35:13 -0400] [1332441] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 14:35:13 -0400] [1332441] [INFO] Listening at: http://127.0.0.1:9054 (1332441)
+[2026-04-09 14:35:13 -0400] [1332441] [INFO] Using worker: sync
+[2026-04-09 14:35:13 -0400] [1332443] [INFO] Booting worker with pid: 1332443
+[2026-04-09 14:35:13 -0400] [1332445] [INFO] Booting worker with pid: 1332445
+[2026-04-09 14:35:13 -0400] [1332447] [INFO] Booting worker with pid: 1332447
+[2026-04-09 14:42:44 -0400] [1332443] [INFO] Worker exiting (pid: 1332443)
+[2026-04-09 14:42:44 -0400] [1332447] [INFO] Worker exiting (pid: 1332447)
+[2026-04-09 14:42:44 -0400] [1332445] [INFO] Worker exiting (pid: 1332445)
+[2026-04-09 14:42:44 -0400] [1332441] [INFO] Handling signal: term
+[2026-04-09 14:42:44 -0400] [1332441] [ERROR] Worker (pid:1332443) was sent SIGTERM!
+[2026-04-09 14:42:44 -0400] [1332441] [ERROR] Worker (pid:1332447) was sent SIGTERM!
+[2026-04-09 14:42:44 -0400] [1332441] [ERROR] Worker (pid:1332445) was sent SIGTERM!
+[2026-04-09 14:42:44 -0400] [1332441] [INFO] Shutting down: Master
+[2026-04-09 14:42:44 -0400] [1332936] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 14:42:44 -0400] [1332936] [INFO] Listening at: http://127.0.0.1:9054 (1332936)
+[2026-04-09 14:42:44 -0400] [1332936] [INFO] Using worker: sync
+[2026-04-09 14:42:44 -0400] [1332937] [INFO] Booting worker with pid: 1332937
+[2026-04-09 14:42:44 -0400] [1332939] [INFO] Booting worker with pid: 1332939
+[2026-04-09 14:42:44 -0400] [1332940] [INFO] Booting worker with pid: 1332940
+[2026-04-09 14:56:15 -0400] [1332937] [INFO] Worker exiting (pid: 1332937)
+[2026-04-09 14:56:15 -0400] [1332939] [INFO] Worker exiting (pid: 1332939)
+[2026-04-09 14:56:15 -0400] [1332940] [INFO] Worker exiting (pid: 1332940)
+[2026-04-09 14:56:15 -0400] [1332936] [INFO] Handling signal: term
+[2026-04-09 14:56:15 -0400] [1332936] [ERROR] Worker (pid:1332937) was sent SIGTERM!
+[2026-04-09 14:56:15 -0400] [1332936] [ERROR] Worker (pid:1332939) was sent SIGTERM!
+[2026-04-09 14:56:15 -0400] [1332936] [INFO] Shutting down: Master
+[2026-04-09 14:56:15 -0400] [1333913] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 14:56:15 -0400] [1333913] [INFO] Listening at: http://127.0.0.1:9054 (1333913)
+[2026-04-09 14:56:15 -0400] [1333913] [INFO] Using worker: sync
+[2026-04-09 14:56:15 -0400] [1333915] [INFO] Booting worker with pid: 1333915
+[2026-04-09 14:56:15 -0400] [1333916] [INFO] Booting worker with pid: 1333916
+[2026-04-09 14:56:15 -0400] [1333917] [INFO] Booting worker with pid: 1333917
+[2026-04-09 14:56:34,517] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 82, in index
+    total = cur.fetchone()[0]
+TypeError: 'NoneType' object is not subscriptable
+[2026-04-09 14:56:35,449] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 82, in index
+    total = cur.fetchone()[0]
+TypeError: 'NoneType' object is not subscriptable
+[2026-04-09 14:57:02 -0400] [1333917] [INFO] Worker exiting (pid: 1333917)
+[2026-04-09 14:57:02 -0400] [1333916] [INFO] Worker exiting (pid: 1333916)
+[2026-04-09 14:57:02 -0400] [1333915] [INFO] Worker exiting (pid: 1333915)
+[2026-04-09 14:57:02 -0400] [1333913] [INFO] Handling signal: term
+[2026-04-09 14:57:02 -0400] [1333913] [ERROR] Worker (pid:1333917) was sent SIGTERM!
+[2026-04-09 14:57:02 -0400] [1333913] [INFO] Shutting down: Master
+[2026-04-09 14:57:02 -0400] [1333955] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 14:57:02 -0400] [1333955] [INFO] Listening at: http://127.0.0.1:9054 (1333955)
+[2026-04-09 14:57:02 -0400] [1333955] [INFO] Using worker: sync
+[2026-04-09 14:57:02 -0400] [1333956] [INFO] Booting worker with pid: 1333956
+[2026-04-09 14:57:02 -0400] [1333958] [INFO] Booting worker with pid: 1333958
+[2026-04-09 14:57:02 -0400] [1333959] [INFO] Booting worker with pid: 1333959
+[2026-04-09 14:57:05,071] ERROR in app: Exception on / [GET]
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 82, in index
+    total = cur.fetchone()[0]
+TypeError: 'NoneType' object is not subscriptable
+[2026-04-09 14:59:14 -0400] [1333959] [INFO] Worker exiting (pid: 1333959)
+[2026-04-09 14:59:14 -0400] [1333958] [INFO] Worker exiting (pid: 1333958)
+[2026-04-09 14:59:14 -0400] [1333956] [INFO] Worker exiting (pid: 1333956)
+[2026-04-09 14:59:14 -0400] [1333955] [INFO] Handling signal: term
+[2026-04-09 14:59:14 -0400] [1333955] [ERROR] Worker (pid:1333956) was sent SIGTERM!
+[2026-04-09 14:59:14 -0400] [1333955] [ERROR] Worker (pid:1333958) was sent SIGTERM!
+[2026-04-09 14:59:14 -0400] [1333955] [ERROR] Worker (pid:1333959) was sent SIGTERM!
+[2026-04-09 14:59:14 -0400] [1333955] [INFO] Shutting down: Master
+[2026-04-09 14:59:14 -0400] [1334059] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 14:59:14 -0400] [1334059] [INFO] Listening at: http://127.0.0.1:9054 (1334059)
+[2026-04-09 14:59:14 -0400] [1334059] [INFO] Using worker: sync
+[2026-04-09 14:59:14 -0400] [1334060] [INFO] Booting worker with pid: 1334060
+[2026-04-09 14:59:14 -0400] [1334063] [INFO] Booting worker with pid: 1334063
+[2026-04-09 14:59:14 -0400] [1334064] [INFO] Booting worker with pid: 1334064
+[2026-04-09 14:59:22 -0400] [1334063] [INFO] Worker exiting (pid: 1334063)
+[2026-04-09 14:59:22 -0400] [1334060] [INFO] Worker exiting (pid: 1334060)
+[2026-04-09 14:59:22 -0400] [1334064] [INFO] Worker exiting (pid: 1334064)
+[2026-04-09 14:59:22 -0400] [1334059] [INFO] Handling signal: term
+[2026-04-09 14:59:22 -0400] [1334059] [ERROR] Worker (pid:1334064) was sent SIGTERM!
+[2026-04-09 14:59:22 -0400] [1334059] [ERROR] Worker (pid:1334060) was sent SIGTERM!
+[2026-04-09 14:59:22 -0400] [1334059] [ERROR] Worker (pid:1334063) was sent SIGTERM!
+[2026-04-09 14:59:22 -0400] [1334059] [INFO] Shutting down: Master
+[2026-04-09 14:59:22 -0400] [1334072] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 14:59:22 -0400] [1334072] [INFO] Listening at: http://127.0.0.1:9054 (1334072)
+[2026-04-09 14:59:22 -0400] [1334072] [INFO] Using worker: sync
+[2026-04-09 14:59:22 -0400] [1334074] [INFO] Booting worker with pid: 1334074
+[2026-04-09 14:59:22 -0400] [1334075] [INFO] Booting worker with pid: 1334075
+[2026-04-09 14:59:22 -0400] [1334076] [INFO] Booting worker with pid: 1334076
+[2026-04-09 15:04:28 -0400] [1334074] [INFO] Worker exiting (pid: 1334074)
+[2026-04-09 15:04:28 -0400] [1334076] [INFO] Worker exiting (pid: 1334076)
+[2026-04-09 15:04:28 -0400] [1334075] [INFO] Worker exiting (pid: 1334075)
+[2026-04-09 15:04:28 -0400] [1334072] [INFO] Handling signal: term
+[2026-04-09 15:04:28 -0400] [1334072] [ERROR] Worker (pid:1334074) was sent SIGTERM!
+[2026-04-09 15:04:28 -0400] [1334072] [ERROR] Worker (pid:1334075) was sent SIGTERM!
+[2026-04-09 15:04:28 -0400] [1334072] [ERROR] Worker (pid:1334076) was sent SIGTERM!
+[2026-04-09 15:04:28 -0400] [1334072] [INFO] Shutting down: Master
+[2026-04-09 15:04:28 -0400] [1334491] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 15:04:28 -0400] [1334491] [INFO] Listening at: http://127.0.0.1:9054 (1334491)
+[2026-04-09 15:04:28 -0400] [1334491] [INFO] Using worker: sync
+[2026-04-09 15:04:28 -0400] [1334493] [INFO] Booting worker with pid: 1334493
+[2026-04-09 15:04:28 -0400] [1334500] [INFO] Booting worker with pid: 1334500
+[2026-04-09 15:04:28 -0400] [1334501] [INFO] Booting worker with pid: 1334501
+[2026-04-09 15:06:43 -0400] [1334501] [INFO] Worker exiting (pid: 1334501)
+[2026-04-09 15:06:43 -0400] [1334500] [INFO] Worker exiting (pid: 1334500)
+[2026-04-09 15:06:43 -0400] [1334493] [INFO] Worker exiting (pid: 1334493)
+[2026-04-09 15:06:43 -0400] [1334491] [INFO] Handling signal: term
+[2026-04-09 15:06:43 -0400] [1334491] [ERROR] Worker (pid:1334493) was sent SIGTERM!
+[2026-04-09 15:06:43 -0400] [1334491] [ERROR] Worker (pid:1334500) was sent SIGTERM!
+[2026-04-09 15:06:43 -0400] [1334491] [ERROR] Worker (pid:1334501) was sent SIGTERM!
+[2026-04-09 15:06:43 -0400] [1334491] [INFO] Shutting down: Master
+[2026-04-09 15:06:44 -0400] [1334726] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 15:06:44 -0400] [1334726] [INFO] Listening at: http://127.0.0.1:9054 (1334726)
+[2026-04-09 15:06:44 -0400] [1334726] [INFO] Using worker: sync
+[2026-04-09 15:06:44 -0400] [1334727] [INFO] Booting worker with pid: 1334727
+[2026-04-09 15:06:44 -0400] [1334728] [INFO] Booting worker with pid: 1334728
+[2026-04-09 15:06:44 -0400] [1334729] [INFO] Booting worker with pid: 1334729
+[2026-04-09 15:12:34 -0400] [1334729] [INFO] Worker exiting (pid: 1334729)
+[2026-04-09 15:12:34 -0400] [1334728] [INFO] Worker exiting (pid: 1334728)
+[2026-04-09 15:12:34 -0400] [1334727] [INFO] Worker exiting (pid: 1334727)
+[2026-04-09 15:12:34 -0400] [1334726] [INFO] Handling signal: term
+[2026-04-09 15:12:34 -0400] [1334726] [ERROR] Worker (pid:1334729) was sent SIGTERM!
+[2026-04-09 15:12:34 -0400] [1334726] [ERROR] Worker (pid:1334727) was sent SIGTERM!
+[2026-04-09 15:12:34 -0400] [1334726] [ERROR] Worker (pid:1334728) was sent SIGTERM!
+[2026-04-09 15:12:34 -0400] [1334726] [INFO] Shutting down: Master
+[2026-04-09 15:12:34 -0400] [1335027] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 15:12:34 -0400] [1335027] [INFO] Listening at: http://127.0.0.1:9054 (1335027)
+[2026-04-09 15:12:34 -0400] [1335027] [INFO] Using worker: sync
+[2026-04-09 15:12:34 -0400] [1335030] [INFO] Booting worker with pid: 1335030
+[2026-04-09 15:12:34 -0400] [1335031] [INFO] Booting worker with pid: 1335031
+[2026-04-09 15:12:34 -0400] [1335032] [INFO] Booting worker with pid: 1335032
+[2026-04-09 15:15:59 -0400] [1335031] [INFO] Worker exiting (pid: 1335031)
+[2026-04-09 15:15:59 -0400] [1335030] [INFO] Worker exiting (pid: 1335030)
+[2026-04-09 15:15:59 -0400] [1335032] [INFO] Worker exiting (pid: 1335032)
+[2026-04-09 15:15:59 -0400] [1335027] [INFO] Handling signal: term
+[2026-04-09 15:15:59 -0400] [1335027] [ERROR] Worker (pid:1335032) was sent SIGTERM!
+[2026-04-09 15:15:59 -0400] [1335027] [ERROR] Worker (pid:1335031) was sent SIGTERM!
+[2026-04-09 15:15:59 -0400] [1335027] [ERROR] Worker (pid:1335030) was sent SIGTERM!
+[2026-04-09 15:15:59 -0400] [1335027] [INFO] Shutting down: Master
+[2026-04-09 15:15:59 -0400] [1335194] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 15:15:59 -0400] [1335194] [INFO] Listening at: http://127.0.0.1:9054 (1335194)
+[2026-04-09 15:15:59 -0400] [1335194] [INFO] Using worker: sync
+[2026-04-09 15:15:59 -0400] [1335195] [INFO] Booting worker with pid: 1335195
+[2026-04-09 15:16:00 -0400] [1335196] [INFO] Booting worker with pid: 1335196
+[2026-04-09 15:16:00 -0400] [1335197] [INFO] Booting worker with pid: 1335197
+[2026-04-09 15:18:36 -0400] [1335197] [INFO] Worker exiting (pid: 1335197)
+[2026-04-09 15:18:36 -0400] [1335196] [INFO] Worker exiting (pid: 1335196)
+[2026-04-09 15:18:36 -0400] [1335195] [INFO] Worker exiting (pid: 1335195)
+[2026-04-09 15:18:36 -0400] [1335194] [INFO] Handling signal: term
+[2026-04-09 15:18:36 -0400] [1335194] [ERROR] Worker (pid:1335197) was sent SIGTERM!
+[2026-04-09 15:18:36 -0400] [1335194] [ERROR] Worker (pid:1335195) was sent SIGTERM!
+[2026-04-09 15:18:36 -0400] [1335194] [ERROR] Worker (pid:1335196) was sent SIGTERM!
+[2026-04-09 15:18:36 -0400] [1335194] [INFO] Shutting down: Master
+[2026-04-09 15:18:37 -0400] [1335339] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 15:18:37 -0400] [1335339] [INFO] Listening at: http://127.0.0.1:9054 (1335339)
+[2026-04-09 15:18:37 -0400] [1335339] [INFO] Using worker: sync
+[2026-04-09 15:18:37 -0400] [1335340] [INFO] Booting worker with pid: 1335340
+[2026-04-09 15:18:37 -0400] [1335342] [INFO] Booting worker with pid: 1335342
+[2026-04-09 15:18:37 -0400] [1335344] [INFO] Booting worker with pid: 1335344
