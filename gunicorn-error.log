@@ -30300,3 +30300,34 @@ jinja2.exceptions.UndefinedError: 'article' is undefined
 [2026-02-24 15:09:22 -0500] [3515634] [INFO] Booting worker with pid: 3515634
 [2026-02-24 15:09:22 -0500] [3515635] [INFO] Booting worker with pid: 3515635
 [2026-02-24 15:09:22 -0500] [3515636] [INFO] Booting worker with pid: 3515636
+[2026-04-09 14:18:57 -0400] [1331092] [INFO] Starting gunicorn 23.0.0
+[2026-04-09 14:18:57 -0400] [1331092] [INFO] Listening at: http://127.0.0.1:9054 (1331092)
+[2026-04-09 14:18:57 -0400] [1331092] [INFO] Using worker: sync
+[2026-04-09 14:18:57 -0400] [1331093] [INFO] Booting worker with pid: 1331093
+[2026-04-09 14:18:57 -0400] [1331096] [INFO] Booting worker with pid: 1331096
+[2026-04-09 14:18:57 -0400] [1331097] [INFO] Booting worker with pid: 1331097
+[2026-04-09 14:19:01 -0400] [1331096] [ERROR] Error handling request /
+Traceback (most recent call last):
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/flask/app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/home/chief/neurocompute/app.py", line 40, in index
+    cur.execute("""
+  File "/home/chief/neurocompute/venv/lib/python3.10/site-packages/psycopg/cursor.py", line 117, in execute
+    raise ex.with_traceback(None)
+psycopg.errors.UndefinedColumn: column "score" does not exist
+LINE 2: ...        SELECT pmid, title, journal, publication_date, score
+                                                                  ^
